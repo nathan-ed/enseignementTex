@@ -8,6 +8,7 @@
 
 # ─── 3. src_exos: all .tex files ───────────────────────────────────────
 !/src_exos/*.tex
+!/src_exos/medias/*.tex
 
 # ─── 4. 1M root: .tex & .bib; keep pdfs in output/ & its subfolders ────
 !/1M/*.tex
