@@ -26,9 +26,9 @@
 !/macros/**
 
 # ─── 7. recueils: root .tex; pdfs in output/ & its subfolders ───────────
-!/recueils/*.tex
-!/recueils/output/
-!/recueils/output/**/*.pdf
+!/recueil/*.tex
+!/recueil/output/
+!/recueil/output/**/*.pdf
 
 # ─── 8. fonts: only files starting with OpenSans, iosevka, cambria ────
 !/fonts/OpenSans*
