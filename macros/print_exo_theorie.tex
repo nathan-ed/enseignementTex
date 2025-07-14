@@ -84,7 +84,7 @@
 }
 
 
-\newcommand{\insertexo}[5][]{% #1 = label (optional), #2 = contenu, #3 = uuid, #4 = type, #5 = upside-down
+\newcommand{\insertexo}[4][]{% #1 = label (optional), #2 = contenu, #3 = uuid, #4 = type, #5 = upside-down
     \input{\path src_exos/#2} % Input the exercise content from the provided path
     \setboolean{uuid}{#3} % Set the uuid boolean
     
@@ -105,9 +105,10 @@
     \ifthenelse{\equal{#4}{cor} \OR \equal{#4}{both}}{%
         \noindent % Ensure no extra indentation
 
-            \begin{core} % Use normal core for regular solution
+            \begin{corri} % Use normal core for regular solution
+		\ifthenelse{\boolean{uuid}}{#2}{}
                  \Solution  % Insert the solution
-            \end{core}
+            \end{corri}
     }{} % Otherwise, do nothing
     
     \endgroup % End the group
