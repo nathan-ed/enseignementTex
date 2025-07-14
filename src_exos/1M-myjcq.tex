@@ -1,0 +1,34 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{4}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+\noindent Déterminer si la fonction \(f\) définie par  
+\[
+	f(x)=\begin{cases}[c]
+\dfrac{|x|}{x}, & x\neq 0,\\
+1, & x=0
+\end{cases}
+\]
+est continue en \(a=0\). Justifier et esquisser une représentation graphique de \(f\).
+}
+\correction{
+	\tcblower
+\begin{itemize}
+  \item Pour \( x \ne 0 \), \( f(x) = \dfrac{|x|}{x} = \begin{cases}
+  1 & \text{si } x > 0 \\
+  -1 & \text{si } x < 0
+  \end{cases} \)
+  \item Donc \( \lim_{x \to 0^-} f(x) = -1 \), \( \lim_{x \to 0^+} f(x) = 1 \)
+  \item Les limites à gauche et à droite sont différentes, donc \( \lim_{x \to 0} f(x) \) n’existe pas
+  \item Ainsi, \( f \) n’est pas continue en \( a = 0 \)
+\end{itemize}
+}
+

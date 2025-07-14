@@ -1,0 +1,53 @@
+\titre{}
+\theme{fonctions}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+Une agence de voyage organise une excursion. Le prix du billet a été fixé à 60 CHF, mais la compagnie a consenti, dans le cas où plus de 100 personnes feraient le voyage, à baisser le prix de chaque billet de 25 cts par personne additionnelle. Sachant qu'il en coûte 1000 CHF à l'agence pour transporter les 100 premiers passagers et 15 CHF par passager additionnel, trouver le nombre de passagers pour lequel le bénéfice net de la compagnie est maximal. Interpréter graphiquement.
+}
+\correction{
+	\tcblower
+\[
+\text{Pour } N < 100 :
+\quad \text{Bénéfice} = 60\,N \;-\; 1000.
+\]
+Cette fonction est linéaire croissante en $N$. Donc son maximum dans cette plage 
+est atteint en $N=100$. À $N=100$, on obtient 
+\[
+B(100) = 60\times100 - 1000 = 5000.
+\]
+
+\[
+\text{Pour } N \ge 100 :
+\quad x = N - 100,\quad \text{Prix par billet} = 60 - 0,25\,x,
+\]
+\[
+\text{Coût total} = 1000 + 15\,x, \quad
+\text{Revenu} = (100 + x)\bigl(60 - 0,25\,x\bigr).
+\]
+\[
+\text{Bénéfice} = (100 + x)\bigl(60 - 0,25\,x\bigr) - \bigl(1000 + 15\,x\bigr)
+= 5000 + 20\,x - 0,25\,x^2.
+\]
+Le sommet de cette parabole (coefficient dominant $-0,25<0$) est :
+\[
+x_{\max} = -\frac{b}{2a}
+= -\frac{20}{2 \cdot (-0,25)}
+= 40.
+\]
+Soit $N=100+40=140$. Le bénéfice maximum alors :
+\[
+B(140) = 5000 + 20\times 40 - 0,25\times 40^2 
+= 5400.
+\]
+Comme $5400 > 5000$, le bénéfice maximal \textbf{n'est pas atteint en dessous de 100 passagers} 
+mais bien en $N=140$.
+}
+

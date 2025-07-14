@@ -1,0 +1,73 @@
+\titre{}
+\theme{cercle}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{abdou}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+Soit $O$ le centre du cercle $(C)$. 
+
+$[AD]$ est un diamètre du cercle.
+
+Déterminer la valeur des angles 
+\[\widehat{AOC}; \quad \widehat{ACO};\quad \widehat{BAD}\]
+}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+	\tkzSetUpPoint[shape=cross]
+% Define the center and a point on the circle
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(3,0){OO}
+  
+\tkzLabelCircle[below right](O,OO)(-50){$(C)$}
+  % Draw the circle with center O passing through A
+  \tkzDrawCircle(O,OO)
+    % Compute the other vertices by successive rotations of 72°
+
+  \tkzDefPointBy[rotation= center O angle 30](OO) \tkzGetPoint{A}
+  \tkzDefPointBy[rotation= center O angle 150](A) \tkzGetPoint{B}
+  \tkzDefPointBy[rotation= center O angle 180](A) \tkzGetPoint{D}
+  \tkzDefPointBy[rotation= center O angle -140](A) \tkzGetPoint{C}
+  
+  
+  \tkzDrawPoints(A,B,C,D,O)
+  
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(D,A)
+  \tkzDrawSegment(A,B)
+  \tkzDrawSegment(C,O)
+  \tkzDrawSegment(B,O)
+  % Label the vertices
+  \tkzLabelPoints[above right](A)
+  \tkzLabelPoints[left](B)
+  \tkzLabelPoints[below](C)
+  \tkzLabelPoints[below right](O)
+  \tkzLabelPoints[left](D)
+  \tkzMarkAngle[size=0.8cm, mark=none](B,O,D)
+\tkzLabelAngle[pos=1.5](B,O,D){\footnotesize{$30^\circ$}}
+  \tkzMarkAngle[size=0.8cm, mark=none](D,O,C)
+  \tkzLabelAngle[pos=1.5](D,O,C){\footnotesize{$40^\circ$}}
+\end{tikzpicture}	
+\end{center}
+}
+\end{minipage}
+}
+\correction{
+	\tcblower
+\begin{tasks}
+	\task $\widehat{AOC}=180^\circ-40^\circ=140^\circ$.
+	\task $\widehat{ACO}=20^\circ$, car isocèle (deux rayons) et par la somme des angles dans un triangle.
+	\task $\widehat{OBA}=15^\circ$, par le thm de l'angle inscrit et de l'angle au centre.
+\end{tasks}
+}
+

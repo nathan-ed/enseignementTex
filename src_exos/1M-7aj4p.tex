@@ -1,0 +1,86 @@
+\titre{}
+\theme{fonctions}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{musy-2017}
+\type{serie}
+\piments{1}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+Associe à chaque tableau de valeurs sa représentation graphique.
+
+\begin{minipage}[t]{0.45\textwidth}{
+\vspace{0pt}
+\begin{tabular}{|c|c|c|c|}
+\hline$x$ & $-8$ & $0$ & $4$ \\
+\hline$\ldots(x)$ & $-1$ & $0$ & $0,5$ \\
+\hline
+\end{tabular}
+
+\vspace{0.2cm}
+
+\begin{tabular}{|c|c|c|c|}
+\hline$x$ & $0$ & $3$ & $10$ \\
+\hline$\ldots(x)$ & $-1$ & $5$ & $19$ \\
+\hline
+\end{tabular}
+
+\vspace{0.2cm}
+
+\begin{tabular}{|c|c|c|c|}
+\hline$x$ & $-6$ & $0$ & $2$ \\
+\hline$\ldots(x)$ & $11$ & $2$ & $-1$ \\
+\hline
+\end{tabular}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}{
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+  axis lines=center,
+  grid=major,
+  width=3.5in,
+height=3.5in,
+  xmin=-4,
+  xmax=4,
+  ymin=-4,
+  ymax=4,
+  xlabel=$x$,
+  ylabel=$y$,
+  enlargelimits={abs=1},
+  xtick={-4,-3,...,4},
+  ytick={-4,-3,...,4},
+  xlabel style={at={(rel axis cs:1,0.5)}},
+  ylabel style={at={(rel axis cs:0.52,1)}},
+  tick style={very thick},
+  ticklabel style={font=\small},
+  legend style={
+  at={(rel axis cs:1,1)},
+  anchor=north west,
+  draw=none,
+  inner sep=0pt,
+  fill=gray!10}
+]
+
+\addplot [very thick,domain=-2:3,samples=200] {2*x-1} node [below right,pos=0.75] {$h$};
+%\addlegendentry {$f(x)=...$};
+\addplot[black,very thick,domain=-2:5,samples=200]{-3/2*x+2}  node[below left,pos=0.1] {$f$};
+\addplot[black,very thick,domain=-5:5,samples=200]{1/8*x}  node[above left,pos=0.8] {$g$};
+%\addlegendentry{$g(x)=...$};
+\end{axis}
+\end{tikzpicture}
+\end{center}	
+}
+\end{minipage}
+}
+\correction{
+	\tcblower
+$1\rightarrow g; 2\rightarrow h; 3\rightarrow f$
+}
+

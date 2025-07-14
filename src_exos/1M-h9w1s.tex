@@ -1,0 +1,47 @@
+\titre{}
+\theme{derivation2}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Calculer les limites suivantes~: 
+\begin{tasks}(2)
+\task $\displaystyle\lim_{x \to 0} \dfrac{\sin(ax)}{x}$
+\task $\displaystyle\lim_{x \to 0} \dfrac{\tan(ax)}{\sin(bx)}, a,b\in \mathbb{R}, b\neq 0$
+\end{tasks}
+
+}
+\correction{
+\tcblower	
+\begin{tasks}(2)
+		\task 
+
+$\begin{aligned}
+&\displaystyle\lim_{x \to 0} \dfrac{\sin(ax)}{x}\\
+&=\displaystyle\lim_{x \to 0} \dfrac{\sin(ax)}{\dfrac{ax}{a}}\\
+&=\displaystyle\lim_{ax \to 0} \dfrac{\sin(ax)}{ax}\cdot a\\
+&=a
+		\end{aligned}$
+	\task 
+
+	On a $\tan(x)=\dfrac{\sin(x)}{\cos(x)}$ et $\lim_{x\to 0} \dfrac{\sin(ax)}{x}=a$.
+
+$
+\begin{aligned}
+&\displaystyle\lim_{x \to 0} \dfrac{\tan(ax)}{\sin(bx)}\\
+&=\displaystyle\lim_{x \to 0} \dfrac{\sin(ax)}{\cos(ax)\sin(bx)}\\
+&=\displaystyle\lim_{x \to 0} \dfrac{\sin(ax)}{x}\dfrac{x}{\sin(bx)}\dfrac{1}{\cos(ax)}\\
+&=\displaystyle\lim_{x \to 0} \dfrac{\sin(ax)}{x}\displaystyle\lim_{x \to 0}\dfrac{x}{\sin(bx)}\displaystyle\lim_{x \to 0}\dfrac{1}{\cos(ax)}\\
+&=a\cdot\dfrac{1}{b}\cdot\dfrac{1}{1}\\
+&=\dfrac{a}{b}
+\end{aligned}
+$
+\end{tasks}
+}
+

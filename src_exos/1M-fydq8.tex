@@ -1,0 +1,43 @@
+\titre{}
+\theme{dérivées}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{fundamentum}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+On dispose de 288 m de clôture grillagée pour construire 6 enclos identiques pour un zoo selon le plan ci-contre. Quelles dimensions donner à ces enclos de manière à maximiser leur surface au sol ?
+\begin{center}
+\begin{tikzpicture}
+    % Définir les coins du rectangle extérieur
+    \tkzDefPoint(0,0){A}
+    \tkzDefPoint(6,0){B}
+    \tkzDefPoint(6,4){C}
+    \tkzDefPoint(0,4){D}
+    
+    % Définir les points pour les lignes de la grille interne
+    \tkzDefPoint(0,2){H_gauche}
+    \tkzDefPoint(6,2){H_droite}
+    \tkzDefPoint(2,0){V1_bas}
+    \tkzDefPoint(2,4){V1_haut}
+    \tkzDefPoint(4,0){V2_bas}
+    \tkzDefPoint(4,4){V2_haut}
+    
+    % Dessiner le rectangle extérieur
+    \tkzDrawPolygon[thick](A,B,C,D)
+    
+    % Dessiner les lignes de la grille interne
+    \tkzDrawSegment[color=gray](H_gauche,H_droite)
+    \tkzDrawSegment[color=gray](V1_bas,V1_haut)
+    \tkzDrawSegment[color=gray](V2_bas,V2_haut)
+\end{tikzpicture}
+\end{center}
+}
+\correction{
+\tcblower
+}
+

@@ -1,0 +1,32 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{musy}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Montrer que l'équation 
+\[2^x=x^2\]
+admet une solution sur l'intervalle $[-1;0]$. 
+}
+\correction{
+	\tcblower
+\begin{itemize}
+  \item On considère la fonction \( f(x) = 2^x - x^2 \), continue sur \( \mathbb{R} \) car somme de fonctions continues.
+  \item On calcule :
+    \[
+    \begin{aligned}
+    f(-1) &= 2^{-1} - (-1)^2 = \dfrac{1}{2} - 1 = -\dfrac{1}{2} \\
+    f(0) &= 2^0 - 0^2 = 1 - 0 = 1
+    \end{aligned}
+    \]
+  \item On a \( f(-1) < 0 \) et \( f(0) > 0 \), donc \( f(-1) \cdot f(0) < 0 \).
+  \item D’après le corollaire du théorème de la valeur intermédiaire, il existe \( c \in [-1; 0] \) tel que \( f(c) = 0 \).
+\end{itemize}
+}
+

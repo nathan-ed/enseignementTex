@@ -1,0 +1,43 @@
+\titre{}
+\theme{geometrie}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+	\begin{minipage}[t]{0.45\textwidth}{
+		\vspace{0pt}
+		On a $BD=25 cm, ED= 15 cm$ et $EC=35 cm$.  
+Calculer l'aire et le périmètre du quadrilatère $ADEC$. 
+		}
+		\end{minipage}
+		\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+\begin{tikzpicture}[scale=.75]
+\tkzDefPoint(5,3.5){A}
+\tkzDefPoint(0,0){B}
+\tkzDefPoint(7,0){C}
+\tkzDefPointBy[homothety=center B ratio 0.3](A) \tkzGetPoint{D}
+\tkzDefPointBy[projection=onto B--C](D) \tkzGetPoint{E}
+\tkzMarkRightAngle(C,A,B)
+\tkzMarkRightAngle(D,E,C)
+\tkzDrawPoints(A,B,C,D,E)
+\tkzDrawSegment(D,E)
+\tkzDrawPolygon(A,B,C)
+\tkzLabelPoints[below](B,C,E)
+\tkzLabelPoints[above](A,D)
+\end{tikzpicture}
+		}
+		\end{minipage}
+
+}
+\correction{
+	\tcblower
+
+}
+

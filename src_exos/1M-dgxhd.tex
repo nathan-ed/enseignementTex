@@ -1,0 +1,61 @@
+\titre{}
+\theme{geometrie}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+\pgfmathsetmacro{\a}{4}%  
+\pgfmathsetmacro{\b}{6}%  
+\pgfmathsetmacro{\h}{3}%
+
+	\begin{minipage}[t]{0.5\textwidth}{
+	\vspace{0pt}
+\begin{tasks}
+	\task Calculer la hauteur de la pyramide droite à base carrée suivante.
+	\task Calculer l’aire de la base et le volume de la Pyramide de Kheops si le côté de la base mesure $231$ m et la hauteur de la pyramide mesure $147$ m.
+\end{tasks}	
+	}
+	\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}{
+	\vspace{0pt}
+\begin{tikzpicture}[%scale=0.7,
+font=\footnotesize, 
+z ={(0,0,-cos(45))},
+]
+
+\coordinate[label=left:$A$] (A) at (0,0,0); 
+\coordinate[label=right:$B$] (B) at (\a,0,0); 
+\coordinate[label=right:$C$] (C) at (\a,0,\b); 
+\coordinate[label=below:$D$] (D) at (0,0,\b); 
+\coordinate[] (M) at (0.5*\a,0,0.5*\b); 
+\path[] (M) --+ (0,\h,0) coordinate[label=$S$] (S);
+
+% Grundfläche
+\fill[lightgray] (A) -- (B) -- (C) -- (D) --cycle;
+\draw[] (A) -- (B)  -- (C) node[pos=0.6, sloped, below]{$6$\,cm}; 
+\draw[densely dashed] (A) -- (D) -- (C); 
+% Höhe
+\draw[] ($(M)!-5pt!(C)$) -- ($(M)!5pt!(C)$) ; 
+\draw[] ($(M)!-5pt!(B)$) -- ($(M)!5pt!(B)$) ; 
+\draw[] (M) -- (S); 
+\draw[] (C) -- (S) node[midway,sloped, above]{$9$\,cm}; 
+% Mantellinien
+\draw[densely dashed] (D) -- (S); 
+\foreach \P in {A,B,C}{  \draw[] (\P) -- (S);     }
+
+
+\end{tikzpicture}
+	}
+	\end{minipage}
+}
+\correction{
+	\tcblower
+
+}
+

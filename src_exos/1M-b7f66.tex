@@ -1,0 +1,39 @@
+\titre{}
+\theme{geometrie}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+	\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+		On a $BH=18 cm$ et $BC= 30 cm$.  
+Calculer la longueur de $CH, AH$ et $AC$.	
+		}
+		\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}{
+		\vspace{0pt}
+\begin{tikzpicture}[scale=.75]
+\tkzDefPoint(5,3.5){C}
+\tkzDefPoint(0,0){B}
+\tkzDefPoint(7,0){A}
+\tkzDefPointBy[projection=onto A--B](C) \tkzGetPoint{H}
+\tkzMarkRightAngle(A,C,B)
+\tkzMarkRightAngle(C,H,A)
+\tkzDrawPoints(A,B,C,H)
+\tkzDrawSegment(C,H)
+\tkzDrawPolygon(A,B,C)
+\tkzLabelPoints[below](B,A,H)
+\tkzLabelPoints[above](C)
+\end{tikzpicture}}
+\end{minipage}}
+\correction{
+	\tcblower
+
+}
+

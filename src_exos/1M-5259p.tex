@@ -1,0 +1,64 @@
+\titre{}
+\theme{geometrie}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+
+	\begin{minipage}[t]{0.6\textwidth}{
+	\vspace{0pt}
+	Déterminer la longueur de $h$ sachant que le diamètre des disques est de $5cm$ et que les deux disques sont inscrits dans un rectangle. 
+	
+	Indice : utiliser les centres des cercles. 
+	}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\textwidth}{
+	\vspace{0pt}
+\begin{tikzpicture}[scale=1]
+    % Define center of the first circle
+    \tkzDefPoint(2,3){A}
+    
+    % Define center of the second circle using slope -4
+    \tkzDefPoint(2+1, 3-2){B}
+
+    \tkzDefPointBy[homothety=center B ratio 0.5](A) \tkzGetPoint{C}
+    \tkzCalcLength(A,C)\tkzGetLength{radius}
+    \tkzDrawCircle(A,C)
+    \tkzDrawCircle(B,C)
+
+    \tkzDefPoint(2-\radius,3){D}
+    \tkzDefPoint(2,3+\radius){E}
+    \tkzDefPoint(3,1-\radius){F}
+    \tkzDefPoint(3+\radius,1){G}
+    \tkzDefPoint(2-\radius,1-\radius){H}
+    \tkzDefPoint(2-\radius,3+\radius){I}
+    \tkzDefPoint(3+\radius,1-\radius){J}
+    \tkzDefPoint(3+\radius,3+\radius){K}
+    % Draw the centers
+    \tkzDrawPoints(A,B)
+    \tkzDrawSegments(K,J J,H)
+    \tkzDrawSegment[dim={$h$,6pt,}](H,I)
+    \tkzDrawSegment[dim={$8cm$,6pt,}](J,H)
+    \tkzDrawSegment[dashed](I,K)
+
+    % Draw the line connecting the centers (optional)
+    \tkzDrawLine[add=0.70 and 0.70, dashed](A,B)
+
+
+\end{tikzpicture}
+	}
+	\end{minipage}
+}
+\correction{
+	\tcblower
+	$h=9cm$
+
+}
+

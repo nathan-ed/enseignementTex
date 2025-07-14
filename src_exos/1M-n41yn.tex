@@ -1,0 +1,83 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+\noindent Calculer les limites suivantes.
+\begin{tasks}(3)
+\task \(\displaystyle\lim_{x\to 4}\frac{2-\sqrt{x}}{4-x}\)
+\task \(\displaystyle\lim_{x\to 3}\frac{x-3}{\sqrt{x+6}-3}\)
+\task \(\displaystyle\lim_{x\to 1}\frac{1-x}{\sqrt{12-3x}-3}\)
+\task*(2) \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x+1}-\sqrt{x^2-x+1}}{x}\)
+\task \(\displaystyle\lim_{x\to 2}\frac{x-\sqrt{x+2}}{\sqrt{4x+1}-3}\)
+\end{tasks}
+}
+\correction{
+\tcblower
+\begin{tasks}(2)
+\task Type $« \dfrac{0}{0} »$ :  
+
+\( 
+\begin{aligned}
+&\lim_{x \to 4} \dfrac{2 - \sqrt{x}}{4 - x}\\
+&= \lim_{x\to 4} \dfrac{2 - \sqrt{x}}{(2 - \sqrt{x})(2 + \sqrt{x})} \\
+&\stackrel{x \ne 4}{=} \lim_{x\to 4} \dfrac{1}{2 + \sqrt{x}} = \dfrac{1}{4}
+\end{aligned}
+\)
+
+\task Type $« \dfrac{0}{0} »$ :  
+
+\(
+\begin{aligned}
+&\lim_{x \to 3} \dfrac{x - 3}{\sqrt{x + 6} - 3}\\
+&= \lim_{x\to 3} \dfrac{(x - 3)(\sqrt{x + 6} + 3)}{x + 6 - 9} \\
+&= \lim_{x\to 3} \dfrac{(x - 3)(\sqrt{x + 6} + 3)}{x - 3} \\
+&\stackrel{x \ne 3}{=} \lim_{x\to 3} \sqrt{x + 6} + 3 = 6
+\end{aligned}
+\)
+
+\task Type $« \dfrac{0}{0} »$~: 
+
+\(
+\begin{aligned}
+&\lim_{x \to 1} \dfrac{1 - x}{\sqrt{12 - 3x} - 3}\\
+&= \lim_{x\to 1} \dfrac{(1 - x)(\sqrt{12 - 3x} + 3)}{12 - 3x - 9} \\
+&= \lim_{x\to 1} \dfrac{(1 - x)(\sqrt{12 - 3x} + 3)}{3(1 - x)} \\
+&\stackrel{x \ne 1}{=} \lim_{x\to 1} \dfrac{\sqrt{12 - 3x} + 3}{3}= 4
+\end{aligned}
+\)
+
+\task Type $« \dfrac{0}{0} »$ :  
+
+\(
+\begin{aligned}
+&\lim_{x \to 0} \dfrac{\sqrt{x + 1} - \sqrt{x^2 - x + 1}}{x}\\
+&= \lim_{x\to 0} \dfrac{(x + 1) - (x^2 - x + 1)}{x(\sqrt{x + 1} + \sqrt{x^2 - x + 1})} \\
+&= \lim_{x\to 0}\dfrac{-x^2 + 2x}{x(\sqrt{x + 1} + \sqrt{x^2 - x + 1})} \\
+&= \lim_{x\to 0} \dfrac{-x + 2}{\sqrt{x + 1} + \sqrt{x^2 - x + 1}} = 1
+\end{aligned}
+\)
+
+\task*(2) Type $« \dfrac{0}{0} »$ :  
+
+\(
+\begin{aligned}
+&\lim_{x \to 2} \dfrac{x - \sqrt{x + 2}}{\sqrt{4x + 1} - 3}\\
+&= \lim \dfrac{(x - \sqrt{x + 2})(\sqrt{4x + 1} + 3)}{4x + 1 - 9} \\
+&= \lim_{x\to 2} \dfrac{(x - \sqrt{x + 2})(\sqrt{4x + 1} + 3)}{4(x - 2)} \\
+&=\lim_{x\to 2} \dfrac{(x^2-x-2)(\sqrt{4x+1}+3)}{4(x-2)(x+\sqrt{x+2})}\\
+&=\lim_{x\to 2} \dfrac{(x-2)(x+1)(\sqrt{4x+1}+3)}{4(x-2)(x+\sqrt{x+2})}\\
+&\stackrel{x\neq 2}{=}\lim_{x\to 2} \dfrac{(x+1)(\sqrt{4x+1}+3)}{4(x+\sqrt{x+2})}\\
+&=\dfrac{3(\sqrt{9}+3)}{4(2+\sqrt{4})}=\dfrac{9}{8}
+\end{aligned}
+\)
+\end{tasks}
+}
+

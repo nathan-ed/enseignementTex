@@ -1,0 +1,40 @@
+\titre{}
+\theme{limits}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{nathan}
+\type{serie}
+\piments{1}
+\pts{}
+\annee{2526}
+
+\contenu{
+\tcblower
+Application du théorème des deux gendarmes.
+\begin{tasks}
+	\task Montrer que si $\lim_{x\to a}|f(x)|=0$ alors $\lim_{x\to a}f(x)=0$.
+	\task Montrer que $\lim_{x\to 0} x\sin\left(\dfrac{1}{x}\right)=0$. 
+	\task En déduire que la fonction $f(x)=
+\begin{cases}
+x\sin\left(\tfrac{1}{x}\right),&x\neq 0,\\
+0,&x=0
+\end{cases}$ est continue en $x=0$. 
+\end{tasks}
+}
+\correction{
+\tcblower
+\begin{tasks}
+	\task On a que $-|f(x)|\leq f(x)\leq |f(x)|, \forall x\in \R$, donc par le théorème des deux gendarmes, $\lim_{x\to a}f(x)=0$. 
+	\task On a $-1\leq \sin\left(\dfrac{1}{x}\right)\leq 1$ $,\forall x \in \R^*$ et donc $0\leq |\sin\left(\dfrac{1}{x}\right)|\leq 1$. On multiplie l'inégalité par $|x|$ et on obtient 
+
+	$\begin{aligned}
+		0\leq |x|\cdot |\sin\left(\dfrac{1}{x}\right)|\leq |x|\\
+		0\leq |x\cdot \sin\left(\dfrac{1}{x}\right)|\leq |x|\\
+	\end{aligned}
+		$
+
+		Par le théorème des deux gendarme, $\lim_{x\to 0}|\sin\left(\dfrac{1}{x}\right)|=0$ et par le point précédent $\lim_{x\to 0}\sin\left(\dfrac{1}{x}\right)=0$
+	\task On a bien $\lim_{x\to 0}f(x)=f(0)$, donc la fonction $f$ est continue en $0$.
+\end{tasks}
+}
+

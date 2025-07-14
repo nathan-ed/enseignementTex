@@ -1,0 +1,77 @@
+\titre{}
+\theme{cercle}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{abdou}
+\type{serie}
+\piments{2}
+\pts{5}
+\annee{2425}
+
+\contenu{
+	\tcblower
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+Soit $O$ le centre du cercle $(C)$. 
+
+Déterminer la valeur des angles~: 
+\[\widehat{BAC}; \widehat{BDC}; \widehat{ACD} \text{ et } \widehat{BED}\]
+}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+	\tkzSetUpPoint[shape=cross]
+% Define the center and a point on the circle
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(4,0.5){OO}
+  \tkzDefPoint(4,0.5){B}
+  
+  % Draw the circle with center O passing through A
+  \tkzDrawCircle(O,OO)
+    % Compute the other vertices by successive rotations of 72°
+
+  \tkzDefPointBy[rotation= center O angle 10](OO) \tkzGetPoint{B}
+  \tkzDefPointBy[rotation= center O angle 100](B) \tkzGetPoint{A}
+  \tkzDefPointBy[rotation= center O angle -40](B) \tkzGetPoint{C}
+  \tkzDefPointBy[rotation= center O angle 200](B) \tkzGetPoint{D}
+  
+  
+\tkzLabelCircle[above right](O,B)(50){$(C)$}
+  \tkzInterLL(A,B)(D,C)\tkzGetPoint{E}
+  \tkzInterLL(A,C)(D,B)\tkzGetPoint{F}
+  % Mark the vertices with crosses
+  \tkzDrawPoints(A,B,C,D,E,F,O)
+  
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(D,B)
+  \tkzDrawLine[add = 0 and 0.1](D,E)
+  \tkzDrawLine[add = 0 and 0.1](A,E)
+  % Label the vertices
+  \tkzLabelPoints[above left](A)
+  \tkzLabelPoints[above right](B)
+  \tkzLabelPoints[below right](C)
+  \tkzLabelPoints[left](O)
+  \tkzLabelPoints[right=3mm](F)
+  \tkzLabelPoints[below left](D)
+  \tkzLabelPoints[below](E)
+  \tkzMarkAngle[size=0.8cm, mark=none](D,F,C)
+  \tkzLabelAngle[pos=1.2](D,F,C){$99^\circ$}
+  \tkzMarkAngle[size=0.8cm, mark=none](A,B,F)
+  \tkzLabelAngle[pos=1.3](A,B,F){$55^\circ$}
+\end{tikzpicture}	
+\end{center}
+}
+\end{minipage}
+}
+\correction{
+	\tcblower
+\begin{tasks}
+	\task $\widehat{BAC}=36^\circ$,. 
+	\task $\widehat{BDC}=36^\circ$,. 
+	\task $\widehat{ACD}=55^\circ$,. 
+	\task $\widehat{BED}=29^\circ$,. 
+\end{tasks}
+}
+

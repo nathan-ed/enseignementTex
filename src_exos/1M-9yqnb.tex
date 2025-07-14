@@ -1,0 +1,48 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{4}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Calculer les limites suivantes.
+\begin{tasks}(2)
+\task $\displaystyle\lim_{x\to 0}\dfrac{\sqrt{1 + x} -  \left(1 + \dfrac{x}{2}\right)}{x}$
+\task $\displaystyle\lim_{x\to 1}\Bigl(\dfrac{1}{x^2 - x} - \dfrac{2}{x^2 - 1}\Bigr)$
+\end{tasks}
+}
+\correction{
+	\tcblower
+\begin{tasks}(2)
+\task Type « \( \dfrac{0}{0} \) » :  
+
+\(
+\begin{aligned}
+&\lim_{x \to 0} \dfrac{\sqrt{1 + x} - \left(1 + \dfrac{x}{2}\right)}{x}\\
+&= \lim_{x \to 0} \left( \dfrac{\sqrt{1 + x} - 1}{x} - \dfrac{1}{2} \right) \\
+&= \lim_{x \to 0} \dfrac{1}{\sqrt{1 + x} + 1} - \dfrac{1}{2} \\
+&= \dfrac{1}{2} - \dfrac{1}{2} = 0
+\end{aligned}
+\)
+
+\task Type « \( \dfrac{0}{0} \) » :  
+
+\(
+\begin{aligned}
+&\lim_{x \to 1} \left( \dfrac{1}{x^2 - x} - \dfrac{2}{x^2 - 1} \right)\\
+&= \lim_{x \to 1} \left( \dfrac{1}{x(x - 1)} - \dfrac{2}{(x - 1)(x + 1)} \right) \\
+&= \lim_{x \to 1} \dfrac{(x + 1) - 2x}{x(x - 1)(x + 1)} \\
+&= \lim_{x \to 1} \dfrac{-x + 1}{x(x - 1)(x + 1)} \\
+&= \lim_{x \to 1} \dfrac{-(x - 1)}{x(x - 1)(x + 1)} \\
+&\stackrel{x \ne 1}{=} \lim_{x \to 1} \dfrac{-1}{x(x + 1)} = \dfrac{-1}{1 \cdot 2} = -\dfrac{1}{2}
+\end{aligned}
+\)
+\end{tasks}
+
+}
+

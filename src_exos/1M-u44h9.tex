@@ -1,0 +1,33 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{musy}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Les fonctions 
+\[f(x)=\dfrac{x^2-1}{x+1} \text{ et } g(x)=\dfrac{x^2-1}{(x+1)^2}\]
+ne sont pas définies en $x=-1$. Peut-on attribuer une valeur à l'image de $-1$ pour que ces fonctions ainsi prolongées soient continue en $x=-1$. Esquissez les graphes de $f$ et $g$. 
+}
+\correction{
+	\tcblower
+\begin{itemize}
+  \item On factorise le numérateur : \( x^2 - 1 = (x - 1)(x + 1) \)
+  \item Donc :
+    \[
+    \begin{aligned}
+    f(x) &= \dfrac{(x - 1)(x + 1)}{x + 1} = x - 1 \quad \text{pour } x \ne -1 \\
+    g(x) &= \dfrac{(x - 1)(x + 1)}{(x + 1)^2} = \dfrac{x - 1}{x + 1} \quad \text{pour } x \ne -1
+    \end{aligned}
+    \]
+  \item Pour \( f \) : \( \displaystyle \lim_{x \to -1} f(x) = (-1) - 1 = -2 \), donc on peut définir \( f(-1) = -2 \) pour la rendre continue.
+  \item Pour \( g \) : \( \displaystyle \lim_{x \to -1^-} g(x) = «\,\dfrac{-2}{0^-}\,»= +\infty \), \quad \( \displaystyle \lim_{x \to -1^+} g(x) = «\,~\dfrac{-2}{0^+}\,»= -\infty \), donc la limite n'existe pas.
+  \item Ainsi, seule \( f \) peut être prolongée continûment en \( x = -1 \). Si on appelle cette nouvelle fonction $\widetilde f$ on doit poser $\widetilde f(-1)=-2$.
+\end{itemize}
+}
+

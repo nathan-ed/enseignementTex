@@ -1,0 +1,142 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+\noindent Calculer les limites suivantes :  
+\begin{tasks}(3)
+\task \(\displaystyle\lim_{x\to 5}\frac{x-5}{\sqrt{2x-1}-3}\)
+\task*(2) \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x^2+3}-\sqrt{x^2+1}}{x^2-1}\)
+\task \(\displaystyle\lim_{x\to 2}\frac{-9x}{(4-x^2)^3}\)
+\task \(\displaystyle\lim_{x\to 1}\frac{x^2-3x+2}{(x^2-1)^2}\)
+\task \(\displaystyle\lim_{x\to 0}\frac{x-a}{x-a}\)
+\task \(\displaystyle\lim_{x\to a}\frac{\sqrt{x}-\sqrt{a}}{x-a}\)
+\task \(\displaystyle\lim_{x\to a}\frac{x^2-a^2}{x-a}\)
+\task \(\displaystyle\lim_{x\to a}\frac{x^3-a^3}{x-a}\)
+\task \(\displaystyle\lim_{x\to a}\frac{1-\tfrac1{x}}{x-a}\)
+\task \(\displaystyle\lim_{x\to 2}\frac{x^2-3x+2}{x^2-4x+4}\)
+\task \(\displaystyle\lim_{x\to 3}\frac{x^2-5x+6}{2x^2-6x}\)
+\task \(\displaystyle\lim_{x\to 0}\frac{(x-1)^2}{x^2+3x}\)
+\task \(\displaystyle\lim_{x\to 1}\frac{\sqrt{x^2+x}-\sqrt{2}}{x-1}\)
+\task \(\displaystyle\lim_{x\to 3}\frac{x^2+2x-15}{x^2+8x+15}\)
+\task \(\displaystyle\lim_{x\to -3}\frac{x+1}{(x+3)^2}\)
+\end{tasks}
+}
+\correction{
+\tcblower
+\begin{tasks}(2)
+
+\task Type « $\dfrac{0}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to 5} \dfrac{x - 5}{\sqrt{2x - 1} - 3} \\
+&= \lim_{x \to 5} \dfrac{(x - 5)(\sqrt{2x - 1} + 3)}{(2x - 1) - 9} \\
+&= \lim_{x \to 5} \dfrac{(x - 5)(\sqrt{2x - 1} + 3)}{2(x - 5)} \\
+&\stackrel{x \ne 5}{=} \lim_{x \to 5} \dfrac{\sqrt{2x - 1} + 3}{2} = \dfrac{3 + 3}{2} = 3
+\end{aligned} \)
+
+\task Forme déterminée
+
+\( \begin{aligned}
+&\lim_{x \to 0} \dfrac{\sqrt{x^2 + 3} - \sqrt{x^2 + 1}}{x^2 - 1} \\
+&=\dfrac{\sqrt{3}}{-1}\\
+&=1-\sqrt{3} 
+\end{aligned} \)
+
+\task Type « $\dfrac{1}{0}$ » :
+
+$+\infty$
+
+\task Type « $\dfrac{0}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to 1} \dfrac{x^2 - 3x + 2}{(x - 1)^2} = \lim_{x \to 1} \dfrac{(x - 1)(x - 2)}{(x - 1)^2} \\
+&\stackrel{x \ne 1}{=}\lim_{x\to 1}\dfrac{x-2}{x-1}\\
+&=\pm \infty \implies \not \exists. 
+\end{aligned} \)
+
+\task Type « forme déterminée » :
+
+\( \begin{aligned}
+&\lim_{x \to a} \dfrac{x - a}{x - a} = 1
+\end{aligned} \)
+
+\task Type « $\dfrac{0}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to a} \dfrac{\sqrt{x} - \sqrt{a}}{x - a} = \lim_{x \to a} \dfrac{1}{\sqrt{x} + \sqrt{a}} = \dfrac{1}{2\sqrt{a}}
+\end{aligned} \)
+
+\task Type « $\dfrac{0}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to a} \dfrac{x^2 - a^2}{x - a} = \lim_{x \to a} \dfrac{(x - a)(x + a)}{x - a} \\
+&\stackrel{x \ne a}{=} \lim_{x \to a} x + a = 2a
+\end{aligned} \)
+
+\task Type « $\dfrac{0}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to a} \dfrac{x^3 - a^3}{x - a} = \lim_{x \to a} x^2 + ax + a^2 = 3a^2
+\end{aligned} \)
+
+\task Type « $\dfrac{0}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to a} \dfrac{1 - \dfrac{1}{x}}{x - a} = \lim_{x \to a} \dfrac{x - 1}{x(x - a)} \\
+\end{aligned} \)
+
+Si $a=0$, alors $-\infty$, si $a=1$, alors $1$, autrement, non définie. 
+
+\task Type « $\dfrac{0}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to 2} \dfrac{x^2 - 3x + 2}{x^2 - 4x + 4} = \lim_{x \to 2} \dfrac{(x - 1)(x - 2)}{(x - 2)^2} \\
+&\stackrel{x \ne 2}{=} \lim_{x \to 2} \dfrac{x - 1}{x - 2}\\
+&= \pm \infty \implies \not \exists
+\end{aligned} \)
+
+\task Type « $\dfrac{0}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to 3} \dfrac{x^2 - 5x + 6}{2x^2 - 6x} = \lim_{x \to 3} \dfrac{(x - 2)(x - 3)}{2x(x - 3)} \\
+&\stackrel{x \ne 3}{=} \lim_{x \to 3} \dfrac{x - 2}{2x} = \dfrac{1}{6}
+\end{aligned} \)
+
+\task Type « forme déterminée » :
+
+\( \begin{aligned}
+&\lim_{x \to 3} \dfrac{(x - 1)^2}{x^2 + 3x} = \dfrac{4}{18} = \dfrac{2}{9}
+\end{aligned} \)
+
+\task Type « $\dfrac{0}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to 3} \dfrac{x^2 + 2x - 15}{x^2 + 8x + 15} = \dfrac{(x - 3)(x + 5)}{(x + 3)(x + 5)} \\
+&\stackrel{x \ne 3}{=} \lim_{x \to 3} \dfrac{x - 3}{x + 3} = \dfrac{0}{6} = 0
+\end{aligned} \)
+
+\task Type « $\dfrac{-2}{0^+}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to -3} \dfrac{x + 1}{(x + 3)^2}\\
+& = -\infty
+\end{aligned} \)
+
+\task Type « $\dfrac{1}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to 1} \dfrac{\sqrt{x^2 + x - \sqrt{2}}}{x - 1}\\
+&=\lim_{x\to 1}\dfrac{x^2+x-\sqrt{2}}{(x-1)\cdot \sqrt{x^2+x-\sqrt{2}}}\\
+&=\pm\implies \not \exists
+\end{aligned} \)
+\end{tasks}
+}
+

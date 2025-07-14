@@ -1,0 +1,31 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{4}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+\noindent Soit \(f\) la fonction définie par  
+\[
+f(x)=\begin{cases}
+2+k, & x<2,\\
+x^2-2, & x\ge2.
+\end{cases}
+\]
+Pour quelle(s) valeur(s) de \(k\) la fonction \(f\) est-elle continue ?
+}
+\correction{
+	\tcblower
+\begin{itemize}
+  \item Chaque expression définissant \( f \) est polynomiale, donc continue sur son domaine.
+  \item Le seul point critique est \( x = 2 \), où les deux morceaux se rejoignent.
+  \item \( \lim_{x \to 2^-} f(x) = 2 + k \), \quad \( \lim_{x \to 2^+} f(x) = 2^2 - 2 = 2 \)
+  \item Pour que $f$ soit continue en $2$, on doit avoir $\lim_{x\to 2}f(x)=f(2)$. On impose \( 2 + k = 2 \), donc \( k = 0 \).
+\end{itemize}
+}
+

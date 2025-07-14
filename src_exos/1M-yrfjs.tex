@@ -1,0 +1,57 @@
+\titre{}
+\theme{numerique}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{musy}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Dessiner un diagramme de Venn représentant simultanément les ensembles $\mathbb{N}, \mathbb{Z}, \mathbb{Q}$ et $\mathbb{R}$. Placer dans la bonne plage les nombres suivants~:
+\[
+\begin{aligned}
+& a_1=3,14\,;\,a_2=\frac{5}{7}\,;\,a_3=-8\,;\,a_4=5\,;\,a_5=-1,4\,;\,a_6=-\frac{7}{5}\,;\,a_7=\sqrt{8}\,;\\
+&a_8=-\sqrt{9}\,;\,a_9=\sqrt{1000}\,;\,
+ a_{10}=1, \overline{7}\,;\,a_{11}=1,020220222022220 \ldots\,;\\
+&a_{12}=\frac{169}{13}\,;\,a_{13}=1,231 \cdot 10^8\,;\,a_{14}=\frac{\pi}{2}\,;\,a_{15}=2+\sqrt{3} .
+\end{aligned}
+\]
+}
+\correction{
+\tcblower
+\begin{center}
+	\def\natEl{(0,0) ellipse (2cm and 1cm)}
+	\def\intEl{(0.5,0) ellipse (3cm and 2cm)}
+	\def\ratEl{(1,0) ellipse (4cm and 3cm)}
+	\def\realEl{(1.5,0) ellipse (5cm and 4cm)}
+\begin{tikzpicture}
+        \node (A) at (1.5,0) {$\N$};
+        \node (B) at (3,0) {$\Z$};
+        \node (C) at (4.5,0) {$\Q$};
+        \node (D) at (6,0) {$\R$};
+        \node (E) at (0.3,0.2) {$a_4$};
+	\node (F) at (-0.5,-0.2) {$a_{13}$};
+	\node (G) at (2,2.5) {$a_1$};
+	\node (H) at (1,-0.5) {$a_{12}$};
+        \node (I) at (1.2,-1.3) {$a_3$};
+	\node (J) at (1.1,1.5) {$a_8$};
+        \node (K) at (3,1.9) {$a_2$};
+        \node (L) at (2.3,-2.3) {$a_5$};
+	\node (M) at (3.9,1.1) {$a_6$};
+	\node (N) at (3.4,-1.5) {$a_{10}$};
+	\node (O) at (5.2,1.5) {$a_7$};
+        \node (P) at (5.5,-1) {$a_9$};	
+	\node (Q) at (5,-1.5) {$a_{14}$};	
+	\node (R) at (4.9,2.2) {$a_{15}$};	
+	\node (S) at (3.9,0.4) {$a_{11}$};	
+	\draw \natEl;
+	\draw \intEl;
+	\draw \ratEl;
+	\draw \realEl;
+\end{tikzpicture}
+\end{center}
+}
+

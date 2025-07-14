@@ -1,0 +1,35 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+\noindent Soit la fonction  
+\[
+f(x)=
+\begin{cases}[c]
+0, & x\in\mathbb{Z},\\
+1, & x\notin\mathbb{Z}.
+\end{cases}
+\]
+\begin{tasks}
+\task Quel est le domaine de définition de \(f\) ?
+\task Donner un point \(a\) où \(f\) est continue. Justifier.
+\task Donner un point \(b\) où \(f\) n’est pas continue. Justifier.
+\end{tasks}
+}
+\correction{
+	\tcblower
+\begin{tasks}
+  \task Le domaine de définition est \( \mathbb{R} \) (car \( f \) attribue une valeur à tout réel selon qu’il est entier ou non).
+  \task \( f \) est continue en tout point \( a \notin \mathbb{Z} \), car dans un voisinage de \( a \), \( f(x) = 1 \) sauf en un nombre isolé de points (les entiers), donc \( \lim_{x \to a} f(x) = 1 = f(a) \). Pensez-y, pour tout nombre $a\not \in \Z$, on peut trouver un voisinage de $a$ qui n'intersecte pas $\Z$. 
+  \task \( f \) n’est pas continue en un entier \( b \), par exemple \( b = 0 \), car dans tout voisinage de 0, il y a des \( x \notin \mathbb{Z} \) tels que \( f(x) = 1 \), alors que \( f(0) = 0 \), donc \( \lim_{x \to 0} f(x) \ne f(0) \).
+\end{tasks}
+}
+

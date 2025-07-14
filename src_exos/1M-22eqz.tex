@@ -1,0 +1,75 @@
+\titre{}
+\theme{cercle}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{abdou}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+Soit $O$ le centre du cercle $(C)$. 
+
+$[BC]$ est un diamètre du cercle. Déterminer la valeur des angles :
+
+\[\widehat{BAD}; \widehat{ABC}; \widehat{ADB} \text{ et } \widehat{CBD}\]
+}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+	\tkzSetUpPoint[shape=cross]
+% Define the center and a point on the circle
+  \tkzDefPoint(0,0.5){O}
+  \tkzDefPoint(4,1.5){B}
+  
+  % Draw the circle with center O passing through A
+  \tkzDrawCircle(O,B)
+
+\tkzLabelCircle[above right](O,B)(40){$(C)$}
+    % Compute the other vertices by successive rotations of 72°
+
+  \tkzDefPointBy[rotation= center O angle 50](B) \tkzGetPoint{A}
+  \tkzDefPointBy[rotation= center O angle 180](B) \tkzGetPoint{C}
+  \tkzDefPointBy[rotation= center O angle -70](B) \tkzGetPoint{D}
+  
+  
+  \tkzInterLL(B,C)(A,D)\tkzGetPoint{E}
+  % Mark the vertices with crosses
+  \tkzDrawPoints(A,B,C,D,E,O)
+  
+  \tkzDrawSegment(A,C)
+  \tkzDrawSegment(D,A)
+  \tkzDrawSegment(C,B)
+  % Label the vertices
+  \tkzLabelPoints[above](A)
+  \tkzLabelPoints[above right](B)
+  \tkzLabelPoints[below left](C)
+  \tkzLabelPoints[above left](O)
+  \tkzLabelPoints[below right](D)
+  \tkzLabelPoints[above left](E)
+  \tkzMarkAngle[size=0.8cm, mark=none](C,E,D)
+  \tkzLabelAngle[pos=1.5](C,E,D){$80^\circ$}
+  \tkzMarkAngle[size=0.8cm, mark=none](E,C,A)
+  \tkzLabelAngle[pos=2.3](E,C,A){$30^\circ$}
+\end{tikzpicture}	
+\end{center}
+}
+\end{minipage}
+}
+\correction{
+	\tcblower
+
+\begin{tasks}
+	\task $\widehat{BAD}=40^\circ$,. 
+	\task $\widehat{ABC}=180-90-30=60^\circ$, par la somme des angles et le thm du cercle de Thalès ($ABC$ rectangle en $A$). 
+	\task $\widehat{ADB}=30^\circ$,. 
+	\task $\widehat{CBD}=50^\circ$,. 
+\end{tasks}
+}
+

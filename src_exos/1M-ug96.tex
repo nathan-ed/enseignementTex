@@ -1,0 +1,54 @@
+\titre{110-musy17}
+\theme{equations}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{musy-2017}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+La figure ci-dessous est formée de trois carrés.
+
+\hfill
+\begin{minipage}{0.4\textwidth}{
+\vspace{0pt}
+Que doit mesurer le côté du petit carré pour que la partie ombrée ait une surface triple de la partie blanche~?
+}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}{
+\vspace{0pt}
+\begin{tikzpicture}[scale=1]
+    \tkzDefPoint[label=below:{}](-2,2){A}
+    \tkzDefPoint[label=right:{}](-2,0.5){B}
+    \tkzDefPoint[label=above:{}](-0.5,0.5){C}
+    \tkzDefPoint[label=above:{}](-0.5,2){D}
+
+    \tkzDefPoint[label=above:{}](-2,0){E}
+    \tkzDefPoint[label=above:{}](-0.5,0){F}
+    \tkzDefPoint[label=above:{}](0,0){G}
+    \tkzDefPoint[label=above:{}](0,0.5){H}
+    \tkzDefPoint[label=above:{}](0,2){I}
+
+
+    \tkzDrawPolygon(A,B,C,D)
+    \tkzDrawPolygon(A,E,G,I)
+    \tkzDrawPolygon(C,F,G,H)
+    \tkzFillPolygon[pattern=north west lines](A,B,C,D)
+    \tkzFillPolygon[pattern=north west lines](C,F,G,H)
+    \tkzDrawSegment[dashed,dim={$20\text{ cm}$,14pt,right=2mm,midway,font=\footnotesize}](I,G)
+	\end{tikzpicture}
+
+}
+\end{minipage}
+\hfill
+
+}
+\correction{
+	\tcblower
+$5(2-\sqrt{2})$ cm (la deuxième solution est la mesure du côté du grand carré).
+}
+

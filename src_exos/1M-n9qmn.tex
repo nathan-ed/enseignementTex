@@ -1,0 +1,77 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+\noindent 
+Calculer les limites suivantes et interpréter graphiquement les résultats :  
+\begin{tasks}(3)
+\task \(\displaystyle\lim_{x\to+\infty}(x^3-2x^2+5)\)
+\task \(\displaystyle\lim_{x\to-\infty}\dfrac{x^2}{x^3}\)
+\task \(\displaystyle\lim_{x\to+\infty}(x^4+2x)\)
+\task \(\displaystyle\lim_{x\to-\infty}(x^3-x^4)\)
+\task \(\displaystyle\lim_{x\to-\infty}\frac{-3}{x^2+5}\)
+\task \(\displaystyle\lim_{x\to+\infty}\frac{3x^2+5}{1-3x^2}\)
+\end{tasks}
+}
+\correction{
+	\tcblower
+On utilise le formalisme de l'algèbre de l'infini.
+\begin{tasks}(2)
+
+\task Type « $+\infty-(+\infty)$ » :
+
+\( \begin{aligned}
+&\lim_{x \to +\infty} \left(x^3 - 2x^2 + 5\right) \\
+&= \lim_{x \to +\infty} x^3\left(1 - \dfrac{2}{x} + \dfrac{5}{x^3}\right) \\
+&= (+\infty)^3 \cdot \left(1 - 0 + 0\right) = +\infty
+\end{aligned} \)
+
+\task Type « $\dfrac{+\infty}{-\infty}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to -\infty} \dfrac{x^2}{x^3} \\
+&= \dfrac{1}{x}\\
+&=0
+\end{aligned} \)
+
+\task Type « $+\infty +\infty$ » :
+
+\( \begin{aligned}
+&\lim_{x \to +\infty} \left(x^4 + 2x\right) \\
+&=+\infty
+\end{aligned} \)
+
+\task Type « $-\infty-(+\infty)$ » :
+
+\( \begin{aligned}
+&\lim_{x \to -\infty} \left(x^3 - x^4\right) \\
+&= \lim_{x \to -\infty} x^4\left(\dfrac{1}{x} - 1\right) \\
+&= (+\infty) \cdot (0 - 1) = -\infty
+\end{aligned} \)
+
+\task Type « $\dfrac{1}{+\infty}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to -\infty} \dfrac{-3}{x^2 + 5} \\
+&= 0
+\end{aligned} \)
+
+\task Type « $\dfrac{+\infty}{-\infty}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to +\infty} \dfrac{3x^2 + 5}{1 - 3x^2} \\
+&= \lim_{x \to +\infty} \dfrac{x^2\left(3 + \dfrac{5}{x^2}\right)}{x^2\left(\dfrac{1}{x^2} - 3\right)} \\
+&= \lim_{x \to +\infty} \dfrac{3 + 0}{0 - 3} = \dfrac{3}{-3} = -1
+\end{aligned} \)
+
+\end{tasks}
+}
+

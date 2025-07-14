@@ -1,0 +1,121 @@
+\newboolean{solution} % Boolean to indicate if solutions should be shown
+\newboolean{uuid} % Boolean to indicate if UUID should be shown
+\newboolean{link} % Boolean to indicate if a link should be shown
+\newcounter{num} % Counter to keep track of exercise numbers
+
+
+% Define the title of the exercise
+\newcommand{\titre}[1]{%
+	\def\TitreExo{#1} % Set the title for later use
+}
+
+% Define the content of the exercise
+\newcommand{\contenu}[1]{%
+	\def\Contenu{#1} % Set the content for later use
+}
+
+% Define the number of points for the exercise
+\newcommand{\pts}[1]{%
+	\def\Points{#1} % Set the number of points for later use
+}
+
+% Define the number of points for the exercise
+\newcommand{\piments}[1]{%
+	\def\Piments{#1} % Set the number of points for later use
+}
+
+% Define the year of the exercise
+\newcommand{\annee}[1]{
+	\def\Annee{#1} % Set the year for later use
+}
+
+% Define the year of the exercise
+\newcommand{\niveau}[1]{
+	\def\Niveau{#1} % Set the year for later use
+}
+
+\newcommand{\source}[1]{
+	\def\Source{#1} % Set the year for later use
+}
+
+\newcommand{\type}[1]{
+	\def\Type{#1} % Set the year for later use
+}
+
+% Define the correction (solution) of the exercise
+\newcommand{\correction}[1]{%
+	\def\Solution{#1} % Set the solution for later use
+}
+
+% Define the correction (solution) of the exercise
+\newcommand{\correctionDetaillee}[1]{%
+	\def\SolutionDetaillee{#1} % Set the solution for later use
+}
+
+% Directly use code as it is
+\newcommand{\code}[1]{#1} % Simple passthrough command for code
+
+% Directly use text as it is
+\newcommand{\texte}[1]{#1} % Simple passthrough command for text
+
+% Define the correction (solution) of the exercise
+\newcommand{\theme}[1]{%
+	\def\Theme{#1} % Set the solution for later use
+}
+% Define the author (currently unused)
+\newcommand{\auteur}[1]{} % Placeholder for author
+
+% Command for question text
+\newcommand{\question}[1]{#1} % Simple passthrough command for question
+
+% Command for providing a response, shown only if the solution boolean is true
+\newcommand{\reponse}[1]{%
+	\ifthenelse{\boolean{solution}} % Check if 'solution' is true
+	{%
+		\begin{solutionbox} % Begin solution box environment
+			\begin{footnotesize} #1 \end{footnotesize} % Display the response in small font size
+		\end{solutionbox}}{} % End solution box if 'solution' is true
+} 
+
+% Move to the next exercise by incrementing the counter
+\newcommand{\nextexo}{%
+	\addtocounter{num}{1} % Increment exercise counter
+	\vspace{1em} % Add vertical space
+}
+
+
+\newcommand{\insertexo}[5][]{% #1 = label (optional), #2 = contenu, #3 = uuid, #4 = type, #5 = upside-down
+    \input{\path src_exos/#2} % Input the exercise content from the provided path
+    \setboolean{uuid}{#3} % Set the uuid boolean
+    
+    % Start grouping to tightly control scope
+    \begingroup
+    % Print the exercise if #4 equals "exo" or "both"
+    \ifthenelse{\equal{#4}{exo} \OR \equal{#4}{both}}{%
+        \noindent % Ensure no extra indentation
+	\begin{exercice}% Begin question environment with the number of points
+            \ifx\relax#1\relax\else\label{#1}\fi % Add label if provided
+            \ifthenelse{\boolean{uuid}}{#2}{} % Include uuid if true
+            \Contenu % Insert the content of the exercise
+             % Add label if provided
+        \end{exercice}
+    }{} % Otherwise, do nothing
+    
+    % Print the correction if #4 equals "cor" or "both"
+    \ifthenelse{\equal{#4}{cor} \OR \equal{#4}{both}}{%
+        \noindent % Ensure no extra indentation
+
+            \begin{core} % Use normal core for regular solution
+                 \Solution  % Insert the solution
+            \end{core}
+    }{} % Otherwise, do nothing
+    
+    \endgroup % End the group
+}
+% Command to list exercises from a given list
+\newcommand{\listexo}[1]{% liste of exercises
+	\foreach \ex in #1 { % Iterate over each exercise in the list
+		\nextexo % Move to the next exercise
+		\insertexo{\ex}{\solution}{\uuid}{\link}{\thenum} % Insert the current exercise with its properties
+	}
+}

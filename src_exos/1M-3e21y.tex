@@ -1,0 +1,48 @@
+\titre{}
+\theme{dérivées}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{fundamentum}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Deux couloirs de largeurs 1 m et 2 m se rencontrent à angle droit. On transporte une barre rigide AB parallèlement au sol. Quelle est la longueur maximale que peut avoir cette barre si l'on veut pouvoir la transporter d'un couloir dans l'autre ?
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % --- Définir les points clés selon la nouvelle orientation ---
+    % Le coin intérieur de l'obstacle
+    \tkzDefPoint(2,1){C}
+    % Les extrémités de la barre (sur les axes)
+    \tkzDefPoint(0,2){A}
+    \tkzDefPoint(4,0){B}
+    % Les points de base pour dessiner l'obstacle en L
+    \tkzDefPoint(0,1){P_horz}
+    \tkzDefPoint(2,0){P_vert}
+
+    % --- Dessiner l'obstacle en L ---
+    \tkzDrawSegments[line width=1.2pt](P_horz,C C,P_vert)
+
+    % --- Dessiner la barre ---
+    \tkzDrawSegment(A,B)
+    \tkzLabelPoint[above left=0.05](A){\textbf{A}}
+    \tkzLabelPoint[below right=0.05](B){\textbf{B}}
+
+    % --- Marquer l'angle droit de l'obstacle ---
+    \tkzMarkRightAngle[size=0.25](P_vert,C,P_horz)
+
+    % --- Dessiner les lignes de cote ---
+    % Cote verticale de 1m
+    \draw[<->] (1,0) -- (1,1) node[midway, left]{1 m};
+    % Cote horizontale de 2m
+    \draw[<->] (0,0.5) -- (2,0.5) node[midway, below]{2 m};
+\end{tikzpicture}
+\end{center}
+}
+\correction{
+\tcblower
+}
+

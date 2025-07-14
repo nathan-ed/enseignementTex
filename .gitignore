@@ -1,0 +1,39 @@
+# ─── 1. Ignore everything ───────────────────────────────────────────────
+*      
+# except directories (so we can re-allow specific files within them)
+!*/
+
+# ─── 2. Keep this file itself ──────────────────────────────────────────
+!.gitignore
+
+# ─── 3. src_exos: all .tex files ───────────────────────────────────────
+!/src_exos/*.tex
+
+# ─── 4. 1M root: .tex & .bib; keep pdfs in output/ & its subfolders ────
+!/1M/*.tex
+!/1M/*.bib
+!/1M/output/
+!/1M/output/**/*.pdf
+
+# ─── 5. 3M root: .tex & .bib; keep pdfs in output/ & its subfolders ────
+!/3M/*.tex
+!/3M/*.bib
+!/3M/output/
+!/3M/output/**/*.pdf
+
+# ─── 6. medias & macros: all files ─────────────────────────────────────
+!/medias/**
+!/macros/**
+
+# ─── 7. recueils: root .tex; pdfs in output/ & its subfolders ───────────
+!/recueils/*.tex
+!/recueils/output/
+!/recueils/output/**/*.pdf
+
+# ─── 8. fonts: only files starting with OpenSans, iosevka, cambria ────
+!/fonts/OpenSans*
+!/fonts/iosevka*
+!/fonts/cambria*
+
+# ─── 9. packages: all files ────────────────────────────────────────────
+!/packages/**

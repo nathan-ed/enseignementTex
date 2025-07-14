@@ -1,0 +1,30 @@
+\titre{}
+\theme{dérivées}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{fundamentum}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+On fabrique un cornet de forme conique en rejoignant les bords rectilignes d'un secteur circulaire de rayon $r$. Quel est le volume du plus grand cornet possible ?
+\begin{center}
+\begin{tikzpicture}
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(2,0){A}
+    \tkzDefPoint(90:2){B}
+    \tkzDefPoint(330:2){C}
+    \tkzDrawCircle(O,A)
+    \tkzDrawSegment[dashed](O,B)
+    \tkzDrawSegment[dashed](O,C)
+    \tkzFillSector[gray!20](O,B)(C)
+\end{tikzpicture}
+\end{center}
+}
+\correction{
+\tcblower
+}
+

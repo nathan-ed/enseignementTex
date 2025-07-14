@@ -1,0 +1,62 @@
+% author : nathan
+% licence : Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+%           https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+% purpose : pour une déclaration simplifiée des fontes
+\NeedsTeXFormat{LaTeX2e}%
+\ProvidesPackage{fontes}[2023/08/10 v0.1]%
+% fontes
+\RequirePackage{fontspec}%
+\RequirePackage[math-style=french]{unicode-math}%
+% options 
+\RequirePackage{kvoptions} % key-value options pour passer titre, thème etc
+
+\newcommand{\fontspath}{§../fonts/}
+\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}%
+
+
+%Commenter ou enlever le commentaire selon choix de la police principale 
+%\setmainfont{DINish}[
+%Path=../fonts/,
+%Scale=1.1,
+%Extension=.ttf,
+%UprightFont={*-Regular},
+%BoldFont={*-Bold}] 
+
+%Enlever le commentaire pour utiliser OpenSans 
+\setmainfont{OpenSans}[
+Path=../fonts/,
+Scale=0.9,
+Extension=.ttf,
+UprightFont={*-Regular},
+BoldFont={*-Bold},
+ItalicFont={*-Italic}]
+
+%% Police pour les mathématiques 
+%Commenter ou enlever le commentaire selon choix de la police 
+%\DeclareStringOption[GFS Neohellenic Math]{math}
+%\setmathfont{\fontes@math}[Scale=1.1]%[Scale=MatchLowercase] 
+%% Enlever le commentaire pour utiliser DejaVu Math TeX Gyre 
+%\setmathfont[Scale=1]{DejaVu Math TeX Gyre} 
+%% Enlever le commentaire pour utiliser Cambria Math 
+\setmathfont{cambria-math}[
+Scale=1, 
+Path=../fonts/,
+Extension={.ttf}] 
+
+\setmonofont{iosevka}[
+Path=../fonts/, 
+Scale=1, 
+Extension=.ttf, 
+UprightFont={*-regular},
+BoldFont={*-bold}]
+
+\newfontfamily{\titlefont}{Nickainley-Normal}[
+Scale=1.5,
+Path=../fonts/,
+Extension=.ttf]
+%\DeclareStringOption[League Gothic]{condensed}
+
+
+
+
+

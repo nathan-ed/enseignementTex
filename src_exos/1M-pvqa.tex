@@ -1,0 +1,49 @@
+\titre{102-musy17}
+\theme{equations}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{muzy-2017}
+\type{serie}
+\piments{3}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+Le rectangle représenté ci-dessous a été découpé en 5 carrés. Le périmètre du rectangle est de 1 m . Déterminer son aire.
+\begin{center}
+	\begin{tikzpicture}[scale=0.5]
+    \tkzDefPoint[label=below:{}](0,0){A}
+    \tkzDefPoint[label=right:{}](0,2.25){B}
+    \tkzDefPoint[label=above:{}](0,4.5){C}
+    \tkzDefPoint[label=above:{}](-2.25,4.5){D}
+    \tkzDefPoint[label=above:{}](-5.25,4.5){E}
+    \tkzDefPoint[label=above:{}](-5.25,1.5){F}
+    \tkzDefPoint[label=above:{}](-5.25,0){G}
+    \tkzDefPoint[label=above:{}](-3.75,0){H}
+    \tkzDefPoint[label=above:{}](-2.25,0){I}
+    \tkzDefPoint[label=above:{}](-2.25,2.25){J}
+    \tkzDefPoint[label=above:{}](-2.25,1.5){K}
+    \tkzDefPoint[label=above:{}](-3.75,1.5){L}
+\tkzDrawPolygon(A,B,J,I)
+\tkzDrawPolygon(B,C,D,J)
+\tkzDrawPolygon(D,E,F,K)
+\tkzDrawPolygon(F,G,H,L)
+\tkzDrawPolygon(H,I,K,L)
+ \end{tikzpicture}
+\end{center}
+
+}
+\correction{
+	\tcblower
+$\dfrac{21}{338}$ m$^{2}$
+}
+\correctionDetaillee{
+On note $a$ le côté du grand carré, $b$ le côté des moyens, $d$ le côté des plus petits étant donné que les moyens et les petits sont isométriques entre-eux, partageant un côté. On a que $a=2d$ et donc que 
+\[\dfrac{3}{2}a=2b\implies a=\dfrac{4b}{3}.\]
+Par ailleurs, $a+3b=\dfrac{1}{2}$ et donc 
+\[\dfrac{4b}{3}+3b=\dfrac{1}{2}\implies 13b=\dfrac{3}{2} \implies b=\dfrac{3}{26}\]
+Ainsi, $a=\dfrac{2}{13}$. On calcule l'aire 
+\[\dfrac{3}{2}a(a+b)=\dfrac{21}{338}\text{m}^2\]
+}
+

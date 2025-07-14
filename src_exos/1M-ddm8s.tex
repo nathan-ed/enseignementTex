@@ -1,0 +1,34 @@
+\titre{}
+\theme{dérivées}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{fundamentum}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+La portée $P = \text{OA}$ d'un projectile lancé (dans le vide) avec une vitesse initiale $v_0$ et un angle d'élévation $\varphi$ est donnée par $P = \dfrac{v_0^2 \cdot \sin(2\varphi)}{g}$, $g$ étant l'accélération de la pesanteur. Pour une vitesse initiale donnée, déterminer la valeur de l'angle $\varphi$ pour laquelle la portée est maximale.
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(9,0){A}
+    \tkzDefPoint(47:3){v_dir}
+    
+    \draw[->, thick] (O) -- (v_dir) node[above left] {$\vec{v_0}$};
+    \draw[thick] (O) .. controls (3,3.5) and (6,3.5) .. (A);
+    
+    \tkzDrawSegment(O,A)
+    \tkzLabelPoints[below](O,A)
+    
+    \tkzMarkAngle[size=1.2, fill=gray!20](A,O,v_dir)
+    \tkzLabelAngle[pos=1.5](A,O,v_dir){$\varphi$}
+\end{tikzpicture}
+\end{center}
+}
+\correction{
+\tcblower
+}
+

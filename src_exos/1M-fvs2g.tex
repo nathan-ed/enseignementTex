@@ -1,0 +1,41 @@
+\titre{}
+\theme{geometrie}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{alloprof}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+ \begin{minipage}[t]{0.45\textwidth}{
+		\vspace{0pt}
+		Calculer la longueur de $\overline{CD}$ si $\overline{AB}=13\text{ cm}$ et $\overline{AC}=12 \text{ cm}$.	
+		}
+		\end{minipage}
+		\hfill
+\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+\begin{tikzpicture}[scale=.75, rotate=167]
+\tkzDefPoint(5,3.5){C}
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(7,0){B}
+\tkzDefPointBy[projection=onto A--B](C) \tkzGetPoint{D}
+\tkzMarkRightAngle(B,C,A)
+\tkzMarkRightAngle(A,D,C)
+\tkzDrawPoints(A,B,C,D)
+\tkzDrawSegment(C,D)
+\tkzDrawPolygon(A,B,C)
+\tkzLabelPoints[above left](B,A,D)
+\tkzLabelPoints[below](C)
+\end{tikzpicture}}
+\end{minipage}
+
+}
+\correction{
+	\tcblower
+
+}
+

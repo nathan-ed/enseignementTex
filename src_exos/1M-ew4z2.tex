@@ -1,0 +1,54 @@
+\titre{}
+\theme{ensemble}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{musy}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Dans l'ensemble $T$ des triangles, on considère $I$, le sous-ensemble des triangles isocèles\,; $E$, le sous-ensemble des triangles équilatéraux\,; $R$, le sous-ensemble des triangles rectangles
+\begin{tasks}
+\task Représenter ces quatre ensembles à l'aide d'un diagramme.
+\task Décrire par des mots les ensembles $I \cap E, R \cap E$ et $I \cap R$.
+\end{tasks}
+}
+\correction{
+\tcblower
+
+\def\trianglecircle{(0,0) ellipse (3cm and 2cm)}
+\def\rectcircle{(-1,0) ellipse (1.5cm and 1.25cm)}
+\def\isocircle{(0:1.2cm) circle (1cm)}
+\def\equicircle{(0:1.5cm) circle (0.5cm)}
+
+\begin{tasks}(2)
+	\task La taille des diagrammes n'est pas représentative de la \enquote{taille} des ensembles.	
+
+\begin{center}
+\begin{tikzpicture}
+        % Draw the shapes
+        \draw \trianglecircle node[above, yshift=2cm] {$T$};
+        \draw \rectcircle node[above, yshift=1.3cm,xshift=0.3cm] {$R$};
+        \draw \isocircle node[above, yshift=1cm] {$I$};
+        \draw \equicircle node[] {$E$};
+
+        % Find and mark the intersection between isocircle and rectcircle
+        %\path [name path=isocircle] \isocircle;
+        %\path [name path=rectcircle] \rectcircle;
+        %\path [name intersections={of=isocircle and rectcircle, by=intersection}];
+        %\fill[red] (intersection) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+\task 
+\begin{itemize}
+	\item $I\cap E=E$, car l'ensemble des triangles \\ équilatéraux est contenu dans l'ensemble de triangles isocèles. 
+	\item $R\cap E=\emptyset$, car il n'existe aucun triangle qui est équilatéral et rectangle (par le théorème de Pythagore, si $a\in \R^*_+$ est la longueur du côté du triangle, alors $a^2+a^2\neq a^2$).
+	\item $I\cap R$ est l'ensemble des triangles dont les deux cathètes mesure $a\in \R^*_+$ et l'hypoténuse mesure $a\sqrt{2}$ (par Pythagore).
+\end{itemize}
+\end{tasks}
+
+}
+

@@ -1,0 +1,61 @@
+\titre{}
+\theme{ensemble}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{musy}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\qrcode{https://coopmaths.fr/alea/?uuid=674e1&id=1mEI-4&lang=fr-CH&v=eleve&es=2211001&title=}
+\tcblower
+\def\firstcircle{(0,0) circle (1cm)}
+\def\thirdcircle{(0:1cm) circle (1cm)}
+Dans chaque cas, trouver $A$ et $B$, deux sous-ensembles de $\mathbb{Z}$ tels que:
+\begin{tasks}
+\task $A \cup B=\{0 ; 1 ; 2 ; 3 ; 4\}$ et $A \cap B=\varnothing$
+\task $A \cup B=\{0 ; 1 ; 2 ; 3 ; 4\}$ et $A \cap B=\{2 ; 3 ; 4\}$
+\task $A \cup B=\{0 ; 1 ; 2 ; 3 ; 4\}$ et $A \setminus B=\{2 ; 3 ; 4\}$
+\task $A \cup B=\{0 ; 1 ; 2 ; 3 ; 4\}$ et $B \setminus A=\{1 ; 4\}$
+\end{tasks}
+}
+\correction{
+\tcblower
+\def\firstcircle{(0,0) circle (1cm)}
+\def\thirdcircle{(0:1cm) circle (1cm)}
+	Il y a plusieurs réponses possibles. 
+	\begin{tasks}(2)
+		\task $A=\{1;2\}$ et $B=\{0;3;4\}$
+\begin{center}
+\begin{tikzpicture}
+        \draw \firstcircle node[above, yshift=1cm] {$A$} node[left] {$1;2$};
+        \draw \thirdcircle node [above, yshift=1cm] {$B$} node[right] {$0;3;$} node[right, yshift=-0.4cm] {$4$};	
+\end{tikzpicture}
+\end{center}
+		\task $A=\{0;1;2;3;4\}$ et $B=\{2;3;4\}$
+\begin{center}
+\begin{tikzpicture}
+        \draw \firstcircle node[above, yshift=1cm] {$A$} node[left] {$0;1$};
+        \draw \thirdcircle node [above, yshift=1cm] {$B$} node[left] {$2;3;$} node[left, yshift=-0.4cm, xshift=-0.2cm] {$4$};	
+\end{tikzpicture}
+\end{center}
+		\task $A=\{0;2;3;4\}$ et $B=\{0;1\}$
+\begin{center}
+\begin{tikzpicture}
+	\draw \firstcircle node[above, yshift=1cm] {$A$} node[left] {$2;3;$} node[left,xshift=-0.2cm, yshift=-0.4cm] {$4$};
+        \draw \thirdcircle node [above, yshift=1cm] {$B$} node[left, xshift=-0.2cm] {$0$} node[right] {$1$};	
+\end{tikzpicture}
+\end{center}
+		\task $A=\{0;2;3\}$ et $B=\{1;4\}$
+\begin{center}
+\begin{tikzpicture}
+	\draw \firstcircle node[above, yshift=1cm] {$A$} node[left] {$0;2;$} node[left,xshift=-0.2cm, yshift=-0.4cm] {$3$};
+        \draw \thirdcircle node [above, yshift=1cm] {$B$} node[right] {$1;4$};
+\end{tikzpicture}
+\end{center}
+
+	\end{tasks}
+}
+

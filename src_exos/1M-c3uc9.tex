@@ -1,0 +1,32 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{4}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+\noindent Déterminer si la fonction \(f\) définie par  
+\[
+	f(x)=\begin{cases}[c]
+\dfrac{x^2-4}{x-2}, & x\neq 2,\\
+4, & x=2
+\end{cases}
+\]
+est continue en \(a=2\). Justifier. 
+}
+\correction{
+	\tcblower
+\begin{itemize}
+  \item Pour \( x \ne 2 \), on a \( f(x) = \dfrac{x^2 - 4}{x - 2} = \dfrac{(x - 2)(x + 2)}{x - 2} = x + 2 \)
+  \item Donc \( \lim_{x \to 2} f(x) = \lim_{x \to 2} (x + 2) = 4 \)
+  \item Or \( f(2) = 4 \), donc \( \lim_{x \to 2} f(x) = f(2) \)
+  \item Ainsi, \( f \) est continue en \( a = 2 \)
+\end{itemize}
+
+}
+

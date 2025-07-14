@@ -1,0 +1,32 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{4}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+\noindent Pour chacune des propositions suivantes, dire si elle est vraie ou fausse. Justifier :  
+\begin{tasks}
+\task Si \(\displaystyle\lim_{x\to a}f(x)=-\infty\) et \(\displaystyle\lim_{x\to a}g(x)=+\infty\), alors \(\displaystyle\lim_{x\to a}\bigl(f(x)+g(x)\bigr)=0\).
+\task \(\displaystyle\lim_{x\to2}f(x)=\lim_{h\to0}f(2+h)\).
+\task Si \(\displaystyle\lim_{x\to a}f(x)=+\infty\) et \(\displaystyle\lim_{x\to a}g(x)=0\) avec \(g(x)>0\), alors \(\displaystyle\lim_{x\to a}\frac{f(x)}{g(x)}=~+\infty\).
+\end{tasks}
+}
+\correction{
+	\tcblower
+\begin{tasks}
+	\task Faux. Par exemple, si $f(x)=-\dfrac{1}{x^2}$ et $g(x)=\dfrac{1}{x^4}$ alors 
+
+	$
+	\begin{aligned}\lim_{x\to 0}-\dfrac{1}{x^2}+\dfrac{1}{x^4}&=\lim_{x\to 0} -\dfrac{x^2}{x^4}+\dfrac{1}{x^4}=\lim_{x\to 0}\dfrac{-x^2+1}{x^4}=\lim_{x\to 0} \dfrac{(1-x)(1+x)}{x^4}=\dfrac{1}{\lim_{x\to 0} x^4}=+\infty
+	\end{aligned}$.
+	\task Vrai. Par le changement de variable $x=h+2$, on a bien l'égalité désirée.
+	\task Vrai. On a déjà vu que si une limite du type $«~\dfrac{1}{0}~»$ existe, alors elle vaut $+\infty$ ou $-\infty$. Dans notre cas, le fait que $g(x)>0$ garantit que la limite du quotient existe et donc que $\dfrac{f(x)}{g(x)}$ tend bien vers $+\infty$.  
+\end{tasks}
+}
+

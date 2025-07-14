@@ -1,0 +1,78 @@
+\titre{}
+\theme{geometrie}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{alloprof}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+ \begin{minipage}[t]{0.45\textwidth}{
+		\vspace{0pt}
+		Calculer la longueur de $\overline{DE}$ si $\overline{BC}=100\text{ cm}$ et $\overline{AC}=116{,}62 \text{ cm}$.	
+		}
+		\end{minipage}
+		\hfill
+\begin{minipage}[t]{0.4\textwidth}{
+		\vspace{0pt}
+
+\begin{tikzpicture}[scale=.75]
+
+% Old: \tkzDefPoint(5,3.5){C}  ==> C→A
+\tkzDefPoint(5,3.5){A}
+
+% Old: \tkzDefPoint(0,0){A}  ==> A→B
+\tkzDefPoint(0,0){B}
+
+% Old: \tkzDefPoint(7,0){B}  ==> B→E
+\tkzDefPoint(7,0){E}
+
+% Old: \tkzDefPointBy[projection=onto A--B](C)  ==> A→B, B→E, C→A
+\tkzDefPointBy[projection=onto B--E](A) \tkzGetPoint{D}
+
+% Old: \tkzDefLine[orthogonal=through A](A,C)  ==> A→B, C→A
+\tkzDefLine[orthogonal=through B](B,A) \tkzGetPoint{h}
+
+% Old: \tkzInterLL(A,h)(C,D) \tkzGetPoint{E}  ==> A→B, C→A, E→C
+\tkzInterLL(B,h)(A,D) \tkzGetPoint{C}
+
+% Old: \tkzMarkRightAngle(B,C,A)  ==> B→E, C→A, A→B
+\tkzMarkRightAngle(E,A,B)
+
+% Old: \tkzMarkRightAngle(A,D,C)  ==> A→B, C→A
+\tkzMarkRightAngle(B,D,A)
+
+% Old: \tkzMarkRightAngle(C,A,E)  ==> C→A, A→B, E→C
+\tkzMarkRightAngle(A,B,C)
+
+% Old: \tkzDrawSegment(C,D)  ==> C→A
+\tkzDrawSegment(A,D)
+
+% Old: \tkzDrawPolygon(A,B,C)  ==> A→B, B→E, C→A
+\tkzDrawPolygon(B,E,A)
+
+% Old: \tkzDrawPolygon(A,C,E)  ==> A→B, C→A, E→C
+\tkzDrawPolygon(B,A,C)
+
+% Old: \tkzLabelPoints[above left](C)  ==> C→A
+\tkzLabelPoints[above left](A)
+
+% Old: \tkzLabelPoints[below](E,A,B)  ==> E→C, A→B, B→E
+\tkzLabelPoints[below](C,B,E)
+
+% Old: \tkzLabelPoints[below right](D)
+\tkzLabelPoints[below right](D)
+
+\end{tikzpicture}
+}
+\end{minipage}
+
+}
+\correction{
+	\tcblower
+
+}
+

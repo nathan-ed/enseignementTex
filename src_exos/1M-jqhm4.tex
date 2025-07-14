@@ -1,0 +1,90 @@
+\titre{}
+\theme{derivation2}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Calculer, si elles existent, les limites suivantes :
+\begin{tasks}(2)
+\task $\displaystyle\lim_{x \to 0} \dfrac{1-\cos(x)}{x^2}$
+\task $\displaystyle\lim_{x \to 0} \dfrac{\cos^2(x)+\sin(2x)-1}{x}$
+\task $\displaystyle\lim_{x\rightarrow \frac{\pi}{2}} \dfrac{1-\sin(x)}{\cos^2(x)}$ 
+\task $\displaystyle\lim_{x\rightarrow 0} \dfrac{1-\cos^2(x)}{x\tan(x)}$ 
+\task $\displaystyle\lim_{x\rightarrow 0} \dfrac{x\sin(x)}{1-\cos(x)}$ 
+\task $\displaystyle\lim_{x\rightarrow 0} \dfrac{x\sin(x)}{1-\cos(x)}$ 
+\task $\displaystyle\lim_{x\rightarrow 0} \dfrac{\cos(x)}{x}$ 
+\end{tasks}
+}
+%vérifié
+\correction{
+	\tcblower
+\begin{tasks}(2)
+\task  
+
+\( \begin{aligned}
+&\lim_{x \to 0} \dfrac{1 - \cos(x)}{x^2} \\
+&= \lim_{x \to 0} \dfrac{(1 - \cos(x))(1 + \cos(x))}{x^2 (1 + \cos(x))} \\
+&= \lim_{x \to 0} \dfrac{1 - \cos^2(x)}{x^2 (1 + \cos(x))} \\
+&= \lim_{x \to 0} \dfrac{\sin^2(x)}{x^2 (1 + \cos(x))} \\
+&= \lim_{x \to 0} \left( \dfrac{\sin(x)}{x} \right)^2 \cdot \dfrac{1}{1 + \cos(x)} \\
+&= 1^2 \cdot \dfrac{1}{2}\\
+&= \dfrac{1}{2}
+\end{aligned} \)
+
+\task
+
+\( \begin{aligned}
+&\lim_{x \to 0} \dfrac{\cos^2(x) + \sin(2x) - 1}{x} \\
+&= \lim_{x \to 0} \dfrac{\cos^2(x) - 1}{x} + \lim_{x \to 0} \dfrac{\sin(2x)}{x} \\
+&= \lim_{x \to 0} \dfrac{-\sin^2(x)}{x} + \lim_{x \to 0} \dfrac{\sin(2x)}{x} \\
+&= \lim_{x \to 0} \dfrac{-\sin(x)}{x} \cdot \sin(x) + \lim_{x \to 0} 2 \cdot \dfrac{\sin(2x)}{2x} \\
+&= -1 \cdot 0 + 2 \cdot 1\\
+&= 2
+\end{aligned} \)
+\task
+
+\( \begin{aligned}
+&\lim_{x \to \frac{\pi}{2}} \dfrac{1 - \sin(x)}{\cos^2(x)} \\
+&= \lim_{x \to \frac{\pi}{2}} \dfrac{(1 - \sin(x))(1 + \sin(x))}{\cos^2(x)(1 + \sin(x))} \\
+&= \lim_{x \to \frac{\pi}{2}} \dfrac{1 - \sin^2(x)}{\cos^2(x)(1 + \sin(x))} \\
+&= \lim_{x \to \frac{\pi}{2}} \dfrac{\cos^2(x)}{\cos^2(x)(1 + \sin(x))} \\
+&= \lim_{x \to \frac{\pi}{2}} \dfrac{1}{1 + \sin(x)} \\
+&= \dfrac{1}{2}
+\end{aligned} \)
+
+\task
+
+\( \begin{aligned}
+&\lim_{x \to 0} \dfrac{1 - \cos^2(x)}{x \cdot \tan(x)} \\
+&= \lim_{x \to 0} \dfrac{\sin^2(x)}{x \cdot \dfrac{\sin(x)}{\cos(x)}} \\
+&= \lim_{x \to 0} \dfrac{\sin(x)}{x} \cdot \dfrac{\sin(x)}{\sin(x)} \cdot \cos(x) \\
+&= 1 \cdot 1 \cdot 1 = 1
+\end{aligned} \)
+
+\task 
+
+\( \begin{aligned}
+&\lim_{x \to 0} \dfrac{x \cdot \sin(x)}{1 - \cos(x)} \\
+&= \lim_{x \to 0} \dfrac{x \cdot \sin(x)}{2 \cdot \sin^2\left(\dfrac{x}{2}\right)} \\
+&= \lim_{x \to 0} \dfrac{\sin(x)}{x} \cdot \dfrac{x^2}{2 \cdot \left(\dfrac{x}{2}\right)^2} \\
+&= \lim_{x \to 0} \dfrac{\sin(x)}{x} \cdot \dfrac{1}{2 \cdot \left(\dfrac{1}{2}\right)^2} \\
+&= 1 \cdot \dfrac{4}{2}= 2 
+\end{aligned} \)
+
+\task Type « $\dfrac{1}{0}$ » :
+
+\( \begin{aligned}
+&\lim_{x \to 0^+} \dfrac{\cos(x)}{x}=\+\infty \\
+&\lim_{x \to 0^-} \dfrac{\cos(x)}{x}=\-\infty \\
+&\lim_{x \to 0} \dfrac{\cos(x)}{x}=\text{ n'existe pas}\\
+\end{aligned} \)
+\end{tasks}
+
+}
+

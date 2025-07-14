@@ -1,0 +1,68 @@
+\titre{}
+\theme{derivation2}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Calculer :
+\begin{tasks}(3)
+\task $\displaystyle\lim_{x \to 0} \dfrac{\sin(3x)}{3x}$
+\task $\displaystyle\lim_{x \to 0} \dfrac{\sin(8x)}{10x}$
+\task $\displaystyle\lim_{x \to 2} \dfrac{\sin(2x-4)}{8x-16}$
+\task $\displaystyle\lim_{x \to 1} \dfrac{\sin(3x-3)}{9-9x}$
+\task $\displaystyle\lim_{x \to -1} \dfrac{\sin(x^2-1)}{x^4-1}$
+\end{tasks}
+}
+\correction{
+	\tcblower
+	On utilise le théorème \ref{thm:sinxx} pour chaque item. 
+	\begin{tasks}(2)
+		\task $1$
+		\task 
+
+		$\begin{aligned}
+	&\displaystyle\lim_{x \to 0} \dfrac{\sin(8x)}{10x}\\
+	&=\displaystyle\lim_{x \to 0} \dfrac{\sin(8x)}{8x\cdot\dfrac{10}{8}}\\
+	&=\displaystyle\lim_{8x \to 0} \dfrac{\sin(8x)}{8x}\cdot \dfrac{8}{10}\\
+	&=\dfrac{4}{5}
+		\end{aligned}$
+
+\task 
+
+$
+\begin{aligned}
+&\displaystyle\lim_{x \to 2} \dfrac{\sin(2x-4)}{8x-16}\\
+&=\displaystyle\lim_{x \to 2} \dfrac{\sin(2x-4)}{4(2x-4)}\\
+&=\displaystyle\lim_{2x-4 \to 0} \dfrac{\sin(2x-4)}{2x-4}\cdot\dfrac{1}{4}\\
+&=\dfrac{1}{4}
+\end{aligned}
+$
+		\task 
+
+$\begin{aligned}
+&\displaystyle\lim_{x \to 1} \dfrac{\sin(3x-3)}{9-9x}\\
+&=\displaystyle\lim_{x \to 1} \dfrac{\sin(3x-3)}{-3(3x-3)}\\
+&=\displaystyle\lim_{3x-3 \to 0} \dfrac{\sin(3x-3)}{(3x-3)}\dfrac{1}{-3}\\
+&=-\dfrac{1}{3}
+\end{aligned}$
+\task 
+
+$
+\begin{aligned}
+&	\displaystyle\lim_{x \to -1} \dfrac{\sin(x^2+1)}{x^4-1}\\
+&=\displaystyle\lim_{x \to -1} \dfrac{\sin(x^2-1)}{x^4-1}\\
+&=\displaystyle\lim_{x \to -1} \dfrac{\sin(x^2-1)}{(x^2-1)(x^2+1)}\\
+&=\displaystyle\lim_{x \to -1} \dfrac{\sin(x^2-1)}{(x^2-1)}\dfrac{1}{(x^2+1)}\\
+&=\dfrac{1}{2}
+\end{aligned}
+$
+
+	\end{tasks}
+}
+

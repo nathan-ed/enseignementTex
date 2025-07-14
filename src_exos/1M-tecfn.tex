@@ -1,0 +1,39 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+Calculer les limites suivantes en justifiant chaque étape. 
+\begin{tasks}(3)
+\task \(\displaystyle\lim_{x\to 1}\frac{x^2-6x+8}{x^2+5x+4}\).
+\task \(\displaystyle\lim_{x\to 0}\frac{\sqrt{x^2-4x+16}}{3}\).
+\task \(\displaystyle\lim_{x\to \frac{\pi}{2}}\cos(2x)\).
+\end{tasks}
+}
+\correction{
+	\tcblower
+\begin{tasks}
+  \task \( \displaystyle \lim_{x \to 1} \dfrac{x^2 - 6x + 8}{x^2 + 5x + 4}
+  \stackrel{\text{P4}}{=} \dfrac{\lim_{x \to 1} (x^2 - 6x + 8)}{\lim_{x \to 1} (x^2 + 5x + 4)}
+  \stackrel{\text{Cor. \ref{thm:poly}}}{=} \dfrac{1^2 - 6\cdot1 + 8}{1^2 + 5\cdot1 + 4}
+  = \dfrac{3}{10} \)
+
+  \task \( \displaystyle \lim_{x \to 0} \dfrac{\sqrt{x^2 - 4x + 16}}{3}
+  \stackrel{\text{P0}}{=} \dfrac{1}{3} \cdot \lim_{x \to 0} \sqrt{x^2 - 4x + 16}
+  \stackrel{\text{thm. \ref{thm:compo} + L4 + cor. \ref{thm:poly}}}{=} \dfrac{1}{3} \cdot \sqrt{0^2 - 4\cdot0 + 16}
+  = \dfrac{1}{3} \cdot 4 = \dfrac{4}{3} \)
+
+  \task \( \displaystyle \lim_{x \to -\frac{\pi}{2}} \cos(2x)
+  \stackrel{\text{thm. \ref{thm:compo} + L4}}{=} \cos\left(\lim_{x \to -\frac{\pi}{2}} 2x\right)
+  \stackrel{\text{P0}}{=} \cos(-\pi)
+  = -1 \)
+\end{tasks}
+}
+

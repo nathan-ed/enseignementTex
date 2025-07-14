@@ -1,0 +1,86 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{luacode}
+\usepackage{../packages/coursCollege}
+\newcommand{\Chapitre}{Recueil}
+
+
+% Path to exercise sources
+\renewcommand{\path}{../}
+
+% Define your filters
+\def\choixAnnee{2425}
+\def\choixTheme{}
+\def\choixNiveau{1M,3M}
+\def\choixSource{}
+\def\choixType{}
+
+% LaTeX expands the choix filter values into Lua strings
+\edef\luaChoixAnnee{\choixAnnee}
+\edef\luaChoixTheme{\choixTheme}
+\edef\luaChoixNiveau{\choixNiveau}
+
+\begin{document}
+
+\begin{luacode}
+
+-- Lua helper function to check if a value is in a comma-separated list
+local function value_in_list(value, list)
+    value = value or ""
+    list = list or ""
+    if list == "" then return true end
+    for item in string.gmatch(list, "([^,]+)") do
+        if value == item:match("^%s*(.-)%s*$") then return true end
+    end
+    return false
+end
+
+-- Assign filter values from LaTeX macros
+choix_annee = "\luaChoixAnnee"
+choix_theme = "\luaChoixTheme"
+choix_niveau = "\luaChoixNiveau"
+
+-- Iterate over all files in the 'src' directory
+local lfs = require("lfs")
+local src_dir = "../src_exos/"
+
+for file in lfs.dir(src_dir) do
+    if file:match("%.tex$") then
+        local filename = file:gsub("%.tex$", "")
+        local full_path = src_dir .. file
+        
+        -- Read the content of the file
+        local f = io.open(full_path, "r")
+        if f then
+            local content = f:read("*all")
+            f:close()
+            
+            -- Extract metadata from the content
+            local annee = content:match("\\annee%s*{(.-)}")
+            local theme = content:match("\\theme%s*{(.-)}")
+            local niveau = content:match("\\niveau%s*{(.-)}")
+            
+            -- Filtering logic
+            local should_include = true
+            if not value_in_list(annee, choix_annee) and value ~= "" then
+                should_include = false
+            end
+
+            if not value_in_list(theme, choix_theme) and value ~= "" then
+                should_include = false
+            end
+            if not value_in_list(niveau, choix_niveau) and value ~= "" then
+                should_include = false
+            end
+            
+            -- Include exercise if it passes all filters
+            if should_include then
+            	tex.print("\\insertexo{" .. filename .. "}{true}{exo}{false}")
+            end
+        else
+            tex.print("\\textbf{Error: Unable to open file " .. full_path .. "}")
+        end
+    end
+end
+\end{luacode}
+
+\end{document}

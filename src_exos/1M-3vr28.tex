@@ -1,0 +1,34 @@
+\titre{}
+\theme{limites}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{sesamath3e}
+\type{serie}
+\piments{4}
+\pts{}
+\annee{2425}
+
+\contenu{
+\tcblower
+\noindent Dans chaque cas, déterminer l'expression algébrique d'une fonction \(f\), sur \(\mathbb{R}\), satisfaisant aux conditions données :  
+\begin{tasks}
+\task \(f\) est continue partout sauf pour \(x=2\) et \(\displaystyle\lim_{x\to 2}f(x)\) n'existe pas.
+\task \(f\) admet une limite à gauche et une limite à droite au point \(x=2\) mais elle est non continue en ce point.
+\end{tasks}
+}
+\correction{
+\tcblower
+\begin{tasks}(1)
+\task \( f(x) = \begin{cases}
+1 & \text{si } x < 2 \\
+-1 & \text{si } x > 2
+\end{cases} \). La fonction n’est pas définie en \( x = 2 \), et la limite en \( x = 2 \) n’existe pas car les limites à gauche et à droite sont différentes.
+
+\task \( f(x) = \begin{cases}
+x & \text{si } x < 2 \\
+5 & \text{si } x = 2 \\
+x & \text{si } x > 2
+\end{cases} \). La limite en \( x = 2 \) existe et vaut 2, mais \( f(2) = 5 \ne 2 \), donc \( f \) est discontinue en ce point.
+\end{tasks}
+}
+

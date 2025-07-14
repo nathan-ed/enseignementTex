@@ -1,0 +1,69 @@
+\titre{}
+\theme{cercle}
+\auteur{Nathan Scheinmann}
+\niveau{1M}
+\source{abdou}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2425}
+
+\contenu{
+	\tcblower
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+Soit $O$ le centre du cercle $(C)$. 
+
+$ABCDE$ est un pentagone régulier inscrit dans $(C)$. 
+
+Déterminer la valeur de l'angle $\alpha$. 
+}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}{
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+	\tkzSetUpPoint[shape=cross]
+% Define the center and a point on the circle
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(3,0){A}
+  
+\tkzLabelCircle[above right](O,A)(30){$(C)$}
+  % Draw the circle with center O passing through A
+  \tkzDrawCircle(O,A)
+    % Compute the other vertices by successive rotations of 72°
+
+  \tkzDefPointBy[rotation= center O angle 72](A) \tkzGetPoint{B}
+  \tkzDefPointBy[rotation= center O angle 72](B) \tkzGetPoint{C}
+  \tkzDefPointBy[rotation= center O angle 72](C) \tkzGetPoint{D}
+  \tkzDefPointBy[rotation= center O angle 72](D) \tkzGetPoint{E}
+  
+  % Draw the inscribed pentagon
+  \tkzDrawPolygon(A,B,C,D,E)
+  
+  \tkzInterLL(A,D)(C,E)\tkzGetPoint{F}
+  % Mark the vertices with crosses
+  \tkzDrawPoints(A,B,C,D,E,O,F)
+  
+  \tkzDrawSegment(A,D)
+  \tkzDrawSegment(C,E)
+  % Label the vertices
+  \tkzLabelPoints[right](A)
+  \tkzLabelPoints[above](B)
+  \tkzLabelPoints[above right](F, O)
+  \tkzLabelPoints[above left](C)
+  \tkzLabelPoints[left](D)
+  \tkzLabelPoints[below](E)
+  \tkzMarkAngle[size=0.8cm, mark=none](E,F,A)
+  \tkzLabelAngle[pos=1.2](E,F,A){$\alpha$}
+
+\end{tikzpicture}	
+\end{center}
+}
+\end{minipage}
+}
+\correction{
+	\tcblower
+	$\widehat{DOE}=72^\circ$. Par le thm de l'angle inscrit et de l'angle au centre, $\widehat{ADE}=36^\circ$. Par ailleurs, $\widehat{AOC}=72\cdot 2=144^\circ$ et par le thm de l'angle inscrit et de l'angle au centre, $\widehat{AEC}=72^\circ$. Ainsi par la somme des angles dans un triangle, $\alpha=180-72-36=72^\circ$. 
+}
+
