@@ -1,0 +1,111 @@
+\renewcommand{\baselinestretch}{1.5}
+\RequirePackage[utf8]{inputenc}
+%\RequirePackage[latin1]{inputenc}
+%\RequirePackage[french]{babel}
+
+\RequirePackage[T1]{fontenc}
+\usepackage{arev}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{afterpage}
+\RequirePackage{amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{multicol}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+\usepackage{tabularray}
+\DefTblrTemplate{contfoot-text}{default}{}
+\DefTblrTemplate{conthead-text}{default}{}
+\DefTblrTemplate{caption}{default}{}
+\DefTblrTemplate{conthead}{default}{}
+\DefTblrTemplate{capcont}{default}{}
+\RequirePackage{etoolbox}
+\RequirePackage{icomma}
+\RequirePackage{makecell}
+\RequirePackage{rotating}
+\RequirePackage[skins,most]{tcolorbox}
+\tcbuselibrary{listings,breakable}
+\RequirePackage{float}
+\RequirePackage{lscape}
+\RequirePackage[toc,page]{appendix}
+\RequirePackage{framed}
+\RequirePackage{fontawesome5}
+\RequirePackage{color}
+\RequirePackage{pst-circ,pstricks-add}
+\RequirePackage{fancybox}
+\RequirePackage{psfrag}
+\RequirePackage[Glenn]{fncychap}
+\ChNameVar{\bfseries\Large\sf} 
+\ChNumVar{\Huge} 
+\ChTitleVar{\bfseries\Large\rm} 
+\ChRuleWidth{1pt}
+\ChNameUpperCase
+\ChTitleUpperCase
+\RequirePackage{niceframe}
+\RequirePackage{psfrag}
+\RequirePackage[top=1.8cm, bottom=1.8cm, left=0.5cm , right=0.5cm]{geometry}
+\setlength{\parindent}{0pt}
+\RequirePackage{fancyhdr}
+\RequirePackage[compact]{titlesec}
+\RequirePackage{xparse}
+\RequirePackage{pdfpages}
+\RequirePackage{pgf,tikz,pgfplots}
+\RequirePackage{tikz-3dplot}
+\RequirePackage{tikz-cd}
+\usetikzlibrary{arrows,calc, shapes.misc, intersections,decorations.markings, patterns, shapes.geometric, calc,positioning,fit,backgrounds,angles, perspective}
+\RequirePackage{tkz-euclide}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{version}
+
+\usepackage{icomma}
+\usepackage{refcount}
+\usepackage{tasks}
+\usepackage{systeme}
+\RequirePackage{siunitx}
+\sisetup{locale = FR, per-mode = symbol, range-phrase=--, range-units=single, product-units=single}
+\newcommand{\da}[1]{\SI[mode=text]{#1}{}}
+\newcommand{\tunit}[2]{\SI[mode=text]{#1}{#2}}
+\newcommand{\nunit}[1]{\SI[mode=text]{}{#1}}
+\DeclareSIUnit\fr{fr.}
+
+\RequirePackage{tasks}
+
+\settasks{
+  % the next two should be set to the same value so labels are aligned to the
+  % left
+  label-width = 2em ,
+  item-indent = 2em ,
+  before-skip = -\parskip , % undo paragraph skip
+  after-skip = -\parskip , % undo paragraph skip
+  label-offset=-0.5em,
+  after-item-skip = 0.2em % undo paragraph skip
+}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\pagestyle{fancy}    
+
+\newcommand{\regroupement}{Mathématiques 2$^{\text{e}}$ niveau normal}
+\newcommand{\titreChapitre}{Test}
+
+\renewcommand{\chaptermark}[1]{\markleft{#1}{}}
+
+\lhead{\begin{small}
+%CO des Coudriers 
+\regroupement, 2025--2026
+\end{small}} 
+\rhead{\begin{small}
+\titreChapitre  \end{small}}  
+\lfoot{\begin{small}
+\leftmark \end{small}}  
+\cfoot{\begin{small}
+\thepage
+\end{small}}  
+\rfoot{\begin{small}
+ns
+\end{small}} 
+\renewcommand{\headrulewidth}{0.4pt}  
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newcommand{\ligne}[1]{\makebox[#1cm]{\hrulefill}\hspace{1em}} 
+\renewcommand{\ligne}[1]{\parbox[b][2em]{#1cm}{\makebox[#1cm]{\hrulefill}}\hspace{0.5em}}

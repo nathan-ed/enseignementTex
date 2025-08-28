@@ -23,7 +23,17 @@
 \RequirePackage{bm}
 \RequirePackage{array}
 \RequirePackage{longtable}
-\RequirePackage{../packages/intervalles}
+\makeatletter
+\IfFileExists{../packages/intervalles.sty}{%
+  \RequirePackage{../packages/intervalles}%
+}{%
+  \IfFileExists{../../packages/intervalles.sty}{%
+    \RequirePackage{../../packages/intervalles}%
+  }{%
+    \PackageError{intervalles}{Could not find intervalles.sty}{}
+  }%
+}
+\makeatother
 \RequirePackage{tabularray}
 \RequirePackage{tabularx}
 \UseTblrLibrary{booktabs}     % nice rules
@@ -355,8 +365,10 @@ after skip=10pt,
 \newlist{myinlineenum}{enumerate*}{1}
 \setlist*[myinlineenum]{before=\vspace{6pt}, align=right, afterlabel=\hspace{2pt}, itemjoin=\hspace{10pt}, label=\roman*)}
 
+
+\RequirePackage{xparse}
+
 % Create a wrapper that sets spacing dynamically
-\usepackage{xparse}
 \NewDocumentEnvironment{MyInlineEnum}{m} % m = spacing argument
   {
     \begin{myinlineenum}[itemjoin=\hspace{#1}]

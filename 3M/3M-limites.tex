@@ -1113,7 +1113,11 @@ ou plus directement :
 \stackrel{\text{\eqmakebox[m][c]{{\bfseries{thm \ref{thm:poly}}}}}}{=}
 2\cdot1\cdot1=2
 \]
-\task 
+\end{tasks}
+\end{exemple}
+\begin{exemplesuite}
+	\begin{tasks}
+		\task[c)]
 \[
 \lim_{x\to2}\dfrac{x+5}{x}
 \stackrel{\text{\eqmakebox[b][c]{{\bfseries{P4}}}}}{=}
@@ -1122,7 +1126,7 @@ ou plus directement :
 \dfrac{2+5}{2}
 =\dfrac{7}{2}
 \]
-\task
+\task[d)]
 \[
 \lim_{x\to0}\cos(x^4)
 \stackrel{\text{\eqmakebox[d][c]{{\bfseries{L3 et thm \ref{thm:compo}}}}}}{=}
@@ -1131,7 +1135,7 @@ ou plus directement :
 \cos(0^4)=\cos(0)=1
 \]
 \end{tasks}
-\end{exemple}
+\end{exemplesuite}
 
 \begin{thm}
 	(sans démonstration)
@@ -1825,139 +1829,6 @@ $
 
 \end{exemple}
 
-
-\subsection{Asymptotes obliques}
-\begin{definition}
-	Asymptote oblique
-	\tcblower
-Une droite $d$ d'équation $d(x) = ax + b$ avec $a \neq 0$ est appelée \textbf{asymptote oblique} de la fonction $f$ ssi au moins l'une des conditions suivantes est satisfaite :
-\[
-\displaystyle\lim_{x \to +\infty} f(x) - d(x) = 0 \quad \text{ou} \quad \displaystyle\lim_{x \to -\infty} f(x) - d(x) = 0
-\]
-\end{definition}
-\begin{exemple}
-Asymptote oblique
-\tcblower	
-\begin{minipage}[t]{0.3\textwidth}{
-\vspace{0pt}
-La fonction ci-contre admet $y = x$ comme asymptote oblique à $\pm\infty$.
-}
-\end{minipage}
-\begin{minipage}[t]{0.6\textwidth}{
-\vspace{0pt}
-	\begin{center}		
-		\begin{tikzpicture}[scale=0.6]
-  \begin{axis}[
-    axis lines=middle,
-    xlabel={$x$}, ylabel={$y$},
-    label style={font=\normalsize},
-    every axis x label/.style={at={(ticklabel* cs:0.92)}, anchor=west, yshift=10pt},
-    every axis y label/.style={at={(ticklabel* cs:0.92)}, anchor=south, xshift=10pt},
-    xmin=-4, xmax=8,
-    ymin=-5, ymax=5,
-    xtick={-4,-2,0,2,4,6},
-    ytick={-5,-4,-2,0,2,4,5},
-    grid=both,
-    grid style={dashed,gray!30},
-  ]
-    % f(x) = (x^3 - 1)/(x^2 - 1), split at x = -1 and x = 1
-    \addplot[domain=-4:-1.1, samples=200, thick] {(x^3-1)/(x^2-1)};
-    \addplot[domain=-0.9:0.9,  samples=200, thick] {(x^3-1)/(x^2-1)};
-    \addplot[domain=1.1:6,   samples=200, thick]
-      {(x^3-1)/(x^2-1)} node[below right,pos=0.1] {$f(x)=\dfrac{x^3-1}{x^2-1}$};
-    \addplot[dashed,domain=-4:6] {x};
-    % removable singular (open circle) at x = 1
-    \addplot[only marks, mark=o, thick] coordinates {(1,1.5)};
-  \end{axis}
-\end{tikzpicture}
-	\end{center}
-}
-\end{minipage}
-\end{exemple}
-
-\begin{methode}
-Asymptote oblique
-\tcblower
-Soit $f$ une fonction rationnelle définie par
-\[
-f(x) = \dfrac{a_n x^n + a_{n-1} x^{n-1} + a_{n-2} x^{n-2} + \ldots + a_1 x + a_0}{b_m x^m + b_{m-1} x^{m-1} + b_{m-2} x^{m-2} + \ldots + b_1 x + b_0}
-\]
-telle que $n = m + 1$, alors $f$ admet une asymptote oblique à $\pm\infty$.
-
-La \textbf{division polynomiale} du numérateur par le dénominateur de $f$ permet de faire apparaître cette asymptote.
-\end{methode}
-
-\begin{exemple}
-	Asymptote oblique de\\
-	\medskip
-	$f(x)=\dfrac{x^2}{x+2}$
-	\tcblower
-Déterminer l'asymptote oblique de la fonction $f$ définie par $f(x) = \dfrac{x^2}{x + 2}$
-\smallskip
-
-On commence par la division polynomiale comme indiqué dans la méthode~:
-\begin{center}
-\polylongdiv[style=D]{x^2}{x+2}
-\end{center}
-d'où on obtient~: $x^2 = (x + 2)(x - 2) + 4$.
-Ainsi, 
-\begin{align*}
-f(x) &= \dfrac{x^2}{x + 2} = \dfrac{(x + 2)(x - 2) + 4}{x + 2} = \dfrac{(x + 2)(x - 2)}{x + 2} + \dfrac{4}{x + 2}= x - 2 + \dfrac{4}{x + 2}
-\end{align*}
-
-On en déduit :
-
-$
-\begin{aligned}
-	\displaystyle\lim_{x \to \pm\infty} f(x) &= \displaystyle\lim_{x \to \pm\infty} \left( x - 2 + \dfrac{4}{x + 2} \right)\\
-&= \displaystyle\lim_{x \to \pm\infty} (x - 2) + \displaystyle\lim_{x \to \pm\infty} \dfrac{4}{x + 2}\\
-&= \displaystyle\lim_{x \to \pm\infty} (x - 2) + 0
-\end{aligned}
-$
-\medskip
-
-puis $\displaystyle\lim_{x \to \pm\infty} f(x) - \displaystyle\lim_{x \to \pm\infty} (x-2) = 0 \Leftrightarrow \displaystyle\lim_{x \to \pm\infty} f(x) - (x-2) = 0$, c'est-à-dire que $y = x-2$ est une asymptote oblique de $f$ à $\pm\infty$
-\end{exemple}
-
-\begin{thm}[label=thm:obli]
-	Caractérisation des asymptotes obliques
-
-	(sans démonstration)
-	\tcblower
-La droite $d$ définie par $d(x) = ax + b$ est une asymptote oblique de la fonction $f$ à $\pm\infty$ ssi $\displaystyle\lim_{x \to \pm\infty} \dfrac{f(x)}{x} = a$ et $\displaystyle\lim_{x \to \pm\infty} (f(x) - ax) = b$.
-\end{thm}
-
-\begin{exemple}
-	Asymptote oblique de\\
-	\medskip
-	$f(x)=\dfrac{x^2}{x+2}$
-	\tcblower
-Déterminer l'asymptote oblique de la fonction $f$ définie par $f(x) = \dfrac{x^2}{x+2}$ en utilisant le théorème \ref{thm:obli}
-
-On commence par déterminer le coefficient $a$ du théorème~:
-
-\begin{align*}
-\displaystyle\lim_{x \to +\infty} \dfrac{x^2}{x+2} \cdot \dfrac{1}{x} &= \displaystyle\lim_{x \to +\infty} \dfrac{x^2}{x} \cdot \dfrac{1}{x+2}\\	
-&= \displaystyle\lim_{x \to +\infty} \dfrac{x^2}{x^2(1+\dfrac{2}{x})}\\
-&= \displaystyle\lim_{x \to +\infty} \dfrac{1}{1+\dfrac{2}{x}}\\
-&= \dfrac{1}{1+0} \\
-&= 1
-\end{align*}
-puis le coefficient $b$
-\begin{align*}
-\displaystyle\lim_{x \to +\infty} (f(x) - ax) &= \displaystyle\lim_{x \to +\infty} \left(\dfrac{x^2}{x+2} - 1 \cdot x\right)\\
-					      &= \displaystyle\lim_{x \to +\infty} \dfrac{x^2 - x(x+2)}{x+2}\\
-					      &= \displaystyle\lim_{x \to +\infty} \dfrac{x^2 - x^2 - 2x}{x+2}\\ 
-					      &= \displaystyle\lim_{x \to +\infty} \dfrac{-2x}{x+2} \\
-&= \displaystyle\lim_{x \to +\infty} \dfrac{x(-2)}{x(1+\dfrac{2}{x})}\\
-&= \displaystyle\lim_{x \to +\infty} \dfrac{-2}{1+\dfrac{2}{x}} \\
-&= \dfrac{-2}{1+0} \\
-&= -2
-\end{align*}
-
-donc $y = x - 2$ est une asymptote oblique de $f$ à $\pm\infty$
-
-\end{exemple}
 \section{Limites de fonctions trigonométriques}
 Le théorème suivant est important et sa démonstration est faite en activité. 
 \medskip
@@ -2293,30 +2164,14 @@ Calculer si possible les limites suivantes et interpréter graphiquement :
 \end{tasks}
 \end{activite}
 
-\begin{activite}[label=acti:asyobl]{Asymptotes obliques}
-\tcblower
-Lorsqu'on étudie une fonction, on n'a parfois besoin pour produire une représentation graphique de qualité de récolter plus d'informations que ce qu'on sait déjà faire.
-\begin{tasks}(1)
-  \task Définir et illustrer la notion d'asymptote oblique.
-  \task Considérons les deux fonctions définies ainsi : 
-  \[
-    f(x)=\dfrac{1}{x^2-1}+2x-1
-    \quad\text{et}\quad
-    g(x)=\dfrac{2x^2-1}{x-1}.
-  \]
-  \begin{enumerate}
-    \item Déterminer leurs asymptotes obliques.
-    \item Interpréter graphiquement.
-  \end{enumerate}
-\end{tasks}
-\end{activite}
+
 
 \begin{activite}[label=acti:asyconcl]{Tout en un}
 \tcblower
 \begin{tasks}(1)
   \task Déterminer toutes les asymptotes de la fonction \(f\) définie par
   \[
-    f(x)=\dfrac{2x^4+4x^3-2x^2}{-x^3+x^2+x-1}
+    f(x)=\dfrac{2x^3+4x^2-2x}{-x^3+x^2+x-1}
   \]
   et interpréter graphiquement.
 \end{tasks}
@@ -2394,122 +2249,124 @@ Représenter graphiquement une (unique) fonction $f$ de votre choix qui vérifie
 Dans les corrigés vous trouverez seulement des éléments de réponses. {\bfseries Une réponse détaillée et justifiée} à l'aide des résultats du cours est attendue. L'enseignant est là pour valider votre réponse et vérifier votre rédaction. {\bfseries En évaluation, une réponse qui n'est pas justifiée selon les attentes ne recueillera pas de point.} 
 
 \subsection{Continuité}
-\insertexo{1n93r}{true}{both}
-\insertexo{59swy}{true}{both}
-\insertexo{qp2mw}{true}{both}
-\insertexo{6csvs}{true}{both}
+\insertexo{1n93r}{false}{exo}
+\insertexo{59swy}{false}{exo}
+\insertexo{qp2mw}{false}{exo}
+\insertexo{6csvs}{false}{exo}
 \subsection{Limites en un nombre}
-\insertexo{4dptb}{true}{both}
-\insertexo[exo:p1f]{g4gbb}{true}{both}
-\insertexo{n9sxp}{true}{both}
-\insertexo[exo:p2d]{tecfn}{true}{both}
-\insertexo{wnd21}{true}{both}
-\insertexo{3vr28}{true}{both}
-\insertexo{c3uc9}{true}{both}
-\insertexo{1bqh9}{true}{both}
-\insertexo{myjcq}{true}{both}
-\insertexo{dpjwk}{true}{both}
-\insertexo{97ryj}{true}{both}
-\insertexo{n1axs}{true}{both}
+\insertexo{4dptb}{false}{exo}
+\insertexo[exo:p1f]{g4gbb}{false}{exo}
+\insertexo{n9sxp}{false}{exo}
+\insertexo[exo:p2d]{tecfn}{false}{exo}
+\insertexo{wnd21}{false}{exo}
+\insertexo{3vr28}{false}{exo}
+\insertexo{c3uc9}{false}{exo}
+\insertexo{1bqh9}{false}{exo}
+\insertexo{myjcq}{false}{exo}
+\insertexo{dpjwk}{false}{exo}
+\insertexo{97ryj}{false}{exo}
+\insertexo{n1axs}{false}{exo}
 
-\insertexo{gb3ag}{true}{both}
-\insertexo{5911p}{true}{both}
+\insertexo{gb3ag}{false}{exo}
+\insertexo{5911p}{false}{exo}
 
-\insertexo{hsytn}{true}{both}
+\insertexo{hsytn}{false}{exo}
 \subsubsection{Indétermination du type « $\dfrac{0}{0}$ » et « $\dfrac{1}{0}$ » }
 
-\insertexo[exo:p1d]{vyj67}{true}{both}
-\insertexo{ac9v2}{true}{both}
-\insertexo{98752}{true}{both}
-\insertexo{gg7hk}{true}{both}
-\insertexo{f7dft}{true}{both}
-\insertexo{u44h9}{true}{both}
-\insertexo{pp62m}{true}{both}
-\insertexo{b3p6g}{true}{both}
-\insertexo{n41yn}{true}{both}
-\insertexo{8j18h}{true}{both}
-\insertexo{yhzh8}{true}{both}
-\insertexo{9yqnb}{true}{both}
+\insertexo[exo:p1d]{vyj67}{false}{exo}
+\insertexo{ac9v2}{false}{exo}
+\insertexo{98752}{false}{exo}
+\insertexo{gg7hk}{false}{exo}
+\insertexo{f7dft}{false}{exo}
+\insertexo{u44h9}{false}{exo}
+\insertexo{pp62m}{false}{exo}
+\insertexo{b3p6g}{false}{exo}
+\insertexo{n41yn}{false}{exo}
+\insertexo{8j18h}{false}{exo}
+\insertexo{yhzh8}{false}{exo}
+\insertexo{9yqnb}{false}{exo}
 %--> corrigés vérifiés après ici.
-\insertexo{k3bry}{true}{both}
-\insertexo{1w6s3}{true}{both}
-\insertexo{nxc2s}{true}{both}
+\insertexo{k3bry}{false}{exo}
+\insertexo{1w6s3}{false}{exo}
+\insertexo{nxc2s}{false}{exo}
 \subsubsection{Asymptotes verticales}
-\insertexo{89av7}{true}{both}
-\insertexo{1w3pd}{true}{both}
+\insertexo{89av7}{false}{exo}
+\insertexo{1w3pd}{false}{exo}
 \subsection{Limites en l'infini}
-\insertexo{x5h3r}{true}{both}
-\insertexo{n9qmn}{true}{both}
-\insertexo{t4gwt}{true}{both}
-\insertexo{bqknk}{true}{both}
-\insertexo{du7be}{true}{both}
-\insertexo{6qym1}{true}{both}
-\insertexo{aatq8}{true}{both}
-\insertexo{gm9uk}{true}{both}
-\insertexo{taje8}{true}{both}
-\insertexo{y4dv7}{true}{both}
-\insertexo{y4385}{true}{both}
-\insertexo{2at6d}{true}{both}
-\insertexo{mj5qq}{true}{both}
-\insertexo{hgcu8}{true}{both}
-\insertexo{ek51g}{true}{both}
-%MA2\insertexo{us8px}{true}{both}
-\insertexo{5en1r}{true}{both}
-\insertexo{1gayt}{true}{both}
-\insertexo{955md}{true}{both}
-\insertexo{mkn1h}{true}{both}
-\insertexo{pzy7s}{true}{both}
-\insertexo{3yjzh}{true}{both}
+\insertexo{x5h3r}{false}{exo}
+\insertexo{n9qmn}{false}{exo}
+\insertexo{t4gwt}{false}{exo}
+\insertexo{bqknk}{false}{exo}
+\insertexo{du7be}{false}{exo}
+\insertexo{6qym1}{false}{exo}
+\insertexo{aatq8}{false}{exo}
+\insertexo{gm9uk}{false}{exo}
+\insertexo{taje8}{false}{exo}
+\insertexo{y4dv7}{false}{exo}
+\insertexo{y4385}{false}{exo}
+\insertexo{2at6d}{false}{exo}
+%MA2\insertexo{us8px}{false}{exo}
+\insertexo{5en1r}{false}{exo}
+\insertexo{zu8c5}{false}{exo}
+\insertexo{1gayt}{false}{exo}
+%MA2\insertexo{pe1ew}{false}{exo}
+%MA2\insertexo{mj5qq}{false}{exo}
+%MA2\insertexo{hgcu8}{false}{exo}
+%MA2\insertexo{ek51g}{false}{exo}
+%MA2\insertexo{955md}{false}{exo}
+%MA2\insertexo{mkn1h}{false}{exo}
+%MA2\insertexo{pzy7s}{false}{exo}
+\insertexo{3yjzh}{false}{exo}
 
 \subsection{Limites de fonctions trigonométriques}
-\insertexo{byf5j}{true}{both}
-\insertexo{h9w1s}{true}{both}
-\insertexo{jqhm4}{true}{both}
+\insertexo{byf5j}{false}{exo}
+\insertexo{h9w1s}{false}{exo}
+\insertexo{jqhm4}{false}{exo}
 
 
 %Pas inclus 
-%\insertexo[exo:p1d]{vyj67}{true}{both}
-%\insertexo{4dptb}{true}{both}
-%\insertexo[exo:p1f]{g4gbb}{true}{both}
-%%\insertexo{extez}{true}{both}
-%%\insertexo{znghn}{true}{both}
-%\insertexo[exo:p2d]{tecfn}{true}{both}
-%%\insertexo{fazjq}{true}{both}
-%\insertexo{f7dft}{true}{both}
-%\insertexo{ac9v2}{true}{both}
-%\insertexo{nxc2s}{true}{both}
-%\insertexo{n9qmn}{true}{both}
-%\insertexo{bqknk}{true}{both}
-%\insertexo{gg7hk}{true}{both}
-%\insertexo{n41yn}{true}{both}
-%\insertexo{8j18h}{true}{both}
-%\insertexo{1w3pd}{true}{both}
-%\insertexo{x5h3r}{true}{both}
-%\insertexo{1bqh9}{true}{both}
-%\insertexo{du7be}{true}{both}
-%\insertexo{k3bry}{true}{both}
-%\insertexo{gm9uk}{true}{both}
-%\insertexo{taje8}{true}{both}
-%\insertexo{3vr28}{true}{both}
-%\insertexo{gb3ag}{true}{both}
-%\insertexo{c3uc9}{true}{both}
-%\insertexo{myjcq}{true}{both}
-%\insertexo{dpjwk}{true}{both}
-%\insertexo{97ryj}{true}{both}
-%\insertexo{n1axs}{true}{both}
-%\insertexo{wnd21}{true}{both}
-%\insertexo{98752}{true}{both}
-%\insertexo{t4gwt}{true}{both}
-%\insertexo{1w6s3}{true}{both}
-%\insertexo{yhzh8}{true}{both}
-%\insertexo{9yqnb}{true}{both}
-%\insertexo{byf5j}{true}{both}
-%\insertexo{h9w1s}{true}{both}
-%\insertexo{jqhm4}{true}{both}
-%\insertexo{1n93r}{true}{both}
-%\insertexo{qp2mw}{true}{both}
-%\insertexo{6qym1}{true}{both}
-%\insertexo{aatq8}{true}{both}
+%\insertexo[exo:p1d]{vyj67}{false}{exo}
+%\insertexo{4dptb}{false}{exo}
+%\insertexo[exo:p1f]{g4gbb}{false}{exo}
+%%\insertexo{extez}{false}{exo}
+%%\insertexo{znghn}{false}{exo}
+%\insertexo[exo:p2d]{tecfn}{false}{exo}
+%%\insertexo{fazjq}{false}{exo}
+%\insertexo{f7dft}{false}{exo}
+%\insertexo{ac9v2}{false}{exo}
+%\insertexo{nxc2s}{false}{exo}
+%\insertexo{n9qmn}{false}{exo}
+%\insertexo{bqknk}{false}{exo}
+%\insertexo{gg7hk}{false}{exo}
+%\insertexo{n41yn}{false}{exo}
+%\insertexo{8j18h}{false}{exo}
+%\insertexo{1w3pd}{false}{exo}
+%\insertexo{x5h3r}{false}{exo}
+%\insertexo{1bqh9}{false}{exo}
+%\insertexo{du7be}{false}{exo}
+%\insertexo{k3bry}{false}{exo}
+%\insertexo{gm9uk}{false}{exo}
+%\insertexo{taje8}{false}{exo}
+%\insertexo{3vr28}{false}{exo}
+%\insertexo{gb3ag}{false}{exo}
+%\insertexo{c3uc9}{false}{exo}
+%\insertexo{myjcq}{false}{exo}
+%\insertexo{dpjwk}{false}{exo}
+%\insertexo{97ryj}{false}{exo}
+%\insertexo{n1axs}{false}{exo}
+%\insertexo{wnd21}{false}{exo}
+%\insertexo{98752}{false}{exo}
+%\insertexo{t4gwt}{false}{exo}
+%\insertexo{1w6s3}{false}{exo}
+%\insertexo{yhzh8}{false}{exo}
+%\insertexo{9yqnb}{false}{exo}
+%\insertexo{byf5j}{false}{exo}
+%\insertexo{h9w1s}{false}{exo}
+%\insertexo{jqhm4}{false}{exo}
+%\insertexo{1n93r}{false}{exo}
+%\insertexo{qp2mw}{false}{exo}
+%\insertexo{6qym1}{false}{exo}
+%\insertexo{aatq8}{false}{exo}
 \newpage
 \section{Pistes pour réviser}
 \begin{itemize}
@@ -2518,10 +2375,10 @@ Dans les corrigés vous trouverez seulement des éléments de réponses. {\bfser
 	\item Une limite peut être déterminée ou indéterminée, en un nombre ou en l'infini. Donner des exemples de chacun de ces cas. 
 	\item Qu'est-ce qu'une indétermination~? Quels sont les différents cas, leurs particularités et les différentes manières de les lever~? Donner des exemples.
 	\item Quelle technique a-t-on à diposition pour calculer une limite qui contient une expression littérale avec une racine~?
-	\item Quelles sont les différences entre les asymptotes verticales, horizontales et obliques~? Expliquer et donner des exemples.
+%MA2	\item Quelles sont les différences entre les asymptotes verticales, horizontales et obliques~? Expliquer et donner des exemples.
 	\item Donner des conditions pour l'existence d'asymptotes verticales. Exemples. 
 	\item Donner des conditions pour l'existence d'asymptotes horizontales. Exemples.
-	\item Donner des conditions pour l'existence d'asymptotes obliques. Exemples.
+%MA2	\item Donner des conditions pour l'existence d'asymptotes obliques. Exemples.
 	\item Quelles sont les deux façons qui ont étudiées pour calculer une limite trigonométrique~? Exemples. 
 \end{itemize}
  \nocite{*}

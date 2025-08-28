@@ -1,0 +1,116 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage{../packages/canevas_modele}
+\settasks{
+  % the next two should be set to the same value so labels are aligned to the
+  % left
+  label-width = 2em ,
+  item-indent = 3em ,
+  %before-skip = -\parskip , % undo paragraph skip
+  %after-skip = -\parskip , % undo paragraph skip
+  label-offset=1em,
+  after-item-skip = 1em % undo paragraph skip
+}
+\usepackage{enumitem}
+\setlist[enumerate]{align=left,leftmargin=1cm,itemsep=10pt,parsep=0pt,topsep=0pt,rightmargin=0.5cm}
+\setlist[itemize]{align=left,labelsep=1em,leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,rightmargin=0cm}
+\renewcommand{\titreChapitre}{Limites et continuité} 
+\renewcommand{\regroupement}{Mathématiques 3$^{\text{e}}$ niveau normal}
+\begin{document}
+	\begin{center}
+	{\Large \bfseries  \titreChapitre}
+\end{center}
+{\bfseries Tableau récapitulatif} 
+\vspace{-0.8cm}
+\begin{center}
+\begin{longtblr}[
+  caption = {},
+]{
+  colspec={|X[1,m,l]|c|c|},
+  rowhead = 1,
+  row{1} = {font=\bfseries},
+  cell{2}{1} = {r=1}{}, % multirow
+  cell{2}{2} = {r=1}{}, % multirow
+  cell{2}{3} = {r=1}{}, % multirow
+  cell{3}{1} = {r=1}{},
+  cell{3}{2} = {r=1}{},
+  cell{3}{3} = {r=1}{},
+  cell{4}{1} = {r=1}{},
+  cell{4}{2} = {r=1}{},
+  cell{4}{3} = {r=1}{},
+  cell{5}{1} = {r=1}{},
+  cell{5}{2} = {r=1}{},
+  cell{5}{3} = {r=1}{},
+  cell{6}{1} = {r=1}{},
+  cell{6}{2} = {r=1}{},
+  cell{6}{3} = {r=1}{},
+  cell{7}{1} = {r=1}{},
+  cell{7}{2} = {r=1}{},
+  cell{7}{3} = {r=1}{},
+  cell{8}{1} = {r=1}{},
+  cell{8}{2} = {r=1}{},
+  cell{8}{3} = {r=1}{},
+  cell{9}{1} = {r=1}{},
+  cell{9}{2} = {r=1}{},
+  cell{9}{3} = {r=1}{},
+  cell{10}{1} = {r=1}{},
+  cell{10}{2} = {r=1}{},
+  cell{10}{3} = {r=1}{},
+}
+\hline[0.8pt]
+&Activités &\makecell{Exercices\\ à faire}\\
+\hline[0.8pt]
+\makecell{{\bf Continuité}\\Définition intuitive\\Théorème valeur intermédiaire} 
+&\makecell{1, 2}&\makecell{1 à 4}\\ 
+\hline
+\makecell{{\bf Limites en un nombre}\\Définitions et exemples\\Lien avec continuité} 
+&\makecell{4, 5}&\makecell{5 à 7}\\
+\hline
+\makecell{Limites de fonctions\\élémentaires}
+&\makecell{}&\makecell{8, 9}\\
+\hline
+\makecell{Propriétés des limites}
+&\makecell{}&\makecell{10 à 19}\\
+\hline
+\makecell{Indéterminations\\types $\frac{0}{0}$ et $\frac{1}{0}$}
+&\makecell{6, 7, 8}&\makecell{20 à 34}\\
+\hline
+\makecell{Asymptotes verticales}
+&\makecell{9}&\makecell{35, 36}\\
+\hline
+\makecell{{\bf Limites en l'infini}\\Définition et algèbre\\de l'infini\\
+Indéterminations avec\\de l'infini}
+&\makecell{10, 11}&\makecell{37 à 45}\\
+\hline
+\makecell{Asymptotes horizontales}
+&\makecell{12, 13, 14, 15}&\makecell{46 à 52}\\
+\hline
+\makecell{{\bf Limites trigonométriques}\\$\lim_{x \to 0} \frac{\sin x}{x} = 1$\\Indéterminations trigonométriques}
+&\makecell{16, 17}&\makecell{53 à 55}\\
+\hline[1pt]
+\end{longtblr}
+Terminé le~:~\ligne{6} 
+
+Revu aux dates~:
+\ligne{6}
+\ligne{6}
+
+Difficultés rencontrées~:
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+Remarques~:
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\end{center}
+\end{document}

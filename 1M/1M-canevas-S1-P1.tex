@@ -1,0 +1,154 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage{../packages/canevas_modele}
+\settasks{
+  % the next two should be set to the same value so labels are aligned to the
+  % left
+  label-width = 2em ,
+  item-indent = 3em ,
+  %before-skip = -\parskip , % undo paragraph skip
+  %after-skip = -\parskip , % undo paragraph skip
+  label-offset=1em,
+  after-item-skip = 1em % undo paragraph skip
+}
+\usepackage{enumitem}
+\setlist[enumerate]{align=left,leftmargin=1cm,itemsep=10pt,parsep=0pt,topsep=0pt,rightmargin=0.5cm}
+\setlist[itemize]{align=left,labelsep=1em,leftmargin=*,itemsep=0pt,parsep=0pt,topsep=0pt,rightmargin=0cm}
+\renewcommand{\titreChapitre}{Travail jusqu'au 31.10.2025} 
+\renewcommand{\regroupement}{Mathématiques 1$^{\text{re}}$ niveau avancé}
+\begin{document}
+	\begin{center}
+	{\Large \bfseries  \titreChapitre}
+\end{center}
+{\bfseries Tableau récapitulatif} 
+\vspace{-0.8cm}
+\begin{center}
+\begin{longtblr}[
+  caption = {},
+]{
+  colspec={|X[1,m,c]|c|c|c|},
+  rowhead = 1,
+  row{1} = {font=\bfseries},
+  cell{2}{1} = {r=1}{}, % multirow
+  cell{2}{2} = {r=1}{}, % multirow
+  cell{2}{3} = {r=1}{}, % multirow
+  cell{2}{4} = {r=4}{}, % multirow
+  cell{3}{1} = {r=1}{},
+  cell{3}{2} = {r=1}{},
+  cell{3}{3} = {r=1}{},
+  cell{3}{4} = {r=1}{},
+  cell{4}{1} = {r=1}{},
+  cell{4}{2} = {r=1}{},
+  cell{4}{3} = {r=1}{},
+  cell{4}{4} = {r=1}{},
+  cell{5}{1} = {r=1}{},
+  cell{5}{2} = {r=1}{},
+  cell{5}{3} = {r=1}{},
+  cell{5}{4} = {r=1}{},
+  cell{6}{1} = {r=1}{},
+  cell{6}{2} = {r=1}{},
+  cell{6}{3} = {r=1}{},
+  cell{6}{4} = {r=2}{},
+  cell{7}{1} = {r=1}{},
+  cell{7}{2} = {r=1}{},
+  cell{7}{3} = {r=1}{},
+  cell{7}{4} = {r=1}{},
+  cell{8}{1} = {c=4}{},
+  cell{8}{2} = {r=1}{},
+  cell{8}{3} = {r=1}{},
+  cell{8}{4} = {r=1}{},
+  cell{9}{1} = {r=1}{},
+  cell{9}{2} = {r=1}{},
+  cell{9}{3} = {r=1}{},
+  cell{9}{4} = {r=1}{},
+  cell{10}{1} = {r=1}{},
+  cell{10}{2} = {r=1}{},
+  cell{10}{3} = {r=1}{},
+  cell{10}{4} = {r=1}{},
+  cell{11}{1} = {r=1}{},
+  cell{11}{2} = {r=1}{},
+  cell{11}{3} = {r=1}{},
+  cell{11}{4} = {r=1}{},
+  cell{12}{1} = {r=1}{},
+  cell{12}{2} = {r=1}{},
+  cell{12}{3} = {r=1}{},
+  cell{12}{4} = {r=1}{},
+  cell{13}{1} = {r=1}{},
+  cell{13}{2} = {r=1}{},
+  cell{13}{3} = {r=1}{},
+  cell{13}{4} = {r=1}{},
+  cell{14}{1} = {r=1}{},
+  cell{14}{2} = {r=1}{},
+  cell{14}{3} = {r=1}{},
+  cell{14}{4} = {r=1}{},
+  cell{16}{1} = {c=4}{},
+  cell{16}{2} = {r=1}{},
+  cell{16}{3} = {r=1}{},
+  cell{16}{4} = {r=1}{},
+}
+\hline[0.8pt]
+&Activités &\makecell{Exercices\\ à faire}&Remédiation\\
+\hline[0.8pt]
+\makecell{{\bf Calcul numérique}\\Division euclidienne} 
+&\makecell{1, 2}&\makecell{1 à 5}&\makecell{1-37}\\ 
+\hline
+\makecell{Nombres rationnels} 
+&\makecell{3, 4}&\makecell{6, 7}&\makecell{}\\
+\hline
+\makecell{Racines}
+&\makecell{5}&\makecell{8 à 12}&\makecell{}\\
+\hline
+\makecell{{\bf Ensembles et intervalles}\\Ensembles de nombres}
+&\makecell{6,7}&\makecell{13 à 17}&\makecell{}\\
+\hline
+\makecell{Ensembles quelconques et opérations d'ensembles}
+&\makecell{8, 9}&\makecell{18 à 26}&\makecell{38-50}\\
+\hline
+\makecell{Intervalles réelles}
+&\makecell{10, 11}&\makecell{27 à 39}&\makecell{}\\
+\hline
+	\makecell{{\bf Fin du champ de la première épreuve}}&&&\\
+\hline
+\makecell{{\bf Calcul littéral}\\Traduire un énoncé}
+&\makecell{14}&\makecell{40, 41}&\makecell{}\\
+\hline
+\makecell{Isoler une variable}
+&\makecell{}&\makecell{42 à 44}&\makecell{}\\
+\hline
+\makecell{L'algèbre comme\\outil de preuve}
+&\makecell{15}&\makecell{45 à 50}&\makecell{}\\
+\hline
+\makecell{Développer et réduire}
+&\makecell{}&\makecell{51 à 61}&\makecell{}\\
+\hline
+\makecell{Identités remarquables}
+&\makecell{16}&\makecell{62 à 70}&\makecell{}\\
+\hline
+\makecell{Factorisation}
+&\makecell{17}&\makecell{71 à 86}&\makecell{}\\
+\hline
+\makecell{{\bf Équations}\\Équations du premier degré\\Résolution et problèmes}
+&\makecell{18, 19,20}&\makecell{87 à 97}&\makecell{}\\
+\hline
+\makecell{{\bf Fin du champ de la deuxième épreuve}}&&&\\
+\hline[1pt]
+\end{longtblr}
+Difficultés rencontrées~:
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+Remarques~:
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\ligne{18}
+\end{center}
+\end{document}
