@@ -83,7 +83,7 @@
 \fi
 }
 \fancyfoot[C]{\thepage/\pageref{LastPage}}
-\fancyfoot[LE,RO]{\sourcecours}
+\fancyfoot[LE,RO]{\footnotesize Version du \today}
 \fancyfoot[LO,RE]{\slshape{\cours}} 
 \RequirePackage{../packages/fontes2}
 \RequirePackage{fontawesome5}
@@ -317,7 +317,7 @@ after skip=10pt,
 
 \newcommand{\checkBox}{\fbox{\rule{0pt}{1em}\hspace{1em}}} % simple square
 \newcommand{\qrwithlabel}[2]{%
-    \begin{minipage}{0.15\linewidth} % Adjust width to fit 4 on a line
+    \begin{minipage}{0.15\pagewidth} % Adjust width to fit 4 on a line
         \centering
         \textbf{#1} \\ % Description on top
 	\smallskip
