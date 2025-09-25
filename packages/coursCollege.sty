@@ -276,7 +276,10 @@ after skip=10pt,
     \end{longtable}%
   }
 
-\renewenvironment{proof}{{\bfseries  Preuve.}}{\hfill$\square$}
+\RenewDocumentEnvironment{proof}{o} % "o" = optional argument
+{\par\noindent{\bfseries Preuve}%
+  \IfValueT{#1}{ {\bfseries de} #1}. \ }
+  {\hfill$\square$\par}
 
 
 \RequirePackage{eqparbox}
@@ -415,3 +418,5 @@ after skip=10pt,
 \newcommand{\nunit}[1]{\SI[mode=text]{}{#1}}
 \renewcommand\labelitemii{\bullet}
 \renewcommand\labelitemi{\bullet}
+\usepackage{enumitem}
+\setlist[itemize]{label=$\bullet$}
