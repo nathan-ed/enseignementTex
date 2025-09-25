@@ -11,11 +11,14 @@
 \contenu{
 \tcblower
 Trouver la pente de la tangente à la parabole d’équation \(y=x^2\) au point \((-1;1)\).
-\begin{tasks}(1)
-  \task 
-\end{tasks}
 }
 \correction{
-
+	\tcblower
+	$\begin{aligned}
+		f'(-1) &= \displaystyle\lim_{h \to 0} \frac{f(-1+h) - f(-1)}{h}
+		       =\displaystyle\lim_{h \to 0} \frac{(-1+h)^2 - 1}{h}\\
+		       &= \displaystyle\lim_{h \to 0} \frac{1 - 2h + h^2 - 1}{h}
+		       = \displaystyle\lim_{h \to 0} \frac{-2h + h^2}{h} = \displaystyle\lim_{h \to 0} (-2 + h) = -2
+	\end{aligned}$
 }
 

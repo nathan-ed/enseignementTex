@@ -17,20 +17,17 @@ On considère le théorème « Dérivée de la différence de deux fonctions »
 \task On donne ci-dessous une démonstration :
 \end{tasks}
 
-Démonstration : $(f - g)'(x) =$
-$\displaystyle\lim_{h \to 0} \dfrac{(f - g)(x + h) - (f - g)(x)}{h}$
+Démonstration : 
 
-$= \displaystyle\lim_{h \to 0} \dfrac{(f(x + h) - g(x + h)) - (f(x) - g(x))}{h}$
-
-$= \displaystyle\lim_{h \to 0} \dfrac{f(x + h) - f(x) - g(x + h) + g(x)}{h}$
-
-$= \displaystyle\lim_{h \to 0} \dfrac{f(x + h) - f(x) - (g(x + h) - g(x))}{h}$
-
-$= \displaystyle\lim_{h \to 0} \dfrac{f(x + h) - f(x)}{h} - \dfrac{g(x + h) - g(x)}{h}$
-
-$= \displaystyle\lim_{h \to 0} \dfrac{f(x + h) - f(x)}{h} - \displaystyle\lim_{h \to 0} \dfrac{g(x + h) - g(x)}{h}$
-
-$= f'(x) - g'(x)$
+$\begin{aligned}(f - g)'(x) &=
+\displaystyle\lim_{h \to 0} \dfrac{(f - g)(x + h) - (f - g)(x)}{h}\\
+&= \displaystyle\lim_{h \to 0} \dfrac{(f(x + h) - g(x + h)) - (f(x) - g(x))}{h}\\
+&= \displaystyle\lim_{h \to 0} \dfrac{f(x + h) - f(x) - g(x + h) + g(x)}{h}\\
+&= \displaystyle\lim_{h \to 0} \dfrac{f(x + h) - f(x) - (g(x + h) - g(x))}{h}\\
+&= \displaystyle\lim_{h \to 0} \dfrac{f(x + h) - f(x)}{h} - \dfrac{g(x + h) - g(x)}{h}\\
+&= \displaystyle\lim_{h \to 0} \dfrac{f(x + h) - f(x)}{h} - \displaystyle\lim_{h \to 0} \dfrac{g(x + h) - g(x)}{h}\\
+&= f'(x) - g'(x)\\
+\end{aligned}$
 
 Justifier chaque étape de la démonstration.
 }

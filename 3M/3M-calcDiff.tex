@@ -33,9 +33,6 @@
 \end{tikzpicture}
 \end{center}\vspace{-1cm}
 \tableofcontents
-{\footnotesize Version du \today}
-\newpage
-\section*{Prérequis}
 
 \newpage
 \section{La dérivée}
@@ -920,7 +917,7 @@ Soit $k$ un nombre négatif. Notons que
    \medskip
 
    \begin{proof}
-	   La preuve est laissée en exercice (exercice \ref{exo:derQuot}).
+	   La preuve est laissée en exercice (exercice \ref{both:derQuot}).
    \end{proof}
 \end{prop}
 
@@ -1070,79 +1067,133 @@ $[\sin(x^2 - 1)]' = \cos(x^2 - 1) \cdot (x^2 - 1)' = \cos(x^2 - 1) \cdot (2x)$
 d'où enfin : $[[\sin(x^2 - 1)]^3]' = 3[\sin(x^2 - 1)]^2 \cos(x^2 - 1) \cdot 2x = 6x\sin^2(x^2 - 1)\cos(x^2 - 1)$
 \end{exemple}
 
-
-\section{Activité}
-
+\subsection{Angle entre deux courbes}
+\begin{definition}
+	\tcblower
+	L'angle entre deux courbes est l'angle aigu formé par les droites tangentes des deux courbes en un de leurs points d'intersection.
+\end{definition}
+\begin{formule}
+	\tcblower
+	L'angle entre les graphes de deux fonctions $f$ et $g$ en un point d'intersection d'abscisse $x=a$ est 
+	\[\alpha=|\arctan(f^\prime(a))-\arctan(g^\prime(a))\,|\]
+\end{formule}
+\begin{exemple}
+	\tcblower
+	Les graphes des fonctions $f$ et $f$ données par $f(x)=x^2$ et $g(x)=\dfrac{8}{x}$ se coupent en un point d'abscisse $x=2$. On a $f'(x)=2x$ et $g'(x)=-\dfrac{8}{x^2}$, donc $f'(2)=4$ et $g'(2)=-2$. L'angle entre les deux graphes en donc 
+	\[|\arctan(4)-\arctan(2)\,|\simeq 139,4^\circ\]
+\end{exemple}
 
 
 \subsection{Exercices}
 \subsubsection{Introduction~: La tangente à une courbe en un point}
 \subsubsection{Définitions et exemples}
-\insertexo{j2esz}{true}{exo}
-\insertexo{mmztw}{true}{exo}
-\insertexo{h2mu9}{true}{exo}
-\insertexo{wdzr4}{false}{exo}
-\insertexo{9ghy8}{false}{exo}
-\insertexo{uhfwb}{true}{exo}
-\insertexo{sjs2h}{true}{exo}
-\insertexo{hb4kv}{true}{exo}
-\insertexo{g75hx}{true}{exo}
+\insertexo{j2esz}{true}{both}
+\insertexo{mmztw}{true}{both}
+\insertexo{h2mu9}{true}{both}
+\insertexo{wdzr4}{true}{both}
+\insertexo{9ghy8}{true}{both}
+\insertexo{uhfwb}{true}{both}
+\insertexo{sjs2h}{true}{both}
+\insertexo{hb4kv}{true}{both}
+\insertexo{g75hx}{true}{both}
+\insertexo{v911h}{false}{both}
+\insertexo{atf6t}{false}{both}
+
 
 \subsubsection{Le nombre dérivé}
-\insertexo{rqd6n}{true}{exo}
+\insertexo{rqd6n}{true}{both}
+\insertexo{pajju}{false}{both}
+
 \subsubsection{Relation avec la continuité}
+\insertexo{6ekwp}{false}{both}
+
 \subsubsection{Règles de dérivation}
 
-\insertexo{raguk}{true}{exo}
-\insertexo{uc9rv}{false}{exo}
-\insertexo{5fsdv}{false}{exo}
-\insertexo{3mgs5}{false}{exo}
-\insertexo[exo:derQuot]{972y4}{false}{exo}
-\insertexo{4pfpm}{true}{exo}
-\insertexo{bgaa8}{true}{exo}
+\insertexo{raguk}{true}{both}
+\insertexo{uc9rv}{true}{both}
+\insertexo{5fsdv}{true}{both}
+\insertexo{3mgs5}{true}{both}
+\insertexo[exo:derQuot]{972y4}{true}{both}
+\insertexo{4pfpm}{true}{both}
+\insertexo{bgaa8}{true}{both}
 
 \subsubsection{L'équation de la tangente}
-\insertexo{ayg94}{true}{exo}
-\insertexo{pbjwq}{true}{exo}
-\insertexo{5tfx9}{true}{exo}
-\insertexo{ddnv1}{true}{exo}
-\insertexo{nj1k9}{true}{exo}
-\insertexo{p9k57}{true}{exo}
-\insertexo{22t18}{true}{exo}
+\insertexo{ayg94}{true}{both}
+\insertexo{pbjwq}{true}{both}
+\insertexo{5tfx9}{true}{both}
+\insertexo{ddnv1}{true}{both}
+\insertexo{nj1k9}{true}{both}
+\insertexo{p9k57}{true}{both}
+\insertexo{22t18}{true}{both}
 \subsubsection{Dérivation de fonctions trigonométriques}
 
-\insertexo{aef2y}{true}{exo}
-\insertexo{u68mh}{true}{exo}
-\insertexo{areny}{true}{exo}
-\insertexo{hhksj}{true}{exo}
-\newpage
+\insertexo{aef2y}{true}{both}
+\insertexo{u68mh}{true}{both}
+\insertexo{areny}{true}{both}
+\insertexo{hhksj}{true}{both}
+
+\subsubsection{Angle entre deux courbes}
+\insertexo{5bbkd}{true}{both}
+\insertexo{kfy9s}{true}{both}
+\insertexo{mxwa2}{true}{both}
+\insertexo{91jqx}{true}{both}
+
 \section{Le théorème des accroissement finis et ses applications}
 
 \subsection{Le théorème des accroissement finis}
 Nous allons étudier dans ce chapitre un théorème qui peut paraître évident, mais qui est très utile~: le théorème des accroissements finis. 
 \medskip
 
-\begin{prop}
+\begin{prop}[label=prop:max]
+	(avec démonstration)
 	\tcblower
-Soit $f$ une fonction dérivable en $x_0$. 
+	Soit $f$ une fonction dérivable sur un intervalle $\ointerval{a}{b}$. Soit $c\in \ointerval{a}{b}$ tel que $f(c)$ soit un maximum de $f$ sur l'interval $\ointerval{a}{b}$. Alors, $f'(c)=0$.
 
-Si $f'(x_0)>0$, alors
-\[f(x_0-h)<f(x_0)<f(x_0+h)\]
-pour tout nombre positif $h$ assez petit. 
+	\begin{proof}
+	Puisque l'image de $c$ est un maximum, pour un $h$ assez petit, on a
+	\[f(c)\geq f(x),  \forall x\in \ointerval{c-h}{c+h}.\]	
+	Ce qui est équivalent à 
+	\begin{equation}
+	f(c)-f(x)\geq 0,  \forall x\in \ointerval{c-h}{c+h}.
+	\tag{$\star$}
+	\label{eq:max}
+\end{equation}
+	Puisque $f$ est dérivable sur $\ointerval{a}{b}$, on a que  
+	\[f'(c)=\lim_{h\to 0^+}\dfrac{f(c+h)-f(c)}{h}=\lim_{h\to 0^-}\dfrac{f(c+h)-f(c)}{h}.\]
 
-Si $f'(x_0)<0$, alors
-\[f(x_0+h)<f(x_0)<f(x_0-h)\]
-pour tout nombre positif $h$ assez petit. 
+	Calculons le signe de ces deux limites.
+	\begin{align*}
+		\text{signe}\left(\lim_{h\to 0^+}\dfrac{f(c+h)-f(c)}{h}\right)&=\dfrac{\text{signe}\left(\displaystyle{\lim_{h\to 0^+}}f(c+h)-f(c)\right)}{\text{signe}\left(\displaystyle{\lim_{h\to 0^+}}h\right)}\\
+		&=\dfrac{«+»}{«+»}=«+»
+\end{align*}
+
+	\begin{align*}
+		\text{signe}\left(\lim_{h\to 0^-}\dfrac{f(c+h)-f(c)}{h}\right)&=\dfrac{\text{signe}\left(\displaystyle{\lim_{h\to 0^-}}f(c+h)-f(c)\right)}{\text{signe}\left(\displaystyle{\lim_{h\to 0^-}}h\right)}\\
+		&=\dfrac{«+»}{«-»}=«-»
+\end{align*}
+Où le signe du numérateur est positif par \eqref{eq:max}. 
+	Le seul nombre qui est à la fois positif et négatif est $0$, donc $f'(c)=0$.
+	\end{proof}
 \end{prop}
+\begin{remarque}
+	\tcblower
+Un résultat identique est valable pour un minimum, il sera démontré en exercice.
+\end{remarque}
 
 \begin{thm}
 	Thm de Rolle
+
+	(avec démonstration)
 	\tcblower
-	Soit $f$ une fonction dérivable sur $] a;b[$ et continue sur $[a;b]$. Si $f(a)=f(b)=0$, alors il existe (au moins un) $c\in] a;b[$ tel que 
+	Soit $f$ une fonction dérivable sur $] a;b[$ et continue sur $[a;b]$. 
+
+	Si $f(a)~=~f(b)~=~0$, alors il existe (au moins un) $c\in] a;b[$ tel que 
 	\[f'(c)=0.\]
 \end{thm}
 \begin{thm}
 	Thm des accroissements finis
+
+	(avec démonstration)
 	\tcblower
 	Soit $f$ une fonction dérivable sur $] a;b[$ et continue sur $[a;b]$, alors il existe (au moins un) $c\in ]a;b[$ tel que 
 	\[f'(c)=\dfrac{f(b)-f(a)}{b-a}.\]
@@ -1154,7 +1205,7 @@ Maintenant que l'on a une bonne idée de ce que représente la dérivée, on com
 \task une fonction est « décroissante » sur un intervalle sur lequel sa dérivée est négative ;
 \task une fonction est constante sur un intervalle sur lequel sa dérivée est nulle.
 \end{tasks}
-On va démontrer ces théorèmes en activités. 
+Mais que veut dire « croissante » et « décroissante » mathématiquement ?
 \begin{definition}
 	\tcblower
 	On dit qu'une fonction est
@@ -1182,15 +1233,20 @@ La fonction $f(x)=x^2$ est décroissante sur l'intervalle $]-\infty;0]$ et crois
 	\tcblower
 	La fonction $f(x)=x^3$ est croissante sur $\mathbb{R}$.	
 \end{exemple}
+On va démontrer ces résultats en exercice.
 \begin{thm}
 	\tcblower
 	Soit $f$ une fonction dérivable sur un intervalle $]a;b[$, alors  
 	\begin{itemize}
-		\item Si $f'(x)>0$ pour tout $x\in I$, alors $f$ est croissante sur $I$;
-		\item Si $f'(x)<0$ pour tout $x\in I$, alors $f$ est décroissante sur $I$;
+		\item Si $f'(x)>0$ pour tout $x\in I$, alors $f$ est strictement croissante sur $I$;
+		\item Si $f'(x)<0$ pour tout $x\in I$, alors $f$ est strictement décroissante sur $I$;
 		\item Si $f'(x)=0$ pour tout $x\in I$, alors $f$ est constante sur $I$.
 	\end{itemize}
 \end{thm}
+\begin{formule}
+	\tcblower
+	Cela nous donne le critère suivant 
+\end{formule}
 \begin{exemple}
 	\tcblower
 	Étude de la monotonie de $f(x)=\sqrt{1-x^2}$
@@ -1639,108 +1695,6 @@ La partie la plus complexe dans la résolution d'un problème d'optimisation con
 \begin{activite}
 	Quelles doivent être les dimensions d'une boîte de base carrée (pas un cube!) sans couvercle de contenance un litre pour que sa construction demande un minimum de matériau~?
 \end{activite}
-\subsection{Concavité et points d'inflexion}
-\subsection{Application à l'étude de fonctions}
-
-\subsection{Applications}
-
-
-\subsection{Exercices}
-
-\insertexo{g4sjk}{true}{exo}
-\insertexo{d4c88}{true}{exo}
-\subsubsection{Le théorème des accroissement finis}
-\insertexo{d4c88}{true}{exo}
-\insertexo{aef2y}{true}{exo}
-\insertexo{n67du}{true}{exo}
-\insertexo{5hev4}{true}{exo}
-\insertexo{hju27}{true}{exo}
-\insertexo{zar8b}{true}{exo}
-\insertexo{x5ny2}{true}{exo}
-\insertexo{r9x4h}{true}{exo}
-\insertexo{147ae}{false}{exo}
-\insertexo{kafhh}{false}{exo}
-\insertexo{4qat4}{false}{exo}
-\insertexo{qr5rf}{false}{exo}
-\insertexo{7nemv}{false}{exo}
-\insertexo{bw6xm}{false}{exo}
-\insertexo{3m62m}{false}{exo}
-\insertexo{8bwde}{false}{exo}
-\insertexo{pjez7}{false}{exo}
-\insertexo{c61qc}{false}{exo}
-\insertexo{n67du}{true}{exo}
-
-\subsubsection{Fonctions croissantes et décroissantes}
-\insertexo{5pyfw}{false}{exo}
-
-\subsubsection{Maximum et minimum}
-\insertexo{5ab1m}{false}{exo}
-\insertexo{fxy4n}{false}{exo}
-
-
-\subsubsection{Optimisation}
-\insertexo{ddm8s}{false}{exo}
-\insertexo{sgvqw}{false}{exo}
-\insertexo{tnh2w}{false}{exo}
-\insertexo{rqexr}{false}{exo}
-\insertexo{h6e65}{false}{exo}
-\insertexo{fadzs}{false}{exo}
-\insertexo{8csxg}{false}{exo}
-\insertexo{js1pf}{false}{exo}
-\insertexo{fydq8}{false}{exo}
-\insertexo{5yxjm}{false}{exo}
-\insertexo{nsmhh}{false}{exo}
-\insertexo{74119}{false}{exo}
-\insertexo{b52kh}{false}{exo}
-\insertexo{j8hdu}{false}{exo}
-\insertexo{ju1wa}{false}{exo}
-\insertexo{p3dkt}{false}{exo}
-\insertexo{p7rny}{false}{exo}
-\insertexo{5xfze}{false}{exo}
-\insertexo{eunpj}{false}{exo}
-\insertexo{exev8}{false}{exo}
-\insertexo{f6wvk}{false}{exo}
-\insertexo{qjpyj}{false}{exo}
-\insertexo{6qaau}{false}{exo}
-\insertexo{3e21y}{false}{exo}
-\insertexo{fxwf8}{false}{exo}
-
-\insertexo{gmcwt}{true}{exo}
-\insertexo{shcv8}{true}{exo}
-\insertexo{9q8gz}{true}{exo}
-\insertexo{xkwd5}{true}{exo}
-\insertexo{bs74m}{true}{exo}
-\insertexo{nv48n}{true}{exo}
-\insertexo{pmwx1}{true}{exo}
-\insertexo{fnj4z}{true}{exo}
-\insertexo{bhu5u}{true}{exo}
-\insertexo{sms7s}{true}{exo}
-
-\subsubsection{Concavité et points d'inflexion}
-\insertexo{n94b7}{false}{exo}
-\insertexo{qk7e9}{false}{exo}
-\insertexo{tfdtr}{false}{exo}
-\insertexo{nkasx}{false}{exo}
-\insertexo{mdru5}{false}{exo}
-
-\subsubsection{Application à l'étude de fonctions}
-\insertexo{515q8}{true}{exo}
-\insertexo{yn5fe}{true}{exo}
-\insertexo{3exms}{true}{exo}
-\insertexo{w3pgx}{true}{exo}
-\subsubsection{Applications}
-\insertexo{fg15r}{true}{exo}
-\insertexo{2mqwc}{true}{exo}
-\insertexo{m4mzh}{true}{exo}
-\insertexo{wu8y4}{true}{exo}
-\insertexo{u7dja}{true}{exo}
-\insertexo{e1wtj}{true}{exo}
-\insertexo{hvq58}{true}{exo}
-\insertexo{uvgs1}{true}{exo}
-\insertexo{7zb7h}{true}{exo}
-
-\section{Activités}
-\insertexo{ezscr}{true}{exo}
 
  \nocite{*}
  \vspace{-10pt}
