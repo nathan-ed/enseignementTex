@@ -15,5 +15,16 @@ $\left(f(x)^n\right)'=nf(x)^{n-1}f'(x)$.
 }
 \correction{
 \tcblower
+On procède par récurrence. Le base de l'induction pour $n=1$, on a $(f(x))'=f'(x)$, qui est évidemment vrai. On suppose que $f(x)^k$ est dérivable avec la formule $(f(x)^k)'=kf(x)^{k-1}f'(x)$ et on le montre pour $k+1$. Si $f(x)^k$ est dérivable, alors $f(x)^{k+1}$ l'est aussi, car $f(x)^{k+1}=f(x)^k\cdot f(x)$. On utilise la formule du produit pour démontrer la formule pour $(f(x)^{k+1})'$.
+On a
+
+$\begin{aligned}
+	(f(x)^{k+1})'&=(f(x)\cdot f(x)^k)'\\
+		     &=f(x)\cdot (f(x)^k)'+f'(x)f(x)^k\\
+		     &=f(x)\cdot kf(x)^{k-1}f'(x)+f'(x)f(x)^k \quad \text{(en utilisant l'hypothèse de récurrence)}\\
+		     &=kf(x)^{k}f'(x)+f'(x)f(x)^k\\
+		     &=(k+1)f(x)^kf'(x)
+\end{aligned}
+$
 }
 

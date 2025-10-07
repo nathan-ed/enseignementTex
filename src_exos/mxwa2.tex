@@ -14,6 +14,26 @@ Déterminer l'équation de la droite $d$ qui passe par l'origine et qui coupe or
 }
 \correction{
 \tcblower
-$y=(1+\sqrt{2}) x$ (asymptotes: A.O. $y=x$, A.V. $x=0$ )
+
+On a 
+\[
+y = \frac{x^{2}+1}{x} = x+\frac{1}{x}, \qquad y'(x)=1-\frac{1}{x^{2}}.
+\]
+La droite $d:y=mx$ coupe la courbe en $M(a,\;a+\tfrac{1}{a})$ et passe par l'origine $(0\,;\,0)$, donc 
+\[
+	m=\frac{a+\tfrac{1}{a}-0}{a-0}=1+\frac{1}{a^{2}} \quad \text{(formule de la pente)}.
+\]
+Condition d’orthogonalité : 
+\[
+\Bigl(1+\tfrac{1}{a^{2}}\Bigr)\Bigl(1-\tfrac{1}{a^{2}}\Bigr)=-1 
+\;\;\Longrightarrow\;\; a^{4}=\tfrac{1}{2}.
+\]
+Ainsi $m=1+\sqrt{2}$ et
+\[
+d:\; y=(1+\sqrt{2})x.
+\]
+
+Les asymptotes sont $y=x$ et $x=0$, d’angles $45^\circ$ et $90^\circ$ avec l'axe des ordonnées à l'origine.  
+Or l'angle de $d$ avec l'axe des ordonnées à l'origine vaut $\arctan(1+\sqrt{2})=67{,}5^\circ=\tfrac{45^\circ+90^\circ}{2}$, donc $d$ est leur bissectrice.
 }
 

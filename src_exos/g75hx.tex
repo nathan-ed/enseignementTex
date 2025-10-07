@@ -9,22 +9,73 @@
 \annee{2425}
 
 \contenu{
+	{\bfseries Entraînement individuel}
 \tcblower
 Calculer, à partir de la définition de la fonction dérivée, la dérivée des fonctions réelles ci-dessous ; représenter \(f\) et \(f'\) dans un même repère et interpréter graphiquement le résultat (sauf pour les points d) et f))~:
 \begin{tasks}(2)
   \task \(f(x)=7\).
   \task \(f(x)=x\).
   \task \(f(x)=3x\).
-  \task \(f(x)=ax+b, \,\, a,b\in\mathbb{R}\).
   \task \(f(x)=x^2\).
   \task \(f(x)=ax^2+bx+c, \,\, a,b,c\in\mathbb{R}\).
   \task \(f(x)=x^3\).
-  \task \(f(x)=\sqrt{x}\).
   \task \(f(x)=\dfrac{1}{x}\).
   \task \(f(x)=\dfrac{1}{x^2+1}\).
 \end{tasks}
 }
 \correction{
+	\tcblower
+
+\begin{tasks}
+\task $f(x)=7$. 
+$
+f'(x)=\displaystyle\lim_{h\to 0}\dfrac{7-7}{h}=0.
+$
+
+\task $f(x)=x$. 
+$
+f'(x)=\displaystyle\lim_{h\to 0}\dfrac{(x+h)-x}{h}=1.
+$
+
+\task $f(x)=3x$. 
+$
+f'(x)=\displaystyle\lim_{h\to 0}\dfrac{3(x+h)-3x}{h}=3.
+$
+
+
+\task $f(x)=x^{2}\quad f'(x)=\displaystyle\lim_{h\to 0}\dfrac{(x+h)^{2}-x^{2}}{h}
+=\displaystyle\lim_{h\to 0}(2x+h)=2x.$
+
+\task $f(x)=ax^{2}+bx+c,\ a,b,c\in\mathbb{R}$.
+
+$
+\begin{aligned}
+f'(x)
+&=\displaystyle\lim_{h\to 0}\frac{a(x+h)^{2}+b(x+h)+c-\bigl(ax^{2}+bx+c\bigr)}{h} \\[6pt]
+&=\displaystyle\lim_{h\to 0}\frac{a(x^{2}+2xh+h^{2})+bx+bh+c-ax^{2}-bx-c}{h} \\[6pt]
+&=\displaystyle\lim_{h\to 0}\frac{2axh+ah^{2}+bh}{h} \\[6pt]
+&=\displaystyle\lim_{h\to 0}\bigl(2ax+ah+b\bigr) \\[6pt]
+&=2ax+b.
+\end{aligned}
+$
+
+\task $f(x)=x^{3}$. 
+$
+f'(x)=\displaystyle\lim_{h\to 0}\dfrac{(x+h)^{3}-x^{3}}{h}
+=\displaystyle\lim_{h\to 0}(3x^{2}+3xh+h^{2})=3x^{2}.
+$
+\task $f(x)=\dfrac{1}{x}$, $x\neq 0$. 
+\[
+f'(x)=\displaystyle\lim_{h\to 0}\dfrac{\dfrac{1}{x+h}-\dfrac{1}{x}}{h}
+=\displaystyle\lim_{h\to 0}\dfrac{-1}{x(x+h)}=-\dfrac{1}{x^{2}}.
+\]
+
+\task $f(x)=\dfrac{1}{x^{2}+1}$. 
+\[
+f'(x)=\displaystyle\lim_{h\to 0}\dfrac{\dfrac{1}{(x+h)^{2}+1}-\dfrac{1}{x^{2}+1}}{h}
+=-\dfrac{2x}{(x^{2}+1)^{2}}.
+\]
+\end{tasks}
 
 }
 

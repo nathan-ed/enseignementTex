@@ -385,12 +385,12 @@ Pour répondre à cette question, nous choisissons un petit nombre $h \neq 0$ et
 
 Lorsque $h$ tend vers zéro (une limite!), la droite sécante tend (si la limite existe) vers « la tangente de $f$ au point $(x, f(x))$ ».
 
-Puisque les droites sécantes ont une pente de la forme
+Ces droites sécantes ont une pente (aussi appelé taux de variation) donnée par
 \begin{equation}
 \frac{f(x + h) - f(x)}{h},
 \end{equation}
 
-nous admettons que la position limite de ces sécantes ont une pente
+nous admettons que la position limite de ces sécantes ont une pente 
 \begin{equation}
 \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}.
 \end{equation}
@@ -400,6 +400,8 @@ Nous commençons l'étude systématique de telles limites, ce que les mathémati
 \begin{center}
 \qrwithlabel{Voyage au pays de maths -- Flâneries infinitésimales}{https://www.arte.tv/fr/videos/097454-003-A/voyages-au-pays-des-maths/}
 \end{center}
+\insertexo{j2esz}{true}{exo}
+\insertexo{uhfwb}{true}{exo}
 \subsection{Définitions et exemples}
 \begin{definition}
 	\tcblower
@@ -566,6 +568,14 @@ width=5.5cm,height=4cm,
 	Calcul de la dérivée de $f(x)=\sqrt{1-x^2}$ pour $x\in ]-1;1[$.
 	\vspace{10cm}
 \end{exemple}
+\insertexo{h2mu9}{true}{exo}
+\insertexo{wdzr4}{true}{exo}
+\insertexo{9ghy8}{true}{exo}
+\insertexo{mmztw}{true}{exo}
+\insertexo{hb4kv}{true}{exo}
+\insertexo{sjs2h}{true}{exo}
+\insertexo{v911h}{true}{exo}
+\insertexo{g75hx}{true}{exo}
 
 
 \subsection{Le nombre dérivé}
@@ -599,6 +609,8 @@ $$f(x) = \begin{cases}
     x^3 + 1, & 0 < x \end{cases}.$$
     \vspace{10cm}
 \end{exemple}
+
+\insertexo{pajju}{true}{exo}
 \subsection{Relation avec la continuité}
 
 Une fonction peut être continue en un certain nombre $x$ sans y être dérivable.
@@ -712,6 +724,9 @@ donc $f$ est bien continue en $x$.
 	La réciproque de ce théorème n'est pas valable comme nous l'avons vu aux exemples \ref{ex:valabs} et \ref{ex:anguleux}.
 \end{remarque}
 
+\insertexo{atf6t}{true}{exo}
+\insertexo{6ekwp}{true}{exo}
+
 \subsection{Règles de dérivation}
 Calculer les dérivées de fonction comme
 \[f(x)=(x^3-2)(4x+1)\quad \text{ou encore} \quad f(x)=\dfrac{6x^2-1}{x^4+5x+1}\]
@@ -738,6 +753,7 @@ Voici un résumé des formules (démontrées plus bas ou en exercices).
 	\item[Produit] $(f\cdot g)'(x)=f(x)\cdot g'(x)+f'(x)\cdot g(x)$
 	\item[Inverse] $\left(\dfrac{1}{g}\right)'(x)=-\dfrac{g'(x)}{g(x)^2}$, si $g(x)\neq 0$
 	\item[Quotient] $\left(\dfrac{f}{g}\right)'(x)=-\dfrac{f(x)\cdot g'(x)-f'(x)\cdot g(x)}{g(x)^2}$
+	\item[Exposant] $x^{\frac{n}{m}}=\frac{n}{m}x^{\frac{n}{m}-1}, \forall n,m\in \mathbb{Z}, m\neq 0$
 \end{description}
 \end{formules}
 \begin{prop}
@@ -812,24 +828,38 @@ Puisque $f$ est dérivable en $x$, nous savons que $f$ est continue en $x$ et ai
    \tcblower
    Si $f(x)=x^n$ pour $n\in \mathbb{N}$, alors $f'(x)=n\cdot x^{n-1}$.
 
+%   \begin{proof}
+%   	Nous procédons par induction sur $n$. Si $n = 1$,   	$$p(x) = x,$$
+%   	
+%   	dont nous savons qu'elle satisfait
+%   	$$p'(x) = 1 = 1 \cdot x^0.$$
+%   	
+%   	
+%   	Nous supposons maintenant que le résultat est valable pour $n = k$ et montrons qu'il tient pour $n = k + 1$. Nous posons
+%
+%   	$$p(x) = x^{k+1}$$
+%   	
+%   	et notons que
+%   	$$p(x) = x \cdot x^k.$$
+%   	
+%   	En appliquant la règle du produit et notre hypothèse d'induction, on a 
+%   	$$p'(x) = x \cdot kx^{k-1} + 1 \cdot x^k = (k+1)x^k.$$
+%   	
+%   	Ceci montre que la formule tient pour $k + 1$.
+%   \end{proof}
    \begin{proof}
-   	Nous procédons par induction sur $n$. Si $n = 1$,   	$$p(x) = x,$$
-   	
-   	dont nous savons qu'elle satisfait
-   	$$p'(x) = 1 = 1 \cdot x^0.$$
-   	
-   	
-   	Nous supposons maintenant que le résultat est valable pour $n = k$ et montrons qu'il tient pour $n = k + 1$. Nous posons
+	   On commence par remarquer que 
+	   \[(x+h)^n=x^n+nx^{n-1}h+\frac{n(n-1)}{2}x^{n-2}h^2+\ldots+h^n\]
+	   Ainsi, 
 
-   	$$p(x) = x^{k+1}$$
-   	
-   	et notons que
-   	$$p(x) = x \cdot x^k.$$
-   	
-   	En appliquant la règle du produit et notre hypothèse d'induction, on a 
-   	$$p'(x) = x \cdot kx^{k-1} + 1 \cdot x^k = (k+1)x^k.$$
-   	
-   	Ceci montre que la formule tient pour $k + 1$.
+	   $\begin{aligned}
+		   (x^n)'&=\displaystyle{\lim_{h\to0}}\dfrac{(x+h)^n-x^n}{h}\\
+			 &=\displaystyle{\lim_{h\to0}}\dfrac{x^n+nx^{n-1}h+\frac{n(n-1)}{2}x^{n-2}h^2+\ldots+h^n-x^n}{h}\\
+			 &=\displaystyle{\lim_{h\to0}}\dfrac{nx^{n-1}h+\frac{n(n-1)}{2}x^{n-2}h^2+\ldots+h^n}{h}\\
+			 &=\displaystyle{\lim_{h\to0}}\left(nx^{n-1}+\frac{n(n-1)}{2}x^{n-2}h+\ldots+h^{n-1}\right)\\
+			&=nx^{n-1}
+	   \end{aligned}$
+
    \end{proof}
 \end{coro}
 
@@ -917,7 +947,7 @@ Soit $k$ un nombre négatif. Notons que
    \medskip
 
    \begin{proof}
-	   La preuve est laissée en exercice (exercice \ref{both:derQuot}).
+	   La preuve est laissée en exercice (exercice \ref{exo:derQuot}).
    \end{proof}
 \end{prop}
 
@@ -1141,58 +1171,50 @@ $\begin{aligned}
 
 
 \subsection{Exercices}
-\subsubsection{Introduction~: La tangente à une courbe en un point}
-\subsubsection{Définitions et exemples}
-\insertexo{j2esz}{true}{both}
-\insertexo{mmztw}{true}{both}
-\insertexo{h2mu9}{true}{both}
-\insertexo{wdzr4}{true}{both}
-\insertexo{9ghy8}{true}{both}
-\insertexo{uhfwb}{true}{both}
-\insertexo{sjs2h}{true}{both}
-\insertexo{hb4kv}{true}{both}
-\insertexo{g75hx}{true}{both}
-\insertexo{v911h}{false}{both}
-\insertexo{atf6t}{false}{both}
 
 
-\subsubsection{Le nombre dérivé}
-\insertexo{rqd6n}{true}{both}
-\insertexo{pajju}{false}{both}
 
-\subsubsection{Relation avec la continuité}
-\insertexo{6ekwp}{false}{both}
+%\insertexo{rqd6n}{true}{exo}
+%\insertexo{3mgs5}{true}{exo}
 
-\subsubsection{Règles de dérivation}
 
-\insertexo{raguk}{true}{both}
-\insertexo{uc9rv}{true}{both}
-\insertexo{5fsdv}{true}{both}
-\insertexo{3mgs5}{true}{both}
-\insertexo[exo:derQuot]{972y4}{true}{both}
-\insertexo{4pfpm}{true}{both}
-\insertexo{bgaa8}{true}{both}
+\insertexo{5mcny}{true}{exo}
+\insertexo{5fsdv}{true}{exo}
+\insertexo{raguk}{true}{exo}
+\insertexo{uc9rv}{true}{exo}
+\insertexo{auu1q}{true}{exo}
+\insertexo{4pmjf}{true}{exo}
+
+\insertexo[exo:derQuot]{972y4}{true}{exo}
+\insertexo{4pfpm}{true}{exo}
+\insertexo{hrm6y}{false}{exo}
+
+\insertexo{bgaa8}{true}{exo}
 
 \subsubsection{L'équation de la tangente}
-\insertexo{ayg94}{true}{both}
-\insertexo{pbjwq}{true}{both}
-\insertexo{5tfx9}{true}{both}
-\insertexo{ddnv1}{true}{both}
-\insertexo{nj1k9}{true}{both}
-\insertexo{p9k57}{true}{both}
-\insertexo{22t18}{true}{both}
+\insertexo{ayg94}{true}{exo}
+\insertexo{pbjwq}{true}{exo}
+\insertexo{5tfx9}{true}{exo}
+\insertexo{ddnv1}{true}{exo}
+\insertexo{nj1k9}{true}{exo}
+\insertexo{p9k57}{true}{exo}
+%\insertexo{22t18}{true}{exo}
+\insertexo{r92kg}{true}{exo}
+\insertexo{ahx6s}{true}{exo}
+
 \subsubsection{Dérivation de fonctions trigonométriques}
 
-\insertexo{aef2y}{true}{both}
-\insertexo{u68mh}{true}{both}
-\insertexo{areny}{true}{both}
-\insertexo{hhksj}{true}{both}
+\insertexo{aef2y}{true}{exo}
+\insertexo{u68mh}{true}{exo}
+\insertexo{areny}{true}{exo}
+\insertexo{b6sz1}{true}{exo}
+\insertexo{hhksj}{true}{exo}
 
 \subsubsection{Angle entre deux courbes}
-\insertexo{5bbkd}{true}{both}
-\insertexo{kfy9s}{true}{both}
-\insertexo{mxwa2}{true}{both}
-\insertexo{91jqx}{true}{both}
+\insertexo{5bbkd}{true}{exo}
+\insertexo{kfy9s}{true}{exo}
+\insertexo{mxwa2}{true}{exo}
+\insertexo{91jqx}{true}{exo}
 
 \section{Le théorème des accroissement finis et ses applications}
 
