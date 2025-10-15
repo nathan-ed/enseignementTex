@@ -615,25 +615,13 @@ $$f(x) = \begin{cases}
 
 Une fonction peut être continue en un certain nombre $x$ sans y être dérivable.
 \begin{exemple}[label=ex:valabs]
-	\tcblower
-La fonction valeur absolue
-$$f(x) = |x|$$
-est continue en 0 (elle est partout continue), mais elle n'est pas dérivable en 0:
-$$\dfrac{f(0+h) - f(0)}{h} = \dfrac{|0+h| - |0|}{h} = \dfrac{|h|}{h} = \begin{cases}
-    -1, & h < 0 \\
-    1, & h > 0 \end{cases}.$$
-de sorte que
-$$\displaystyle\lim_{h \to 0^-} \dfrac{f(0+h) - f(0)}{h} = -1, \quad \displaystyle\lim_{h \to 0^+} \dfrac{f(0+h) - f(0)}{h} = 1.$$
-et
-$$\displaystyle\lim_{h \to 0} \dfrac{f(0+h) - f(0)}{h} \quad \text{n'existe pas}.$$
-L'échec de la fonction valeur absolue à être dérivable en 0 est reflété par son graphe. En $(0, 0)$, le graphe change brusquement de direction et il n'y a pas de tangente en ce point.
-
-\end{exemple}
-\begin{figure}[h]
-    \centering
-    \begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.65]
         \begin{axis}[
-            axis lines=middle,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    label style={font=\normalsize},
+    every axis x label/.style={at={(ticklabel* cs:0.92)}, anchor=west, yshift=10pt},
+    every axis y label/.style={at={(ticklabel* cs:0.92)}, anchor=south, xshift=10pt},
             xmin=-2, xmax=2,
             ymin=-0.5, ymax=2.5,
             xlabel=$x$,
@@ -649,24 +637,29 @@ L'échec de la fonction valeur absolue à être dérivable en 0 est reflété pa
             \node[below] at (axis cs:1.2,0) {pas de dérivée en 0};
         \end{axis}
     \end{tikzpicture}
-    \caption{La fonction valeur absolue}
-\end{figure}
+	\tcblower
+La fonction valeur absolue
+$$f(x) = |x|$$
+est continue en 0 (elle est partout continue), mais elle n'est pas dérivable en 0:
+$$\dfrac{f(0+h) - f(0)}{h} = \dfrac{|0+h| - |0|}{h} = \dfrac{|h|}{h} = \begin{cases}
+    -1, & h < 0 \\
+    1, & h > 0 \end{cases}.$$
+de sorte que
+$$\displaystyle\lim_{h \to 0^-} \dfrac{f(0+h) - f(0)}{h} = -1, \quad \displaystyle\lim_{h \to 0^+} \dfrac{f(0+h) - f(0)}{h} = 1.$$
+et
+$$\displaystyle\lim_{h \to 0} \dfrac{f(0+h) - f(0)}{h} \quad \text{n'existe pas}.$$
+L'échec de la fonction valeur absolue à être dérivable en 0 est reflété par son graphe. En $(0, 0)$, le graphe change brusquement de direction et il n'y a pas de tangente en ce point.
 
+\end{exemple}
 
 \begin{exemple}[label=ex:anguleux]
-	\tcblower
-On observe un changement de direction soudain similaire dans le graphe de
-$$f(x) = \begin{cases}
-    x^2, & x \le 1 \\
-    x, & x > 1 \end{cases}.$$
-au point $(1, 1)$. Encore une fois, $f$ est partout continue (vérifiez-le!), mais elle n'est pas dérivable en $1$~:
-\vspace{10cm}
-\end{exemple}
-\begin{figure}[h]
-    \centering
-    \begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.65]
         \begin{axis}[
-            axis lines=middle,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    label style={font=\normalsize},
+    every axis x label/.style={at={(ticklabel* cs:0.92)}, anchor=west, yshift=10pt},
+    every axis y label/.style={at={(ticklabel* cs:0.92)}, anchor=south, xshift=10pt},
             xmin=-0.5, xmax=2,
             ymin=-0.5, ymax=2,
             xlabel=$x$,
@@ -681,9 +674,16 @@ au point $(1, 1)$. Encore une fois, $f$ est partout continue (vérifiez-le!), ma
             \addplot[domain=1:2, thick, red!70!black] {x};
             \node[below] at (axis cs:1,-0.2) {pas de dérivée en 1};
         \end{axis}
-    \end{tikzpicture}
-    \caption{Une fonction avec un point anguleux}
-\end{figure}
+	\end{tikzpicture}
+	\tcblower
+On observe un changement de direction soudain similaire dans le graphe de
+$$f(x) = \begin{cases}
+    x^2, & x \le 1 \\
+    x, & x > 1 \end{cases}.$$
+au point $(1, 1)$. Encore une fois, $f$ est partout continue (vérifiez-le!), mais elle n'est pas dérivable en $1$~:
+\vspace{10cm}
+\end{exemple}
+
 
 \begin{definition}
 	\tcblower
@@ -1015,6 +1015,18 @@ $	\begin{aligned}
 
 	\end{proof}
 \end{coro}
+\insertexo{5mcny}{true}{exo}
+\insertexo{5fsdv}{true}{exo}
+\insertexo{raguk}{true}{exo}
+\insertexo{uc9rv}{true}{exo}
+\insertexo{auu1q}{true}{exo}
+\insertexo{4pmjf}{true}{exo}
+
+\insertexo[exo:derQuot]{972y4}{true}{exo}
+\insertexo{4pfpm}{true}{exo}
+\insertexo{hrm6y}{false}{exo}
+
+\insertexo{bgaa8}{true}{exo}
 \subsection{L'équation de la tangente}
 \begin{formule}
 	\tcblower
@@ -1040,6 +1052,10 @@ ou encore
 	au point $(3;4)$. 
 	\vspace{6cm}
 \end{exemple}
+\insertexo{f3jrh}{false}{exo}
+\insertexo{q4xfv}{false}{exo}
+\insertexo{xk5f9}{false}{exo}
+\insertexo{f9twd}{false}{exo}
 \subsection{Dérivées des fonctions trigonométriques}
 \begin{thm}
 Dérivées des fonctions trigonométriques
@@ -1068,13 +1084,11 @@ On a
 		  &=\lim_{h\to 0}\dfrac{2\sin\left(\dfrac{h}{2}\right)\cos\left(x+\dfrac{h}{2}\right)}{h}\\
 		  &=\lim_{h\to 0}\dfrac{\sin\left(\dfrac{h}{2}\right)}{\frac{h}{2}}\cos\left(x+\dfrac{h}{2}\right)\\
 		  &=\lim_{\frac{h}{2}\to 0}\dfrac{\sin\left(\dfrac{h}{2}\right)}{\frac{h}{2}}\lim_{h\to 0}\cos\left(x+\dfrac{h}{2}\right)\\
-		  &= 1\cdot \cos(x)\\
-		  &=\cos(x).
+		  &= 1\cdot \cos(x)=\cos(x).
 \end{align*}
 \end{proof}
 
 \begin{proof}[$[\cos(x)]'=-\sin(x)$]
-
 	On utilise les relations
 	\[
 		\cos(x)=\sin\left(\dfrac{\pi}{2}-x\right)\quad\text{et}\quad
@@ -1152,6 +1166,10 @@ $\begin{aligned}
 	[[\sin(x^2 - 1)]^3]' &= 3[\sin(x^2 - 1)]^2 \cos(x^2 - 1) \cdot 2x\\ &= 6x\sin^2(x^2 - 1)\cos(x^2 - 1)
 \end{aligned}$
 \end{exemple}
+\insertexo{pju6j}{false}{exo}
+\insertexo{u68mh}{true}{exo}
+\insertexo{areny}{true}{exo}
+\insertexo{b6sz1}{true}{exo}
 
 \subsection{Angle entre deux courbes}
 \begin{definition}
@@ -1170,7 +1188,6 @@ $\begin{aligned}
 \end{exemple}
 
 
-\subsection{Exercices}
 
 
 
@@ -1178,44 +1195,31 @@ $\begin{aligned}
 %\insertexo{3mgs5}{true}{exo}
 
 
-\insertexo{5mcny}{true}{exo}
-\insertexo{5fsdv}{true}{exo}
-\insertexo{raguk}{true}{exo}
-\insertexo{uc9rv}{true}{exo}
-\insertexo{auu1q}{true}{exo}
-\insertexo{4pmjf}{true}{exo}
 
-\insertexo[exo:derQuot]{972y4}{true}{exo}
-\insertexo{4pfpm}{true}{exo}
-\insertexo{hrm6y}{false}{exo}
 
-\insertexo{bgaa8}{true}{exo}
 
-\subsubsection{L'équation de la tangente}
-\insertexo{ayg94}{true}{exo}
-\insertexo{pbjwq}{true}{exo}
-\insertexo{5tfx9}{true}{exo}
-\insertexo{ddnv1}{true}{exo}
-\insertexo{nj1k9}{true}{exo}
-\insertexo{p9k57}{true}{exo}
+
+%\insertexo{ayg94}{true}{exo}
+%\insertexo{pbjwq}{true}{exo}
+%\insertexo{5tfx9}{true}{exo}
+%\insertexo{p9k57}{true}{exo}
+%\insertexo{r92kg}{true}{exo}
+%\insertexo{ddnv1}{true}{exo}
+%\insertexo{nj1k9}{true}{exo}
 %\insertexo{22t18}{true}{exo}
-\insertexo{r92kg}{true}{exo}
-\insertexo{ahx6s}{true}{exo}
+%\insertexo{ahx6s}{true}{exo}
 
-\subsubsection{Dérivation de fonctions trigonométriques}
 
-\insertexo{aef2y}{true}{exo}
-\insertexo{u68mh}{true}{exo}
-\insertexo{areny}{true}{exo}
-\insertexo{b6sz1}{true}{exo}
-\insertexo{hhksj}{true}{exo}
 
-\subsubsection{Angle entre deux courbes}
+%\insertexo{aef2y}{true}{exo}
+
+
 \insertexo{5bbkd}{true}{exo}
 \insertexo{kfy9s}{true}{exo}
 \insertexo{mxwa2}{true}{exo}
 \insertexo{91jqx}{true}{exo}
 
+\newpage
 \section{Le théorème des accroissement finis et ses applications}
 
 \subsection{Le théorème des accroissement finis}
@@ -1806,6 +1810,8 @@ Quelle conclusion en tirer~?
 	Étudier les points critiques de 
 	\[f(x)=\dfrac{\sqrt{x}-1}{\sqrt{x}+1}\]
 \end{activite}
+
+\insertexo{hhksj}{true}{exo}
 \subsection{Optimisation}
 Vous avez déjà rencontré des problèmes d'optimisation dans votre cursus. Ces questions représentent des applications concrètes des outils d'analyse que nous avons étudiés dans les sections précédentes. Il s'agit de déterminer la valeur minimale ou maximale d'une quantité variable dans une situation donnée. 
 
