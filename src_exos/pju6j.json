@@ -7,11 +7,18 @@
   "source": "crm",
   "type": "serie",
   "annee": "2526",
-  "competences": [],
+  "competences": [
+    "7192f97b-9b05-4092-b495-0f6d88407f1a"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 1,
   "pts": 0,
-  "topic": "Calcul différentiel"
+  "topic": "Calcul différentiel",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Calcul différentiel"
+  ]
 }

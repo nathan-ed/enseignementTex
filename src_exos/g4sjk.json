@@ -7,11 +7,18 @@
   "source": "sesamath3e",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "c982892b-bde8-402c-806b-727f1bb5740b"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 2,
   "pts": 0,
-  "topic": "Calcul différentiel"
+  "topic": "Généralité sur les limites",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Généralité sur les limites"
+  ]
 }

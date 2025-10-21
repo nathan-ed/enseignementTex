@@ -7,7 +7,9 @@
   "source": "musy",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "382b4294-03a0-4b7a-bc05-4ece1e15c9e0"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",

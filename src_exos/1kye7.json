@@ -7,7 +7,9 @@
   "source": "co",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "a45de63a-55c8-467d-9224-a4d01bfce80f"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",

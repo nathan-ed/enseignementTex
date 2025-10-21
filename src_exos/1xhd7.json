@@ -7,9 +7,13 @@
   "source": "co",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "89226394-4c66-4c7f-ac6a-2d2d4fd5cae3"
+  ],
   "tags": [],
-  "custom_tags": [],
+  "custom_tags": [
+    "Remédiation"
+  ],
   "remarques": "",
   "piments": 1,
   "pts": 0,

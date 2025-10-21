@@ -7,11 +7,18 @@
   "source": "sesamath3e",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "288f52b5-c31a-4a9c-8813-d808f8702b1a"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 2,
   "pts": 0,
-  "topic": "Calcul différentiel"
+  "topic": "Calcul différentiel",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Calcul différentiel"
+  ]
 }

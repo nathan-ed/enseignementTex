@@ -7,11 +7,18 @@
   "source": "sesamath3e",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "2741f3ba-8bcb-4b92-ac29-241995d94d9d"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 2,
   "pts": 0,
-  "topic": "Continuité"
+  "topic": "Généralité sur les limites",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Généralité sur les limites"
+  ]
 }

@@ -7,7 +7,9 @@
   "source": "fundamentum",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "cd247e00-35b7-4c43-8ba6-88f3ebf2706d"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",

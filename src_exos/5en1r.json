@@ -7,11 +7,19 @@
   "source": "sesamath3e",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "72c85d0b-29a7-47ed-ba09-2d72ca605048",
+    "836b8cfe-7c08-46a4-929f-8b60c1c0ab86"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 2,
   "pts": 0,
-  "topic": "Calcul différentiel"
+  "topic": "Asymptotes",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Asymptotes"
+  ]
 }

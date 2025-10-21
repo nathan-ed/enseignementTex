@@ -7,11 +7,18 @@
   "source": "musy",
   "type": "serie",
   "annee": "2526",
-  "competences": [],
+  "competences": [
+    "4955fa05-2a03-4b55-9f6e-1ae9a4170ae3"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 1,
   "pts": 0,
-  "topic": "Calcul de limite"
+  "topic": "Asymptotes",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Asymptotes"
+  ]
 }

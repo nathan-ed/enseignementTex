@@ -7,11 +7,18 @@
   "source": "sesamath3e",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "33f098f5-7180-4a9a-95af-1e2f5fc6ce92"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 2,
   "pts": 0,
-  "topic": "Calcul différentiel"
+  "topic": "Limites trigonométriques",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Limites trigonométriques"
+  ]
 }

@@ -7,11 +7,13 @@
   "source": "sesamath3e",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "cd247e00-35b7-4c43-8ba6-88f3ebf2706d"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 2,
   "pts": 0,
-  "topic": "Calcul de limite"
+  "topic": "Continuité et limites"
 }

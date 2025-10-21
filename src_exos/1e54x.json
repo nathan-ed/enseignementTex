@@ -7,9 +7,13 @@
   "source": "musy",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "660e7a80-2629-4367-8c71-abf020347b16"
+  ],
   "tags": [],
-  "custom_tags": [],
+  "custom_tags": [
+    "Remédiation"
+  ],
   "remarques": "",
   "piments": 2,
   "pts": 0,

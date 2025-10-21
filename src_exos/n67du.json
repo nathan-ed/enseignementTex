@@ -7,11 +7,18 @@
   "source": "sesamath3e",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "ae949e2a-fe42-4522-b885-2c351cc12aab"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 2,
   "pts": 0,
-  "topic": "Calcul différentiel"
+  "topic": "Fonctions continues",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Fonctions continues"
+  ]
 }

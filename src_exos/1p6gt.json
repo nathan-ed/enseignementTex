@@ -7,7 +7,9 @@
   "source": "co",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "905be9ba-b513-4cf1-a653-dc63d0f6196e"
+  ],
   "tags": [],
   "custom_tags": [
     "Remédiation"

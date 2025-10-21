@@ -7,11 +7,18 @@
   "source": "sesamath3e",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "5dbcb48f-dbc5-4be3-939c-646672a8066e"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 4,
   "pts": 0,
-  "topic": "Calcul de limite"
+  "topic": "Limites en un nombre",
+  "topics": [
+    "Limites en un nombre"
+  ],
+  "archived": false,
+  "usage_history": []
 }

@@ -7,11 +7,15 @@
   "source": "co",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "660e7a80-2629-4367-8c71-abf020347b16"
+  ],
   "tags": [],
   "piments": 1,
   "pts": 0,
   "custom_tags": [],
   "remarques": "",
-  "topic": "Calcul littéral"
+  "topic": "Calcul littéral",
+  "archived": false,
+  "usage_history": []
 }

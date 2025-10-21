@@ -7,11 +7,18 @@
   "source": "nathan",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "12f5d6d2-3a42-47cf-aa1d-123c69969795"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "topic": "Calcul différentiel",
   "piments": 1,
-  "pts": 0
+  "pts": 0,
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Calcul différentiel"
+  ]
 }

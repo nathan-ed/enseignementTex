@@ -7,11 +7,18 @@
   "source": "musy",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "bcbdb83d-007a-4481-b26b-162ea97bf28f"
+  ],
   "tags": [],
-  "custom_tags": [],
+  "custom_tags": [
+    "Utilisé"
+  ],
   "remarques": "",
   "topic": "Calcul littéral",
-  "piments": 1,
-  "pts": 0
+  "piments": 2,
+  "pts": 0,
+  "topics": [
+    "Calcul littéral"
+  ]
 }

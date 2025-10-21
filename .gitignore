@@ -6,8 +6,9 @@
 # ─── 2. Keep this file itself ──────────────────────────────────────────
 !.gitignore
 
-# ─── 3. src_exos: all .tex files ───────────────────────────────────────
+# ─── 3. src_exos: all .tex files and metadata JSON ────────────────────
 !/src_exos/*.tex
+!/src_exos/*.json
 !/src_exos/medias/*.tex
 
 # ─── 4. 1M root: .tex & .bib; keep pdfs in output/ & its subfolders ────
@@ -38,3 +39,27 @@
 
 # ─── 9. packages: all files ────────────────────────────────────────────
 !/packages/**
+
+# ─── 10. tools: compilation scripts ───────────────────────────────────
+!/tools/**
+
+# ─── 11. temp_compile: ignore temporary compilation files ─────────────
+/temp_compile/
+
+# ─── 12. output/exercises: keep generated exercise PDFs ────────────────
+!/output/
+!/output/exercises/
+!/output/exercises/*.pdf
+
+# ─── 13. competences: competence definitions ──────────────────────────
+!/competences/**
+
+# ─── 14. tagging_app: Flask tagging application ───────────────────────
+!/tagging_app/**
+# But ignore Python cache and virtual environment
+tagging_app/__pycache__/
+tagging_app/**/__pycache__/
+tagging_app/venv/
+
+# ─── 15. backups: metadata backups (ignored, not version controlled) ──
+backups/

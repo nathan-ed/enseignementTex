@@ -7,11 +7,18 @@
   "source": "musy",
   "type": "serie",
   "annee": "2526",
-  "competences": [],
+  "competences": [
+    "97f9a752-95fd-4894-8642-31d418927ffd"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 1,
   "pts": 0,
-  "topic": "Calcul différentiel"
+  "topic": "Calcul différentiel",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Calcul différentiel"
+  ]
 }

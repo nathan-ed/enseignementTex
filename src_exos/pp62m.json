@@ -7,11 +7,19 @@
   "source": "musy",
   "type": "serie",
   "annee": "2425",
-  "competences": [],
+  "competences": [
+    "4abaac18-fe48-434e-b0fe-33cdc9b26ba2",
+    "f8b96969-b2c8-4793-a284-2959e96433f7"
+  ],
   "tags": [],
   "custom_tags": [],
   "remarques": "",
   "piments": 2,
   "pts": 0,
-  "topic": "Calcul de limite"
+  "topic": "Fonctions continues",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Fonctions continues"
+  ]
 }
