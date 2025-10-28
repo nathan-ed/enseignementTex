@@ -14,5 +14,27 @@ Prouver que $\tan'(x)=\dfrac{1}{\cos^2(x)}=1+\tan^2(x)$
 }
 \correction{
 \tcblower
+{\scriptsize \textit{Correction générée par IA}}
+
+On sait que $\tan(x) = \dfrac{\sin(x)}{\cos(x)}$. En utilisant la formule de dérivation du quotient~:
+
+\( \begin{aligned}
+\tan'(x) &= \left(\dfrac{\sin(x)}{\cos(x)}\right)' \\
+&= \dfrac{\sin'(x) \cdot \cos(x) - \sin(x) \cdot \cos'(x)}{\cos^2(x)} \\
+&= \dfrac{\cos(x) \cdot \cos(x) - \sin(x) \cdot (-\sin(x))}{\cos^2(x)} \\
+&= \dfrac{\cos^2(x) + \sin^2(x)}{\cos^2(x)} \\
+&= \dfrac{1}{\cos^2(x)}
+\end{aligned} \)
+
+Pour montrer que $\dfrac{1}{\cos^2(x)} = 1 + \tan^2(x)$, on utilise l'identité trigonométrique $\cos^2(x) + \sin^2(x) = 1$~:
+
+\( \begin{aligned}
+1 + \tan^2(x) &= 1 + \dfrac{\sin^2(x)}{\cos^2(x)} \\
+&= \dfrac{\cos^2(x)}{\cos^2(x)} + \dfrac{\sin^2(x)}{\cos^2(x)} \\
+&= \dfrac{\cos^2(x) + \sin^2(x)}{\cos^2(x)} \\
+&= \dfrac{1}{\cos^2(x)}
+\end{aligned} \)
+
+Donc $\tan'(x) = \dfrac{1}{\cos^2(x)} = 1 + \tan^2(x)$.
 }
 

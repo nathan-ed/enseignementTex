@@ -18,5 +18,44 @@ Dériver la fonction $h$, donnée par $h(x)=\left(x^2+1\right)^3$, de deux faço
 }
 \correction{
 \tcblower
+{\scriptsize \textit{Correction générée par IA}}
+
+\textbf{Première méthode~: après distribution et réduction}
+
+Développons d'abord $(x^2+1)^3$ :
+
+\( \begin{aligned}
+(x^2+1)^3 &= (x^2+1)(x^2+1)^2 \\
+&= (x^2+1)(x^4+2x^2+1) \\
+&= x^6+2x^4+x^2+x^4+2x^2+1 \\
+&= x^6+3x^4+3x^2+1
+\end{aligned} \)
+
+Donc $h(x) = x^6+3x^4+3x^2+1$.
+
+En dérivant terme à terme :
+\[
+h'(x) = 6x^5+12x^3+6x
+\]
+
+\textbf{Deuxième méthode~: avec la formule de la fonction composée}
+
+Posons $u(x)=x^2+1$ et $v(u)=u^3$, de sorte que $h(x)=v(u(x))$.
+
+On a :
+\begin{itemize}
+\item $u'(x)=2x$
+\item $v'(u)=3u^2$
+\end{itemize}
+
+D'après la formule de dérivation d'une fonction composée :
+\[
+h'(x) = v'(u(x)) \cdot u'(x) = 3(x^2+1)^2 \cdot 2x = 6x(x^2+1)^2
+\]
+
+On peut vérifier que les deux expressions sont équivalentes en développant la deuxième forme :
+\[
+6x(x^2+1)^2 = 6x(x^4+2x^2+1) = 6x^5+12x^3+6x
+\]
 }
 

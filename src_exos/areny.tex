@@ -21,6 +21,63 @@ Déterminer les dérivées suivantes et donner la réponse sans exposant négati
 \end{tasks}
 }
 \correction{
+\tcblower
+{\scriptsize \textit{Correction générée par IA}}
 
+\begin{tasks}
+\task Pour $f(x)=\sin(x^4 - \dfrac{1}{x})$, on utilise la formule de dérivation des fonctions composées.
+
+Posons $u(x)=x^4-\dfrac{1}{x}=x^4-x^{-1}$, alors $u'(x)=4x^3+x^{-2}=4x^3+\dfrac{1}{x^2}$.
+
+Donc :
+\[
+f'(x)=\cos(u(x)) \cdot u'(x)=\cos\left(x^4-\dfrac{1}{x}\right)\cdot\left(4x^3+\dfrac{1}{x^2}\right)
+\]
+
+\task Pour $f(x)=\cos(5\sqrt{x})=\cos(5x^{\frac{1}{2}})$.
+
+Posons $u(x)=5x^{\frac{1}{2}}$, alors $u'(x)=5\cdot\dfrac{1}{2}x^{-\frac{1}{2}}=\dfrac{5}{2\sqrt{x}}$.
+
+Donc :
+\[
+f'(x)=-\sin(u(x)) \cdot u'(x)=-\sin(5\sqrt{x})\cdot\dfrac{5}{2\sqrt{x}}=-\dfrac{5\sin(5\sqrt{x})}{2\sqrt{x}}
+\]
+
+\task Pour $f(x)=\tan(\cos(x))$.
+
+Posons $u(x)=\cos(x)$, alors $u'(x)=-\sin(x)$.
+
+La dérivée de $\tan(u)$ est $\dfrac{1}{\cos^2(u)}$, donc :
+\[
+f'(x)=\dfrac{1}{\cos^2(u(x))} \cdot u'(x)=\dfrac{-\sin(x)}{\cos^2(\cos(x))}
+\]
+
+\task Pour $f(x)=\sin^3(x)=(\sin(x))^3$.
+
+Posons $u(x)=\sin(x)$, alors $u'(x)=\cos(x)$.
+
+Donc :
+\[
+f'(x)=3(\sin(x))^2 \cdot \cos(x)=3\sin^2(x)\cos(x)
+\]
+
+\task Pour $f(x)=\sqrt{\cos(x)}=(\cos(x))^{\frac{1}{2}}$.
+
+Posons $u(x)=\cos(x)$, alors $u'(x)=-\sin(x)$.
+
+Donc :
+\[
+f'(x)=\dfrac{1}{2}(\cos(x))^{-\frac{1}{2}} \cdot (-\sin(x))=-\dfrac{\sin(x)}{2\sqrt{\cos(x)}}
+\]
+
+\task Pour $f(x)=\sin^{-1}(2x)=\arcsin(2x)$.
+
+Posons $u(x)=2x$, alors $u'(x)=2$.
+
+La dérivée de $\arcsin(u)$ est $\dfrac{1}{\sqrt{1-u^2}}$, donc :
+\[
+f'(x)=\dfrac{1}{\sqrt{1-(2x)^2}} \cdot 2=\dfrac{2}{\sqrt{1-4x^2}}
+\]
+\end{tasks}
 }
 

@@ -16,6 +16,25 @@ tout $a \in \mathbb{R}$, $f'$ s'annule au moins une fois sur
 l'intervalle $]a,a + 2\pi[$.
 }
 \correction{
+\tcblower
+{\scriptsize \textit{Correction générée par IA}}
 
+On a $f(x) = \dfrac{\sin(x) + \cos(x)}{1 + \cos(x)}$.
+
+\textbf{Périodicité~:} Puisque $\sin$ et $\cos$ sont périodiques de période $2\pi$, il suffit de montrer que $f'$ s'annule au moins une fois sur $]a, a+2\pi[$ pour tout $a \in \mathbb{R}$.
+
+\textbf{Valeurs particulières~:} Calculons $f$ en deux points espacés de $2\pi$~:
+\begin{itemize}
+\item $f(0) = \dfrac{\sin(0) + \cos(0)}{1 + \cos(0)} = \dfrac{0 + 1}{1 + 1} = \dfrac{1}{2}$
+\item $f(2\pi) = \dfrac{\sin(2\pi) + \cos(2\pi)}{1 + \cos(2\pi)} = \dfrac{0 + 1}{1 + 1} = \dfrac{1}{2}$
+\end{itemize}
+
+On a donc $f(0) = f(2\pi)$.
+
+\textbf{Application du théorème de Rolle~:} La fonction $f$ est continue et dérivable sur $[0, 2\pi]$ (le dénominateur ne s'annule pas sur cet intervalle car $\cos(x) \neq -1$ pour $x \in ]0, 2\pi[$), et $f(0) = f(2\pi)$.
+
+D'après le théorème de Rolle, il existe au moins un point $c \in ]0, 2\pi[$ tel que $f'(c) = 0$.
+
+\textbf{Généralisation~:} Pour tout $a \in \mathbb{R}$, en considérant l'intervalle $[a, a+2\pi]$, on a de même $f(a) = f(a+2\pi)$ par périodicité. Le théorème de Rolle s'applique donc sur $[a, a+2\pi]$, ce qui montre que $f'$ s'annule au moins une fois sur $]a, a+2\pi[$.
 }
 

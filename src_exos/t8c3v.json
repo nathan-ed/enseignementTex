@@ -1,0 +1,24 @@
+{
+  "id": "t8c3v",
+  "titre": "",
+  "theme": "derivation",
+  "auteur": "Nathan Scheinmann",
+  "niveau": "3M",
+  "source": "crm",
+  "type": "serie",
+  "annee": "2526",
+  "competences": [
+    "4bbdf48b-61fb-4e5c-947d-46c035200764"
+  ],
+  "tags": [],
+  "custom_tags": [],
+  "remarques": "",
+  "piments": 2,
+  "pts": 0,
+  "topic": "Calcul différentiel",
+  "archived": false,
+  "usage_history": [],
+  "topics": [
+    "Calcul différentiel"
+  ]
+}

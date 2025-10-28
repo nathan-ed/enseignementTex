@@ -72,19 +72,18 @@ Calculer, si elles existent, les limites suivantes :
 \( \begin{aligned}
 &\lim_{x \to 0} \dfrac{x \cdot \sin(x)}{1 - \cos(x)} \\
 &= \lim_{x \to 0} \dfrac{x \cdot \sin(x)}{2 \cdot \sin^2\left(\dfrac{x}{2}\right)} \\
-&= \lim_{x \to 0} \dfrac{\sin(x)}{x} \cdot \dfrac{x^2}{2 \cdot \left(\dfrac{x}{2}\right)^2} \\
-&= \lim_{x \to 0} \dfrac{\sin(x)}{x} \cdot \dfrac{1}{2 \cdot \left(\dfrac{1}{2}\right)^2} \\
-&= 1 \cdot \dfrac{4}{2}= 2 
+&= \lim_{x \to 0} \dfrac{\sin(x)}{x} \cdot \dfrac{x^2}{2 \cdot \left(\sin\left(\dfrac{x}{2}\right)\right)^2} \\
+&= \lim_{x \to 0} \dfrac{\sin(x)}{x} \cdot \dfrac{1}{2} \cdot\left( \dfrac{x}{\sin\left(\dfrac{x}{2}\right)}\right)^2 \\
+&= 1 \cdot \dfrac{1}{2}\cdot4= 2 
 \end{aligned} \)
 
 \task Type « $\dfrac{1}{0}$ » :
 
 \( \begin{aligned}
-&\lim_{x \to 0^+} \dfrac{\cos(x)}{x}=\+\infty \\
-&\lim_{x \to 0^-} \dfrac{\cos(x)}{x}=\-\infty \\
+&\lim_{x \to 0^+} \dfrac{\cos(x)}{x}=+\infty \\
+&\lim_{x \to 0^-} \dfrac{\cos(x)}{x}=-\infty \\
 &\lim_{x \to 0} \dfrac{\cos(x)}{x}=\text{ n'existe pas}\\
 \end{aligned} \)
 \end{tasks}
 
 }
-

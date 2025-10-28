@@ -27,5 +27,63 @@ On considère les fonctions données par : $f(x)=\sqrt{x}$, $g(x)=\sin (x)$ et $
 }
 \correction{
 \tcblower
+{\scriptsize \textit{Correction générée par IA}}
+
+On a $f(x)=\sqrt{x}$, $g(x)=\sin(x)$ et $h(x)=4x^3+3$.
+
+\begin{tasks}
+\task Images des fonctions composées~:
+
+\begin{enumerate}
+\item $(f \circ h)(x) = f(h(x)) = f(4x^3+3) = \sqrt{4x^3+3}$
+
+\item $(g \circ f)(x) = g(f(x)) = g(\sqrt{x}) = \sin(\sqrt{x})$
+
+\item $(g \circ h)(x) = g(h(x)) = g(4x^3+3) = \sin(4x^3+3)$
+
+\item $(h \circ g)(x) = h(g(x)) = h(\sin(x)) = 4\sin^3(x) + 3$
+
+\item $(f \circ g \circ h)(x) = f(g(h(x))) = f(g(4x^3+3)) = f(\sin(4x^3+3)) = \sqrt{\sin(4x^3+3)}$
+\end{enumerate}
+
+\task Dérivées des fonctions composées (en utilisant la règle de dérivation en chaîne $(u \circ v)' = (u' \circ v) \cdot v'$)~:
+
+\textbf{Pour $f \circ h$~:}
+\( \begin{aligned}
+(f \circ h)'(x) &= f'(h(x)) \cdot h'(x) \\
+&= \dfrac{1}{2\sqrt{4x^3+3}} \cdot 12x^2 \\
+&= \dfrac{12x^2}{2\sqrt{4x^3+3}} \\
+&= \dfrac{6x^2}{\sqrt{4x^3+3}}
+\end{aligned} \)
+
+\textbf{Pour $g \circ f$~:}
+\( \begin{aligned}
+(g \circ f)'(x) &= g'(f(x)) \cdot f'(x) \\
+&= \cos(\sqrt{x}) \cdot \dfrac{1}{2\sqrt{x}} \\
+&= \dfrac{\cos(\sqrt{x})}{2\sqrt{x}}
+\end{aligned} \)
+
+\textbf{Pour $g \circ h$~:}
+\( \begin{aligned}
+(g \circ h)'(x) &= g'(h(x)) \cdot h'(x) \\
+&= \cos(4x^3+3) \cdot 12x^2 \\
+&= 12x^2\cos(4x^3+3)
+\end{aligned} \)
+
+\textbf{Pour $h \circ g$~:}
+\( \begin{aligned}
+(h \circ g)'(x) &= h'(g(x)) \cdot g'(x) \\
+&= 12\sin^2(x) \cdot \cos(x) \\
+&= 12\sin^2(x)\cos(x)
+\end{aligned} \)
+
+\textbf{Pour $f \circ g \circ h$~:}
+\( \begin{aligned}
+(f \circ g \circ h)'(x) &= f'(g(h(x))) \cdot g'(h(x)) \cdot h'(x) \\
+&= \dfrac{1}{2\sqrt{\sin(4x^3+3)}} \cdot \cos(4x^3+3) \cdot 12x^2 \\
+&= \dfrac{12x^2\cos(4x^3+3)}{2\sqrt{\sin(4x^3+3)}} \\
+&= \dfrac{6x^2\cos(4x^3+3)}{\sqrt{\sin(4x^3+3)}}
+\end{aligned} \)
+\end{tasks}
 }
 

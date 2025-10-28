@@ -1,0 +1,63 @@
+\titre{}
+\theme{derivation}
+\auteur{Nathan Scheinmann}
+\niveau{3M}
+\source{crm}
+\type{serie}
+\piments{2}
+\pts{}
+\annee{2526}
+
+\contenu{
+\tcblower
+Soit la fonction $f(x)=2x^2-3x$.
+\begin{tasks}
+\task En quel point la tangente au graphe de $f$ a-t-elle une pente de $\dfrac{1}{4}$ ?
+\task Déterminer l'équation des tangentes au graphe de $f$ qui passent par le point $(0,-8)$.
+\end{tasks}
+}
+\correction{
+\tcblower
+On a $f(x)=2x^2-3x$, donc $f'(x)=4x-3$.
+
+\begin{tasks}
+\task On cherche $a$ tel que $f'(a)=\dfrac{1}{4}$.
+
+\[
+4a-3=\dfrac{1}{4} \quad\Rightarrow\quad 4a=3+\dfrac{1}{4}=\dfrac{13}{4} \quad\Rightarrow\quad a=\dfrac{13}{16}
+\]
+
+On calcule $f\left(\dfrac{13}{16}\right)=2\left(\dfrac{13}{16}\right)^2-3\cdot\dfrac{13}{16}=2\cdot\dfrac{169}{256}-\dfrac{39}{16}=\dfrac{169}{128}-\dfrac{312}{128}=-\dfrac{143}{128}$.
+
+Le point de tangence est $\left(\dfrac{13}{16},-\dfrac{143}{128}\right)$.
+
+\task Soit $a$ l'abscisse du point de tangence. L'équation de la tangente en ce point est :
+\[
+y=f'(a)(x-a)+f(a)=(4a-3)(x-a)+2a^2-3a
+\]
+
+Cette tangente passe par $(0,-8)$, donc :
+\[
+-8=(4a-3)(0-a)+2a^2-3a=-a(4a-3)+2a^2-3a=-4a^2+3a+2a^2-3a=-2a^2
+\]
+
+Donc $-2a^2=-8$, ce qui donne $a^2=4$, soit $a=2$ ou $a=-2$.
+
+\textbf{Pour $a=2$ :}
+\begin{itemize}
+\item $f(2)=2\cdot 4-3\cdot 2=8-6=2$
+\item $f'(2)=4\cdot 2-3=5$
+\item Équation : $y=5(x-2)+2=5x-10+2=5x-8$
+\end{itemize}
+
+\textbf{Pour $a=-2$ :}
+\begin{itemize}
+\item $f(-2)=2\cdot 4-3\cdot(-2)=8+6=14$
+\item $f'(-2)=4\cdot(-2)-3=-11$
+\item Équation : $y=-11(x-(-2))+14=-11(x+2)+14=-11x-22+14=-11x-8$
+\end{itemize}
+
+Les tangentes ont pour équations $y=5x-8$ et $y=-11x-8$.
+\end{tasks}
+}
+

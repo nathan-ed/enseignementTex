@@ -21,6 +21,69 @@
 \end{tasks}
 }
 \correction{
+\tcblower
+{\scriptsize \textit{Correction générée par IA}}
 
+Pour étudier ces fonctions, il faut déterminer leur domaine de définition, puis calculer leur dérivée pour analyser les variations.
+
+\begin{tasks}
+\task $f(x) = 2\cos(x) - \cos(2x)$
+
+\textbf{Domaine :} $\mathbb{R}$
+
+\textbf{Dérivée :}
+\[
+f'(x) = -2\sin(x) - (-\sin(2x)) \cdot 2 = -2\sin(x) + 2\sin(2x)
+\]
+
+En utilisant $\sin(2x)=2\sin(x)\cos(x)$ :
+\[
+f'(x) = -2\sin(x) + 4\sin(x)\cos(x) = 2\sin(x)(2\cos(x) - 1)
+\]
+
+\task $f(x) = \sin^2(x) - \sin(x)$
+
+\textbf{Domaine :} $\mathbb{R}$
+
+\textbf{Dérivée :}
+\[
+f'(x) = 2\sin(x)\cos(x) - \cos(x) = \cos(x)(2\sin(x) - 1)
+\]
+
+\task $f(x) = 2\cos^3(x) - 3$
+
+\textbf{Domaine :} $\mathbb{R}$
+
+\textbf{Dérivée :}
+\[
+f'(x) = 2 \cdot 3\cos^2(x) \cdot (-\sin(x)) = -6\cos^2(x)\sin(x)
+\]
+
+\task $f(x) = \dfrac{\sin(x)}{\cos(2x)}$
+
+\textbf{Domaine :} $\cos(2x) \neq 0$, donc $2x \neq \dfrac{\pi}{2} + k\pi$ avec $k \in \mathbb{Z}$, soit $x \neq \dfrac{\pi}{4} + \dfrac{k\pi}{2}$
+
+\textbf{Dérivée :} En utilisant la formule $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^2}$ :
+\[
+f'(x) = \dfrac{\cos(x) \cdot \cos(2x) - \sin(x) \cdot (-2\sin(2x))}{\cos^2(2x)} = \dfrac{\cos(x)\cos(2x) + 2\sin(x)\sin(2x)}{\cos^2(2x)}
+\]
+
+\task $f(x) = \dfrac{\tan(2x)}{\tan^2(x)}$
+
+\textbf{Domaine :} Il faut $\cos(2x) \neq 0$ et $\cos(x) \neq 0$ et $\tan(x) \neq 0$, donc $x \neq \dfrac{\pi}{4} + \dfrac{k\pi}{2}$, $x \neq \dfrac{\pi}{2} + k\pi$ et $x \neq k\pi$ avec $k \in \mathbb{Z}$
+
+\textbf{Dérivée :} Cette dérivée nécessite la formule du quotient et est assez complexe à développer.
+
+\task $f(x) = \dfrac{2}{\sqrt{1-2\sin^2(x)}}$
+
+\textbf{Domaine :} Il faut $1-2\sin^2(x) > 0$, donc $\sin^2(x) < \dfrac{1}{2}$, soit $|\sin(x)| < \dfrac{1}{\sqrt{2}}$
+
+\textbf{Dérivée :} En posant $u(x)=1-2\sin^2(x)$, on a $u'(x)=-4\sin(x)\cos(x)=-2\sin(2x)$.
+
+Avec $f(x)=2u(x)^{-\frac{1}{2}}$ :
+\[
+f'(x) = 2 \cdot \left(-\dfrac{1}{2}\right)u(x)^{-\frac{3}{2}} \cdot u'(x) = -u(x)^{-\frac{3}{2}} \cdot (-2\sin(2x)) = \dfrac{2\sin(2x)}{(1-2\sin^2(x))^{\frac{3}{2}}}
+\]
+\end{tasks}
 }
 
