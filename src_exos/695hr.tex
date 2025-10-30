@@ -13,68 +13,22 @@
 Déterminer le domaine de définition de la fonction $x\mapsto \dfrac{1}{x-4+\sqrt{x^2-2}}$
 }
 \correction{
-	\tcblower
+\tcblower
 {\scriptsize \textit{Correction générée par IA}}
 
-Pour déterminer le domaine de définition de $f(x) = \dfrac{1}{x-4+\sqrt{x^2-2}}$, nous devons identifier les valeurs de $x$ pour lesquelles la fonction est définie.
+\textbf{Contrainte 1~:} $x^2-2 \geq 0 \implies |x| \geq \sqrt{2}$, soit $x \in ]-\infty; -\sqrt{2}] \cup [\sqrt{2}; +\infty[$.
 
-\textbf{Contraintes :}
+\textbf{Contrainte 2~:} Le dénominateur $x-4+\sqrt{x^2-2} \neq 0$.
 
-1. Le dénominateur ne doit pas être nul : $x-4+\sqrt{x^2-2} \neq 0$
+Résolvons $\sqrt{x^2-2} = 4-x$ (nécessite $x \leq 4$)~:
+\( \begin{aligned}
+x^2-2 &= (4-x)^2 = 16-8x+x^2 \\
+-2 &= 16-8x \\
+x &= \dfrac{9}{4}
+\end{aligned} \)
 
-2. L'expression sous la racine doit être positive ou nulle : $x^2-2 \geq 0$
+Vérification~: $\dfrac{9}{4}-4+\sqrt{\dfrac{81}{16}-2} = \dfrac{9}{4}-4+\dfrac{7}{4} = 0$ ✓
 
-\textbf{Étude de la contrainte 2 :}
-
-\[
-x^2-2 \geq 0 \quad \Rightarrow \quad x^2 \geq 2 \quad \Rightarrow \quad |x| \geq \sqrt{2}
-\]
-
-Donc $x \in ]-\infty; -\sqrt{2}] \cup [\sqrt{2}; +\infty[$.
-
-\textbf{Étude de la contrainte 1 :}
-
-Il faut trouver les valeurs de $x$ pour lesquelles :
-\[
-x-4+\sqrt{x^2-2} = 0 \quad \Rightarrow \quad \sqrt{x^2-2} = 4-x
-\]
-
-Pour que cette équation ait un sens, il faut que $4-x \geq 0$, donc $x \leq 4$.
-
-En élevant au carré (valide car les deux membres doivent être positifs) :
-\[
-x^2-2 = (4-x)^2 = 16-8x+x^2
-\]
-
-\[
--2 = 16-8x
-\]
-
-\[
-8x = 18
-\]
-
-\[
-x = \dfrac{18}{8} = \dfrac{9}{4}
-\]
-
-Vérifions : pour $x = \dfrac{9}{4}$ :
-\[
-\sqrt{\left(\dfrac{9}{4}\right)^2-2} = \sqrt{\dfrac{81}{16}-\dfrac{32}{16}} = \sqrt{\dfrac{49}{16}} = \dfrac{7}{4}
-\]
-
-Et :
-\[
-\dfrac{9}{4}-4+\dfrac{7}{4} = \dfrac{9+7-16}{4} = 0
-\]
-
-La valeur $x = \dfrac{9}{4}$ annule bien le dénominateur.
-
-\textbf{Domaine de définition :}
-
-En combinant les contraintes, le domaine est :
-\[
-\mathcal{D}_f = \left]-\infty; -\sqrt{2}\right] \cup \left[\sqrt{2}; \dfrac{9}{4}\right[ \cup \left]\dfrac{9}{4}; +\infty\right[
-\]
+\textbf{Domaine~:} $\mathcal{D}_f = ]-\infty; -\sqrt{2}] \cup [\sqrt{2}; \dfrac{9}{4}[ \cup ]\dfrac{9}{4}; +\infty[$
 }
 

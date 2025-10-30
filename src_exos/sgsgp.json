@@ -2,21 +2,18 @@
   "id": "sgsgp",
   "titre": "",
   "theme": "Calcul différentiel",
-  "topic": "Calcul différentiel",
-  "topics": [
-    "Calcul différentiel"
-  ],
   "auteur": "Nathan Scheinmann",
   "niveau": "3M",
   "source": "",
   "type": "serie",
-  "piments": 0,
-  "pts": "",
   "annee": "2526",
   "competences": [
     "55b75bd6-ffe5-4707-973c-94343a682f1b"
   ],
+  "tags": [],
+  "custom_tags": [],
   "remarques": "",
-  "archived": false,
-  "usage_history": []
+  "topic": "Calcul différentiel",
+  "piments": 0,
+  "pts": 0
 }

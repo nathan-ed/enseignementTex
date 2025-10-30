@@ -33,87 +33,22 @@ Calculer la longueur de $CH, AH$ et $AC$.
 \end{tikzpicture}}
 \end{minipage}}
 \correction{
-	\tcblower
+\tcblower
 {\scriptsize \textit{Correction générée par IA}}
 
-Dans le triangle rectangle $ABC$, la hauteur $CH$ partage le triangle en deux triangles rectangles plus petits. Nous pouvons utiliser les relations métriques dans le triangle rectangle.
-
-\textbf{Calcul de $CH$ :}
-
-Dans le triangle rectangle $BCH$, nous avons :
+Par Pythagore dans le triangle $BCH$~:
 \[
-BC^2 = BH^2 + CH^2
+CH^2 = BC^2 - BH^2 = 900 - 324 = 576 \implies CH = 24 \text{ cm}
 \]
 
-D'où :
+Relation de la hauteur~: $CH^2 = AH \cdot BH$
 \[
-30^2 = 18^2 + CH^2
+AH = \dfrac{576}{18} = 32 \text{ cm}
 \]
 
+Par Pythagore dans le triangle $ACH$~:
 \[
-900 = 324 + CH^2
+AC^2 = AH^2 + CH^2 = 1024 + 576 = 1600 \implies AC = 40 \text{ cm}
 \]
-
-\[
-CH^2 = 576
-\]
-
-\[
-CH = 24 \text{ cm}
-\]
-
-\textbf{Calcul de $AH$ :}
-
-Dans le triangle rectangle $ACH$, nous utilisons la relation de la hauteur dans un triangle rectangle.
-
-On sait que dans un triangle rectangle, si $H$ est le pied de la hauteur issue de l'angle droit, alors :
-\[
-CH^2 = AH \cdot BH
-\]
-
-En fait, cette formule n'est pas directe. Utilisons plutôt le triangle rectangle $ACH$ :
-
-Par le théorème de Pythagore dans le triangle $ACH$ :
-\[
-AC^2 = AH^2 + CH^2
-\]
-
-Mais nous devons d'abord trouver $AC$. Utilisons la relation :
-\[
-BC \cdot AC = AB \cdot CH
-\]
-
-Ou plus directement, remarquons que $AB = AH + BH = AH + 18$.
-
-Dans le triangle rectangle $ABC$, nous avons aussi :
-\[
-CH^2 = AH \cdot BH
-\]
-
-Donc :
-\[
-24^2 = AH \cdot 18
-\]
-
-\[
-576 = 18 \cdot AH
-\]
-
-\[
-AH = 32 \text{ cm}
-\]
-
-\textbf{Calcul de $AC$ :}
-
-Dans le triangle rectangle $ACH$ :
-\[
-AC^2 = AH^2 + CH^2 = 32^2 + 24^2 = 1024 + 576 = 1600
-\]
-
-\[
-AC = 40 \text{ cm}
-\]
-
-\textbf{Réponses :} $CH = 24$ cm, $AH = 32$ cm, $AC = 40$ cm.
 }
 

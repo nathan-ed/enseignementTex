@@ -1,0 +1,135 @@
+\titre{Dérivées de fonctions trigonométriques}
+\theme{derivation}
+\auteur{Claude AI}
+\niveau{3M}
+\source{}
+\type{serie}
+\piments{3}
+\pts{}
+\annee{}
+
+\contenu{
+\tcblower
+Dérivez les fonctions suivantes:
+\begin{enumerate}[label=\alph*)]
+    \item $f(x) = \dfrac{1}{\sin(x)}$
+    \item $f(x) = \tan(x) \cdot \cos(x)$
+    \item $f(x) = \dfrac{\sin(x)}{1 + \cos(x)}$
+    \item $f(x) = \dfrac{\sin(x) - 1}{2\sin(x) + 1}$
+    \item $f(x) = \dfrac{1}{\sin(x) \cdot \cos(x)}$
+    \item $f(x) = \sin^2(x)$
+    \item $f(x) = \sin(2x)$
+    \item $f(x) = \sin^3(4x)$
+    \item $f(x) = \sin\left(\left(\dfrac{2x-1}{x}\right)^2\right)$
+\end{enumerate}
+}
+
+\correction{
+\tcblower
+\begin{enumerate}[label=\alph*)]
+    \item $f(x) = \dfrac{1}{\sin(x)} = \sin(x)^{-1}$
+
+    En utilisant la dérivée d'une puissance et la règle de la chaîne:
+    \begin{align*}
+        f'(x) &= -1 \cdot \sin(x)^{-2} \cdot \cos(x) \\
+        &= -\dfrac{\cos(x)}{\sin^2(x)} \\
+        &= -\dfrac{1}{\tan(x) \cdot \sin(x)}
+    \end{align*}
+
+    \item $f(x) = \tan(x) \cdot \cos(x)$
+
+    En utilisant la règle du produit:
+    \begin{align*}
+        f'(x) &= \tan'(x) \cdot \cos(x) + \tan(x) \cdot \cos'(x) \\
+        &= \dfrac{1}{\cos^2(x)} \cdot \cos(x) + \tan(x) \cdot (-\sin(x)) \\
+        &= \dfrac{1}{\cos(x)} - \tan(x) \cdot \sin(x) \\
+        &= \dfrac{1}{\cos(x)} - \dfrac{\sin(x)}{\cos(x)} \cdot \sin(x) \\
+        &= \dfrac{1}{\cos(x)} - \dfrac{\sin^2(x)}{\cos(x)} \\
+        &= \dfrac{1 - \sin^2(x)}{\cos(x)} \\
+        &= \dfrac{\cos^2(x)}{\cos(x)} = \cos(x)
+    \end{align*}
+
+    \item $f(x) = \dfrac{\sin(x)}{1 + \cos(x)}$
+
+    En utilisant la règle du quotient:
+    \begin{align*}
+        f'(x) &= \dfrac{\sin'(x) \cdot (1 + \cos(x)) - \sin(x) \cdot (1 + \cos(x))'}{(1 + \cos(x))^2} \\
+        &= \dfrac{\cos(x) \cdot (1 + \cos(x)) - \sin(x) \cdot (-\sin(x))}{(1 + \cos(x))^2} \\
+        &= \dfrac{\cos(x) + \cos^2(x) + \sin^2(x)}{(1 + \cos(x))^2} \\
+        &= \dfrac{\cos(x) + 1}{(1 + \cos(x))^2} \\
+        &= \dfrac{1}{1 + \cos(x)}
+    \end{align*}
+
+    \item $f(x) = \dfrac{\sin(x) - 1}{2\sin(x) + 1}$
+
+    En utilisant la règle du quotient:
+    \begin{align*}
+        f'(x) &= \dfrac{(\sin(x) - 1)' \cdot (2\sin(x) + 1) - (\sin(x) - 1) \cdot (2\sin(x) + 1)'}{(2\sin(x) + 1)^2} \\
+        &= \dfrac{\cos(x) \cdot (2\sin(x) + 1) - (\sin(x) - 1) \cdot 2\cos(x)}{(2\sin(x) + 1)^2} \\
+        &= \dfrac{2\sin(x)\cos(x) + \cos(x) - 2\sin(x)\cos(x) + 2\cos(x)}{(2\sin(x) + 1)^2} \\
+        &= \dfrac{3\cos(x)}{(2\sin(x) + 1)^2}
+    \end{align*}
+
+    \item $f(x) = \dfrac{1}{\sin(x) \cdot \cos(x)}$
+
+    En utilisant la règle du quotient (ou du produit avec des puissances négatives):
+    \begin{align*}
+        f'(x) &= \dfrac{0 \cdot (\sin(x)\cos(x)) - 1 \cdot (\sin(x)\cos(x))'}{(\sin(x)\cos(x))^2} \\
+        &= \dfrac{-(\sin'(x)\cos(x) + \sin(x)\cos'(x))}{(\sin(x)\cos(x))^2} \\
+        &= \dfrac{-(\cos(x)\cos(x) + \sin(x) \cdot (-\sin(x)))}{(\sin(x)\cos(x))^2} \\
+        &= \dfrac{-(\cos^2(x) - \sin^2(x))}{(\sin(x)\cos(x))^2} \\
+        &= \dfrac{\sin^2(x) - \cos^2(x)}{(\sin(x)\cos(x))^2}
+    \end{align*}
+
+    \item $f(x) = \sin^2(x)$
+
+    En utilisant la règle de la chaîne:
+    \begin{align*}
+        f'(x) &= 2 \cdot \sin(x) \cdot \sin'(x) \\
+        &= 2\sin(x) \cdot \cos(x) \\
+        &= \sin(2x)
+    \end{align*}
+
+    \item $f(x) = \sin(2x)$
+
+    En utilisant la règle de la chaîne:
+    \begin{align*}
+        f'(x) &= \cos(2x) \cdot (2x)' \\
+        &= \cos(2x) \cdot 2 \\
+        &= 2\cos(2x)
+    \end{align*}
+
+    \item $f(x) = \sin^3(4x)$
+
+    En utilisant la règle de la chaîne (deux fois):
+    \begin{align*}
+        f'(x) &= 3 \cdot \sin^2(4x) \cdot \sin'(4x) \\
+        &= 3\sin^2(4x) \cdot \cos(4x) \cdot (4x)' \\
+        &= 3\sin^2(4x) \cdot \cos(4x) \cdot 4 \\
+        &= 12\sin^2(4x) \cdot \cos(4x)
+    \end{align*}
+
+    \item $f(x) = \sin\left(\left(\dfrac{2x-1}{x}\right)^2\right)$
+
+    Posons $u(x) = \left(\dfrac{2x-1}{x}\right)^2$ et $f(x) = \sin(u(x))$.
+
+    D'abord, calculons $u'(x)$ avec $v(x) = \dfrac{2x-1}{x}$:
+    \begin{align*}
+        v(x) &= \dfrac{2x-1}{x} = 2 - \dfrac{1}{x} \\
+        v'(x) &= \dfrac{1}{x^2}
+    \end{align*}
+
+    Maintenant, $u(x) = v(x)^2$, donc:
+    \begin{align*}
+        u'(x) &= 2v(x) \cdot v'(x) \\
+        &= 2 \cdot \left(2 - \dfrac{1}{x}\right) \cdot \dfrac{1}{x^2} \\
+        &= \dfrac{2(2x-1)}{x^3}
+    \end{align*}
+
+    Finalement, en utilisant la règle de la chaîne:
+    \begin{align*}
+        f'(x) &= \cos(u(x)) \cdot u'(x) \\
+        &= \cos\left(\left(\dfrac{2x-1}{x}\right)^2\right) \cdot \dfrac{2(2x-1)}{x^3}
+    \end{align*}
+\end{enumerate}
+}

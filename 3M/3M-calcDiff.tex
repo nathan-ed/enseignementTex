@@ -573,8 +573,8 @@ width=5.5cm,height=4cm,
 \insertexo{h2mu9}{true}{exo}
 \insertexo{wdzr4}{true}{exo}
 \insertexo{9ghy8}{true}{exo}
-\insertexo{v911h}{true}{exo}
 \insertexo{g75hx}{true}{exo}
+\insertexo{v911h}{true}{exo}
 
 
 \subsection{Le nombre dérivé}
@@ -609,9 +609,30 @@ $$f(x) = \begin{cases}
     \vspace{10cm}
 \end{exemple}
 
-\insertexo{pajju}{true}{exo}
 \insertexo{rqd6n}{false}{exo}
+\insertexo{pajju}{true}{exo}
+\insertexo{mmztw}{true}{exo}
+\insertexo{hb4kv}{true}{exo}
 \subsection{Relation avec la continuité}
+\begin{thm}
+		\tcblower
+Si $f$ est dérivable en $x$ alors $f$ est continue en $x$.
+
+\begin{proof}
+	On a
+
+	\begin{explanation}[0.75]
+	$\displaystyle{\lim_{h\to0}\left( f(x)+h)-f(x)\right)}=\displaystyle{\lim_{h\to 0}\left(\dfrac{f(x+h)-f(x)}{h}\cdot h\right)}$&\\
+	$=\displaystyle{\lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h}\cdot\lim_{h\to 0}h} $ & limites $\exists$ et finies\\
+			$=f'(x)\cdot 0=0$ &car $\displaystyle{\lim_{h\to 0}h=0}$
+\end{explanation}
+donc $f$ est bien continue en $x$.
+\end{proof}
+\end{thm}
+\begin{remarque}
+	\tcblower
+	La réciproque de ce théorème n'est pas valable comme nous le verrons aux exemples \ref{ex:valabs} et \ref{ex:anguleux}.
+\end{remarque}
 
 Une fonction peut être continue en un certain nombre $x$ sans y être dérivable.
 \begin{exemple}[label=ex:valabs]
@@ -648,7 +669,7 @@ de sorte que
 $$\displaystyle\lim_{h \to 0^-} \dfrac{f(0+h) - f(0)}{h} = -1, \quad \displaystyle\lim_{h \to 0^+} \dfrac{f(0+h) - f(0)}{h} = 1.$$
 et
 $$\displaystyle\lim_{h \to 0} \dfrac{f(0+h) - f(0)}{h} \quad \text{n'existe pas}.$$
-L'échec de la fonction valeur absolue à être dérivable en 0 est reflété par son graphe. En $(0, 0)$, le graphe change brusquement de direction et il n'y a pas de tangente en ce point.
+L'échec de la fonction valeur absolue à être dérivable en 0 est reflété par son graphe. En $(0; 0)$, le graphe change brusquement de direction et il n'y a pas de tangente en ce point.
 
 \end{exemple}
 
@@ -680,8 +701,8 @@ On observe un changement de direction soudain similaire dans le graphe de
 $$f(x) = \begin{cases}
     x^2, & x \le 1 \\
     x, & x > 1 \end{cases}.$$
-au point $(1, 1)$. Encore une fois, $f$ est partout continue (vérifiez-le!), mais elle n'est pas dérivable en $1$~:
-\vspace{10cm}
+au point $(1; 1)$. Encore une fois, $f$ est partout continue (vérifiez-le!), mais elle n'est pas dérivable en $1$~:
+\vspace{7cm}
 \end{exemple}
 
 
@@ -704,33 +725,11 @@ au point $(1, 1)$. Encore une fois, $f$ est partout continue (vérifiez-le!), ma
 \end{definition}
 \end{comment}
 
-\begin{thm}
-		\tcblower
-Si $f$ est dérivable en $x$ alors $f$ est continue en $x$.
 
-\begin{proof}
-	On a
-
-	\begin{explanation}[0.75]
-	$\displaystyle{\lim_{h\to0}\left( f(x)+h)-f(x)\right)}=\displaystyle{\lim_{h\to 0}\left(\dfrac{f(x+h)-f(x)}{h}\cdot h\right)}$&\\
-	$=\displaystyle{\lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h}\cdot\lim_{h\to 0}h} $ & limites $\exists$ et finies\\
-			$=f'(x)\cdot 0=0$ &car $\displaystyle{\lim_{h\to 0}h=0}$
-\end{explanation}
-donc $f$ est bien continue en $x$.
-\end{proof}
-\end{thm}
-\begin{remarque}
-	\tcblower
-	La réciproque de ce théorème n'est pas valable comme nous l'avons vu aux exemples \ref{ex:valabs} et \ref{ex:anguleux}.
-\end{remarque}
-
-\insertexo{mmztw}{true}{exo}
 \insertexo{3mumb}{false}{exo}
-\insertexo{hb4kv}{true}{exo}
 \insertexo{sjs2h}{true}{exo}
 \insertexo{atf6t}{true}{exo}
 \insertexo{6ekwp}{true}{exo}
-\insertexo{pajju}{false}{exo}
 
 \subsection{Règles de dérivation}
 Calculer les dérivées de fonction comme
@@ -759,6 +758,9 @@ Voici un résumé des formules (démontrées plus bas ou en exercices).
 	\item[Inverse] $\left(\dfrac{1}{g}\right)'(x)=-\dfrac{g'(x)}{g(x)^2}$, si $g(x)\neq 0$
 	\item[Quotient] $\left(\dfrac{f}{g}\right)'(x)=-\dfrac{f(x)\cdot g'(x)-f'(x)\cdot g(x)}{g(x)^2}$
 	\item[Exposant] $x^{\frac{n}{m}}=\frac{n}{m}x^{\frac{n}{m}-1}, \forall n,m\in \mathbb{Z}, m\neq 0$
+	\item[Composition] Dans les conditions du Théorème 	\ref{thm:derCompo} 
+
+		$(f\circ g)'(x)=f'(g(x))\cdot g'(x)$ 
 \end{description}
 \end{formules}
 \begin{prop}
@@ -821,11 +823,7 @@ Voici un résumé des formules (démontrées plus bas ou en exercices).
 Puisque $f$ est dérivable en $x$, nous savons que $f$ est continue en $x$ et ainsi
    	$$\lim_{h \to 0} f(x+h) = f(x).$$
    	
-   	Puisque 
-   	$$\lim_{h \to 0} \frac{g(x+h) - g(x)}{h} = g'(x) \quad \text{et} \quad \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = f'(x),$$
-   	
-   	nous obtenons
-   	$$\lim_{h \to 0} \frac{(fg)(x+h) - (fg)(x)}{h} = f(x)g'(x) + g(x)f'(x).$$
+   	Puisque $\lim_{h \to 0} \frac{g(x+h) - g(x)}{h} = g'(x)$ et $\lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = f'(x)$, nous obtenons $\lim_{h \to 0} \frac{(fg)(x+h) - (fg)(x)}{h} = f(x)g'(x) + g(x)f'(x).$
    \end{proof}
 \end{prop}
 
@@ -1025,14 +1023,13 @@ $	\begin{aligned}
 \insertexo{raguk}{true}{exo}
 \insertexo{uc9rv}{true}{exo}
 \insertexo{auu1q}{true}{exo}
+\insertexo[exo:derQuot]{972y4}{true}{exo}
+\insertexo{bgaa8}{true}{exo}
+\insertexo{4pfpm}{true}{exo}
+\insertexo{b6sz1}{false}{exo}
+\insertexo{hrm6y}{false}{exo}
 \insertexo{4pmjf}{true}{exo}
 
-\insertexo[exo:derQuot]{972y4}{true}{exo}
-\insertexo{4pfpm}{true}{exo}
-\insertexo{hrm6y}{false}{exo}
-\insertexo{b6sz1}{false}{exo}
-
-\insertexo{bgaa8}{true}{exo}
 \subsection{L'équation de la tangente}
 \begin{formule}
 	\tcblower
@@ -1058,6 +1055,12 @@ ou encore
 	au point $(3;4)$. 
 	\vspace{6cm}
 \end{exemple}
+\insertexo{ddnv1}{false}{exo}
+\insertexo{pbjwq}{false}{exo}
+\insertexo{t8c3v}{false}{exo}
+\insertexo{r2h6k}{false}{exo}
+\insertexo{p5qw8}{false}{exo}
+\insertexo{n9xt4}{false}{exo}
 \insertexo{f3jrh}{false}{exo}
 \insertexo{q4xfv}{false}{exo}
 \insertexo{xk5f9}{false}{exo}
@@ -1172,17 +1175,11 @@ $\begin{aligned}
 	[[\sin(x^2 - 1)]^3]' &= 3[\sin(x^2 - 1)]^2 \cos(x^2 - 1) \cdot 2x\\ &= 6x\sin^2(x^2 - 1)\cos(x^2 - 1)
 \end{aligned}$
 \end{exemple}
-\insertexo{ddnv1}{false}{exo}
 \insertexo{pju6j}{false}{exo}
-\insertexo{pbjwq}{false}{exo}
 \insertexo{u68mh}{true}{exo}
 \insertexo{areny}{true}{exo}
-\insertexo{t8c3v}{false}{exo}
-\insertexo{b6sz1}{true}{exo}
-\insertexo{r2h6k}{false}{exo}
-\insertexo{p5qw8}{false}{exo}
-\insertexo{n9xt4}{false}{exo}
 
+\begin{comment}
 \subsection{Angle entre deux courbes}
 \begin{definition}
 	\tcblower
@@ -1203,6 +1200,7 @@ $\begin{aligned}
 \insertexo{kfy9s}{true}{exo}
 \insertexo{mxwa2}{true}{exo}
 \insertexo{91jqx}{true}{exo}
+\end{comment}
 
  \nocite{*}
  \vspace{-10pt}
