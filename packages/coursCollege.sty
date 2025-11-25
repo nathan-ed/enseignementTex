@@ -49,6 +49,7 @@
 % Define counters
 \newcounter{exemple}
 \newcounter{formule}
+\newcounter{procedure}
 \newcounter{definition}
 \newcounter{exercice}
 \newcounter{remarque}
@@ -114,14 +115,57 @@
     colframe=white % No border
 }
 
+\newlength{\exemplemarginshift}
+\setlength{\exemplemarginshift}{5.3cm}
+\newlength{\exemplemarginwidth}
+\setlength{\exemplemarginwidth}{5cm}
+\newlength{\exemplemarginleftoffset}
+\setlength{\exemplemarginleftoffset}{\exemplemarginshift}
+\addtolength{\exemplemarginleftoffset}{-\exemplemarginwidth}
+\addtolength{\exemplemarginleftoffset}{-2mm}
+\newcommand{\exemplemarginraise}{1.4\baselineskip}
+\newsavebox{\exemplemarginbox}
+\newcommand{\resetexemplemargin}{\global\sbox{\exemplemarginbox}{}}
+\newcommand{\setexemplemargin}[2][0pt]{%
+    \global\sbox{\exemplemarginbox}{%
+        \begin{minipage}[t]{\exemplemarginwidth}\centering\vspace*{#1}#2\end{minipage}%
+    }%
+    \ignorespaces
+}
+
 \newtcolorbox[auto counter]{exemple}[1][]{
-	enhanced,
-    before upper={\raggedleft\textbf{\stepcounter{exemple}Exemple~\theexemple}\\\vspace{0.5em}},
-borderline west={0.5pt}{5cm}{black,
-    line cap=round,
-    shorten >=3mm,
-    shorten <=3mm},
-before lower={\setlength\parindent{0pt}},
+    enhanced,
+    breakable,
+    left=5.3cm,
+    right=0pt,
+    top=5pt,
+    bottom=0pt,
+    middle=-7pt,
+    fontupper={\raggedright},
+    fontlower=\justifying,
+    before upper={\resetexemplemargin\vspace{2mm}\llap{\textbf{\stepcounter{exemple}Exemple~\theexemple}\hspace{0.5cm}}\vspace{-2mm}},
+    overlay unbroken and first={
+        \draw[line width=0.5pt, black, line cap=round]
+            ([xshift=5cm,yshift=-3mm]frame.north west) --
+            ([xshift=5cm,yshift=3mm]frame.south west);
+        \ifdim\wd\exemplemarginbox>0pt
+\node[anchor=north west] at ([xshift=\exemplemarginleftoffset,yshift=-\exemplemarginraise]frame.north west) {\usebox{\exemplemarginbox}};
+        \fi
+    },
+    overlay middle={
+        \draw[line width=0.5pt, black]
+            ([xshift=5cm]frame.north west) --
+            ([xshift=5cm]frame.south west);
+        \node[anchor=east,overlay] at ([xshift=4.7cm,yshift=-2mm]frame.north west) {\textbf{Exemple~\theexemple~(suite)}};
+    },
+    overlay last={
+        \draw[line width=0.5pt, black, line cap=round]
+            ([xshift=5cm]frame.north west) --
+            ([xshift=5cm,yshift=3mm]frame.south west);
+        %\node[anchor=east,overlay] at ([xshift=4.7cm,yshift=-2mm]frame.north west) {\textbf{Exemple~\theexemple~(suite)}};
+    },
+    before lower={\setlength\parindent{0pt}},
+    after skip=10pt,
     #1
 }
 \newtcolorbox[auto counter]{exemplesuite}[1][]{
@@ -141,12 +185,45 @@ before lower={\setlength\parindent{0pt}},
     #1
 }
 
-
+\newtcolorbox[auto counter]{procedure}[1][]{
+    enhanced,
+    breakable,
+    left=5cm,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    middle=0pt,
+    fontupper={\raggedright},
+    fontlower=\justifying,
+    before upper={\vspace{2mm}\llap{\textbf{\stepcounter{procedure}Procédure}\hspace{0.3cm}}\vspace{-2mm}},
+    overlay unbroken and first={
+        \draw[line width=0.5pt, black, line cap=round]
+            ([xshift=5cm,yshift=-3mm]frame.north west) --
+            ([xshift=5cm,yshift=3mm]frame.south west);
+    },
+    overlay middle={
+        \draw[line width=0.5pt, black]
+            ([xshift=5cm]frame.north west) --
+            ([xshift=5cm]frame.south west);
+        \node[anchor=east,overlay] at ([xshift=4.7cm,yshift=-2mm]frame.north west) {\textbf{Procédure (suite)}};
+    },
+    overlay last={
+        \draw[line width=0.5pt, black, line cap=round]
+            ([xshift=5cm]frame.north west) --
+            ([xshift=5cm,yshift=3mm]frame.south west);
+        \node[anchor=east,overlay] at ([xshift=4.7cm,yshift=-2mm]frame.north west) {\textbf{Procédure (suite)}};
+    },
+    before lower={\setlength\parindent{0pt}},
+    after skip=10pt,
+    #1
+    
+}
 \newtcolorbox[auto counter]{formule}[1][]{
     before upper={\raggedleft\textbf{\stepcounter{formule}Formule}\\\vspace{0.5em}},
     before lower={\setlength\parindent{0pt}},
     #1
 }
+
 \newtcolorbox[auto counter]{formules}[1][]{
     before upper={\raggedleft\textbf{\stepcounter{formule}Formules}\\\vspace{0.5em}},
     before lower={\setlength\parindent{0pt}},
