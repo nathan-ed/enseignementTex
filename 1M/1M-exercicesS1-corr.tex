@@ -1,0 +1,317 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{../packages/coursCollege}
+\newcommand{\Chapitre}{Exercices pour le premier semestre}
+\renewcommand{\path}{../}
+\usepackage[    %backend=biber, 
+natbib=true,
+style=numeric,
+sorting=none]{biblatex}  % Load biblatex for bibliography handling
+\addbibresource{biblio-der.bib}  
+\renewcommand\refname{Sources}
+\renewcommand{\cours}{1MA2~--~EG~--~ns~--~2025-2026}
+\usepackage{subcaption}
+% Définition des couleurs
+\definecolor{functioncolor}{RGB}{220,50,47}
+\definecolor{tangentcolor}{RGB}{220,50,47}
+\definecolor{secantcolor}{RGB}{38,139,210}
+\definecolor{pointcolor}{RGB}{220,50,47}
+
+\begin{document}
+\tocloftpagestyle{fancy}
+% Reduce space between section entries
+\setlength{\cftbeforesecskip}{2pt}
+
+% Reduce indentation for section entries
+\setlength{\cftsecindent}{1em}
+\begin{center}
+{\bfseries \Huge Exercices -- Premier semestre (suite)}
+\vspace{1cm}
+
+
+\end{center}\vspace{-1cm}
+\tableofcontents
+\newpage
+
+%\section{Calcul numérique}
+%
+%%\insertexo{6z4t2}{false}{both}
+%%\insertexo{1mcjb}{false}{both}
+%\subsection{Nombres premiers}
+%\insertexo{fttde}{false}{both}
+%\insertexo{b23hy}{false}{both}
+%\insertexo{11mx3}{false}{both}
+%\insertexo{4sun4}{false}{both}
+%\subsection{Division euclidienne}
+%\insertexo{t3fxd}{false}{both}
+%
+%\insertexo{wv9bq}{false}{both}
+%\insertexo{cc78t}{false}{both}
+%\insertexo{vrjk9}{false}{both}
+%\insertexo{nwgzm}{false}{both}
+%
+%\subsection{Périodiques}
+%\insertexo{vssbc}{false}{both}
+%%\insertexo{jhavr}{false}{both}
+%\insertexo{xgk9e}{false}{both}
+%\subsection{Racines}
+%\insertexo{hv2ug}{false}{both}
+%\insertexo{ksh26}{false}{both}
+%\insertexo{9f4t8}{false}{both}
+%\insertexo{f3sg7}{false}{both}
+%
+%\insertexo{rp8cc}{false}{both}
+%\section{Ensembles et intervalles}
+%\subsection{Ensembles de nombres}
+%\insertexo{nj317}{false}{both}
+%\insertexo{j1x1v}{false}{both}
+%\insertexo{hggjf}{false}{both}
+%\insertexo{w1wsu}{false}{both}
+%\insertexo{cbh7d}{false}{both}
+%%\insertexo{yrfjs}{false}{both}
+%\subsection{Ensembles quelconques}
+%\insertexo{k8f2j}{false}{both}
+%\insertexo{tr635}{false}{both}
+%\insertexo{p6w7q}{false}{both}
+%
+%\insertexo{ew4z2}{false}{both}
+%\insertexo{fq51r}{false}{both}
+%\insertexo{rm8qy}{false}{both}
+%\insertexo{zm8w4}{false}{both}
+%\insertexo{krq84}{false}{both}
+%\insertexo{s2efz}{false}{both}
+%\insertexo{d5xp3}{false}{both}
+%\subsection{Intervalles réelles}
+%\insertexo{v2rv8}{false}{both}
+%
+%\insertexo{ht3h6}{false}{both}
+%
+%\insertexo{u14s6}{false}{both}
+%\insertexo{9k125}{false}{both}
+%\insertexo{mrvd7}{false}{both}
+%\insertexo{6ugwm}{false}{both}
+%\insertexo{drcdb}{false}{both}
+%\insertexo{czc9e}{false}{both}
+%\insertexo{p2cxv}{false}{both}
+%\insertexo{nw439}{false}{both}
+%\insertexo{61ve6}{false}{both}
+%\section{Calul littéral}
+%\subsection{Traduire un énoncé}
+%\insertexo{bvvy}{false}{both}
+%\insertexo{3qa3k}{false}{both}
+%\insertexo{a3tr3}{false}{both}
+%\subsection{Isoler une variable}
+%\insertexo{kdgn}{false}{both}
+%\insertexo{n66ke}{false}{both}
+%\insertexo{2yzxt}{false}{both}
+%
+%\subsection{L'algèbre comme outil de preuve}
+%\insertexo{sxya4}{false}{both}
+%\insertexo{wanr}{false}{both}
+%\insertexo{jxa81}{false}{both}
+%\insertexo{u38hd}{false}{both}
+%\insertexo{5xg9e}{false}{both}
+%\insertexo{rdpye}{false}{both}
+%\subsection{Développer et réduire}
+%\insertexo{n86nn}{false}{both}
+%\insertexo{akwq5}{false}{both}
+%\insertexo{sj5q7}{false}{both}
+%\insertexo{9e72h}{false}{both}
+%\insertexo{gw913}{false}{both}
+%\insertexo{jw3r4}{false}{both}
+%\insertexo{1e54x}{false}{both}
+%\insertexo{n9d51}{false}{both}
+%\insertexo{v4dqz}{false}{both}
+%\subsection{Identités remarquables}
+%\insertexo{akeku}{false}{both}
+%\insertexo{sqsur}{false}{both}
+%\insertexo{xabyp}{false}{both}
+%\insertexo{qkz3z}{false}{both}
+%\insertexo{6edd2}{false}{both}
+%\insertexo{3ytn7}{false}{both}
+%\insertexo{82fkx}{false}{both}
+%\subsection{Factorisation}
+%\insertexo{g6h1q}{false}{both}
+%\insertexo{q5m9j}{false}{both}
+%\insertexo{z34z9}{false}{both}
+%\insertexo{6cmvd}{false}{both}
+%\insertexo{4kec2}{false}{both}
+%\insertexo{64mtt}{false}{both}
+%\insertexo{pq3wr}{false}{both}
+%\insertexo{kywsv}{false}{both}
+%\insertexo{nc4wd}{false}{both}
+%\insertexo{ctbb}{false}{both}
+%\insertexo{x9jw}{false}{both}
+%\section{Équations}
+%\insertexo{5pcp}{false}{both}
+%\subsection{Équations du premier degré}
+%\insertexo{qa6b}{false}{both}
+%\insertexo{ehjb}{false}{both}
+%\insertexo{rhvj}{false}{both}
+%\subsubsection{Résolution d'équations}
+%\subsubsection{Résolution de problèmes}
+%\insertexo{prpq}{false}{both}
+%\insertexo{ae7n}{false}{both}
+%\insertexo{fata}{false}{both}
+%\insertexo{abv3}{false}{both}
+%\insertexo{pvqa}{false}{both}
+%\insertexo{q8vx}{false}{both}
+\setcounter{section}{3}
+\section{Equations}
+\setcounter{subsection}{1}
+\subsection{Théorème du produit nul}
+\insertexo{hayk}{false}{both}
+\insertexo{r5g1}{false}{both}
+\subsection{Complétion du carré}
+\insertexo{cn6a}{false}{both}
+\subsection{Formule du discriminant}
+\insertexo{4yk3}{false}{both}
+\insertexo{z8vs}{false}{both}
+\subsection{Résolutions générales d'équations}
+\insertexo{5hed}{false}{both}
+\insertexo{ka15h}{false}{both}
+\insertexo{hr3d}{false}{both}
+\insertexo{5tja}{false}{both}
+\insertexo{3s5y}{false}{both}
+\insertexo{ufbv}{false}{both}
+\insertexo{q822}{false}{both}
+\insertexo{5pp8}{false}{both}
+\insertexo{ek52}{false}{both}
+\subsection{Résolution de problèmes}
+\insertexo{v9mk}{false}{both}
+\insertexo{n9j2}{false}{both}
+\insertexo{gq2s}{false}{both}
+\insertexo{fu5h}{false}{both}
+\insertexo{7v59j}{false}{both}
+\insertexo{ug96}{false}{both}
+\insertexo{fxnm}{false}{both}
+\insertexo{amb1}{false}{both}
+\insertexo{uw34}{false}{both}
+\subsection{Équations bicarrées}
+\insertexo{9kr7}{false}{both}
+\insertexo{jjs4}{false}{both}
+\subsection{Équations irrationnelles}
+\insertexo{qndn}{false}{both}
+\subsection{Systèmes d'équations}
+\insertexo{cqkc}{false}{both}
+\insertexo{fz7d}{false}{both}
+\insertexo{r351}{false}{both}
+\insertexo{8crq}{false}{both}
+\insertexo{tfmt}{false}{both}
+\insertexo{marp}{false}{both}
+\insertexo{8266}{false}{both}
+\insertexo{2r37}{false}{both}
+\insertexo{qg1h}{false}{both}
+\insertexo{bdr9}{false}{both}
+\insertexo{q43t}{false}{both}
+\insertexo{qad4}{false}{both}
+%\subsection{Résolution de problèmes}
+%\insertexo{591f}{false}{both}
+%\insertexo{a24q}{false}{both}
+%\insertexo{dv8m}{false}{both}
+%\insertexo{v3z1}{false}{both}
+%\insertexo{wy6v}{false}{both}
+%\insertexo{6vjf}{false}{both}
+%\insertexo{936c}{false}{both}
+%\section{Pythagore}
+%\insertexo{4hnue}{false}{both}
+%\insertexo{xsa6d}{false}{both}
+%\insertexo{51zgu}{false}{both}
+%\insertexo{6nzrd}{false}{both}
+%\insertexo{5cukt}{false}{both}
+%\insertexo{dgxhd}{false}{both}
+%\insertexo{vzkzz}{false}{both}
+%\insertexo{1a2ea}{false}{both}
+%\insertexo{5259p}{false}{both}
+%\insertexo{k481d}{false}{both}
+%\section{Thalès}
+%\insertexo{ur87x}{false}{both}
+%\insertexo{fvs2g}{false}{both}
+%\insertexo{j2gtb}{false}{both}
+%\insertexo{b7f66}{false}{both}
+%\insertexo{5fh1d}{false}{both}
+%\section{trigo}
+%\insertexo{yyxse}{false}{both}
+%\insertexo{brprr}{false}{both}
+%\insertexo{4hhgy}{false}{both}
+%\insertexo{gek17}{false}{both}
+%\insertexo{n827m}{false}{both}
+%\insertexo{73m72}{false}{both}
+%\insertexo{vy35}{false}{both}
+%\insertexo{n6cxz}{false}{both}
+%\insertexo{92n2p}{false}{both}
+%\insertexo{pu12x}{false}{both}
+%\insertexo{zcmts}{false}{both}
+%\insertexo{j3232}{false}{both}
+%\insertexo{281zz}{false}{both}
+%\insertexo{uydzz}{false}{both}
+%\insertexo{9apat}{false}{both}
+%\insertexo{fd8ny}{false}{both}
+%\insertexo{t2456}{false}{both}
+%\insertexo{ekp94}{false}{both}
+%\insertexo{gnkbw}{false}{both}
+%\insertexo{de7km}{false}{both}
+%\insertexo{6c6w2}{false}{both}
+%\insertexo{s7xwk}{false}{both}
+%\insertexo{yztxx}{false}{both}
+%\insertexo{2r44h}{false}{both}
+%\section{cercles et angles}
+%\insertexo{22eqz}{false}{both}
+%\insertexo{478y1}{false}{both}
+%\insertexo{ejsh1}{false}{both}
+%\insertexo{fqp9v}{false}{both}
+%\insertexo{z451t}{false}{both}
+%\insertexo{yvdsw}{false}{both}
+%\insertexo{zuran}{false}{both}
+%\insertexo{evc59}{false}{both}
+%\insertexo{5s1pd}{false}{both}
+%\insertexo{ap83v}{false}{both}
+%\insertexo{d1f4q}{false}{both}
+%\section{fonctions}
+%\insertexo{ctcch}{false}{both}
+%\insertexo{bxak6}{false}{both}
+%\insertexo{jyun7}{false}{both}
+%\insertexo{7aj4p}{false}{both}
+%\insertexo{kjxge}{false}{both}
+%\insertexo{uc1n8}{false}{both}
+%\insertexo{v7d64}{false}{both}
+%\insertexo{pzws2}{false}{both}
+%\insertexo{azp4k}{false}{both}
+%\insertexo{trcsj}{false}{both}
+%\insertexo{7r267}{false}{both}
+%\insertexo{vkggb}{false}{both}
+%\insertexo{ffeqn}{false}{both}
+%\insertexo{3j85f}{false}{both}
+%\insertexo{r4ggz}{false}{both}
+%\insertexo{jxb8v}{false}{both}
+%\insertexo{3v9h8}{false}{both}
+%\insertexo{96gye}{false}{both}
+%\insertexo{t85gc}{false}{both}
+%\insertexo{gs1br}{false}{both}
+%\insertexo{qxjb5}{false}{both}
+%\insertexo{xwye2}{false}{both}
+%\insertexo{695hr}{false}{both}
+%\insertexo{v45ts}{false}{both}
+%\insertexo{sbyj3}{false}{both}
+%\insertexo{habv6}{false}{both}
+%\insertexo{2z37j}{false}{both}
+%\insertexo{b4vhc}{false}{both}
+%\insertexo{645w8}{false}{both}
+%\insertexo{k6m9k}{false}{both}
+%\insertexo{f9zpd}{false}{both}
+%\insertexo{jj4kc}{false}{both}
+%\insertexo{umzs2}{false}{both}
+%\insertexo{we4mn}{false}{both}
+%\insertexo{u9her}{false}{both}
+%\insertexo{7nduh}{false}{both}
+%\insertexo{5yfr4}{false}{both}
+%\insertexo{v42bf}{false}{both}
+%\insertexo{9ppsy}{false}{both}
+%\insertexo{y3kxz}{false}{both}
+%\insertexo{h9s4d}{false}{both}
+%\insertexo{cm4fj}{false}{both}
+%\insertexo{evk3n}{false}{both}
+%\insertexo{jq9q2}{false}{both}
+%\subsection{geom analytique}
+%\insertexo{jr16y}{false}{both}
+%\insertexo{v4s75}{false}{both}
+\end{document}

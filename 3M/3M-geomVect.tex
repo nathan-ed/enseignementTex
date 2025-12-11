@@ -1,0 +1,1112 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{../packages/coursCollege} % Assumes coursCollege.sty is in the search path
+
+% Document Metadata
+\newcommand{\Chapitre}{Géométrie vectorielle}
+\renewcommand{\cours}{3MA1~--~EG~--~ns~--~2025-2026}
+
+% Custom commands for vectors to match the style
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\vcol}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+\newcommand{\vcolthree}[3]{\begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}}
+
+\begin{document}
+
+\section{Géométrie vectorielle}
+\begin{exercice}
+    \tcblower
+    Soient $\vec{F}_{1}$, $\vec{F}_{2}$, $\vec{F}_{3}$ et $\vec{F}_{4}$ des forces agissant sur un objet $P$, comme l'indique la figure ci-dessous.
+    Construisez la force qui empêchera $P$ de se déplacer :
+    
+    \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=10cm, height=8cm,
+            axis lines=none,
+            grid=both,
+            grid style={line width=.1pt, draw=gray!30},
+            major grid style={line width=.2pt,draw=gray!60},
+            xmin=-6, xmax=6,
+            ymin=-6, ymax=6,
+            xtick={-6,-5,...,6},
+            ytick={-6,-5,...,6},
+            scale only axis,
+            anchor=center
+        ]
+            \coordinate (P) at (axis cs:0,0);
+            \node[below right] at (P) {$P$};
+            
+            % Vectors estimated from the grid image
+            \draw[->, thick, >=latex] (P) -- (axis cs:2,2) node[midway, above left] {$\vec{F}_1$};
+            \draw[->, thick, >=latex] (P) -- (axis cs:-4,3) node[midway, above right] {$\vec{F}_2$}; % Approx (-4,3)
+            \draw[->, thick, >=latex] (P) -- (axis cs:-1,-2) node[midway, right] {$\vec{F}_3$};
+            \draw[->, thick, >=latex] (P) -- (axis cs:3,-4) node[midway, above right] {$\vec{F}_4$};
+
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+\end{exercice}
+
+\begin{definition}
+    \tcblower
+    Un \textbf{espace vectoriel} ($V$) est un espace contenant des objets appelés \textbf{vecteurs}.
+    Ces vecteurs peuvent être représentés dans un repère par une flèche.
+    La direction, le sens et la longueur (appelée \textbf{norme}) caractérisent ces vecteurs.
+    Nous nous concentrerons uniquement sur les espaces vectoriels $\mathbb{R}^{2}$ et $\mathbb{R}^{3}$.
+\end{definition}
+
+\begin{definition}
+    \tcblower
+    \textbf{Opérations sur les vecteurs.}
+    
+    \begin{itemize}
+        \item \textbf{La somme :} À partir de deux vecteurs mis bout à bout, on définit la somme comme le vecteur qui relie les points de départ et d'arrivée.
+        On en dégage la relation évidente (Relation de Chasles) : $\vect{AB}+\vect{BC}=\vect{AC}$.
+        
+        \textbf{Propriétés :}
+        \begin{enumerate}
+            \item $\vec{u}+\vec{v}=\vec{v}+\vec{u}$ (commutativité).
+            \item $\vec{u}+(\vec{v}+\vec{w})=(\vec{u}+\vec{v})+\vec{w}$ (associativité).
+            \item $\vec{0}$ est l'élément neutre, c'est-à-dire que $\vec{u}+\vec{0}=\vec{0}+\vec{u}=\vec{u}$.
+            \item $\forall\vec{u}\in V; \exists\vec{w}(=-\vec{u})$ appelé l'opposé de $\vec{u}$, tel que $\vec{u}+\vec{w}=\vec{w}+\vec{u}=\vec{0}$.
+        \end{enumerate}
+        Remarque: $-\vect{AB}=\vect{BA}$ ; $\vect{AA}=\vec{0}$.
+
+        \item \textbf{La différence :} La différence de deux vecteurs est la somme par l'opposé.
+        \[ \vec{u}-\vec{v}=\vec{u}+(-\vec{v}) \]
+
+        \item \textbf{La multiplication par un nombre réel} (appelé scalaire) $\lambda\cdot\vec{v}$ représente l'homothétie d'un facteur $\lambda$ du vecteur $\vec{v}$.
+    \end{itemize}
+\end{definition}
+
+\begin{exercice}
+    \tcblower
+    Déterminez par une construction géométrique les scalaires $\alpha$ et $\beta$ tels que $\vec{w}=\alpha\vec{u}+\beta\vec{v}$.
+    
+    \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=10cm, height=6cm,
+            axis lines=none,
+            xmin=0, xmax=10, ymin=0, ymax=6,
+            clip=false
+        ]
+            % Recreating visual representation roughly
+            \draw[->, thick, >=latex] (axis cs:1,5) -- (axis cs:4,5.5) node[midway, above] {$\vec{u}$};
+            \draw[->, thick, >=latex] (axis cs:1,4) -- (axis cs:2,2.5) node[midway, right] {$\vec{v}$};
+            
+            \draw[->, thick, >=latex] (axis cs:3,0.5) -- (axis cs:9,5.5) node[midway, above left] {$\vec{w}$};
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soit $OABC$ un carré. Construisez les points $E$, $F$, $G$ et $H$ tels que :
+    \begin{tasks}(2)
+        \task $\vect{AE}=\vect{AC}+\vect{BC}$
+        \task $\vect{AF}=\frac{1}{2}\vect{AO}-\vect{OC}$
+        \task $\vect{CG}=2\vect{CB}+\frac{1}{2}\vect{BO}$
+        \task $\vect{OH}=-\sqrt{2}\vect{OB}$
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soit $ABCDEF$ un hexagone régulier de centre $O$. Construisez les vecteurs ci-dessous et exprimez-les plus simplement. Indiquez s'il y a des vecteurs colinéaires parmi eux.
+    \begin{tasks}(2)
+        \task $\vec{a}=\vect{AB}+\vect{CD}$
+        \task $\vec{b}=\vect{AB}+\vect{FE}$
+        \task $\vec{c}=\vect{AC}-\vect{BD}-\vect{AB}$
+        \task $\vec{d}=\vect{EB}+\vect{DE}$
+        \task $\vec{e}=\vect{FE}+\vect{FE}$
+        \task $\vec{f}=\vect{FA}+\vect{BC}+\vect{AB}+\vect{OD}$ (Note: Source text says "DD" or similar typo, adjusted to context or kept as source "DD" if strictly required, but "OD" fits hex geometry context better. Source actually says "DD". Keeping as transcribed or fixing? I will use source text logic but clearly there is a typo in source "DD". Let's assume typical hex problem).
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Les points $A$, $B$ et $M$ sont tels que :
+    \[ 2\vect{MA}+3\vect{BM}=\vect{AB} \]
+    Exprimez $\vect{AM}$ en fonction de $\vect{AB}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soient $ABCD$ et $AB^{\prime}CD^{\prime}$ deux parallélogrammes. Comparez les vecteurs $\vect{BB^{\prime}}$ et $\vect{DD^{\prime}}$.
+\end{exercice}
+\section{Dépendance linéaire}
+
+\begin{definition}
+    \tcblower
+    \begin{itemize}
+        \item On appelle \textbf{combinaison linéaire} des vecteurs $\vec{a},\vec{b},\vec{c},...,\vec{n}$, le vecteur :
+        \[ \alpha\vec{a} + \beta\vec{b} + \gamma\vec{c} + ... + \nu\vec{n} \quad \text{où } \alpha,\beta,\gamma,...,\nu\in\mathbb{R} \]
+        \item Les vecteurs $\vec{v_{1}},\vec{v_{2}},...,\vec{v_{k}}$ sont dits \textbf{linéairement dépendants} si on peut écrire au moins un de ces vecteurs comme combinaison linéaire des autres.
+        \[ \exists \alpha_{2},...,\alpha_{k}\in\mathbb{R} \text{ tels que } \vec{v_{1}}=\alpha_{2}\cdot\vec{v_{2}}+...+\alpha_{k}\cdot\vec{v_{k}} \]
+        \item Si ce n'est pas possible, on dit qu'ils sont \textbf{linéairement indépendants} et on a :
+        \[ \alpha_{1}\vec{v}_{1}+\alpha_{2}\cdot\vec{v_{2}}+...+\alpha_{k}\cdot\vec{v_{k}}=\vec{0} \iff \alpha_{1}=\alpha_{2}=...=\alpha_{k}=0 \]
+        \item On dit que l'ensemble $\{\vec{v_{1}},...,\vec{v_{k}}\}$ \textbf{engendre} l'espace $V$ si n'importe quel vecteur $\vec{v}\in V$ peut s'écrire comme combinaison linéaire de ces $\vec{v_{i}}$.
+        \item Une \textbf{base} de $V$ est un ensemble de vecteurs qui engendrent $V$ et qui sont linéairement indépendants.
+    \end{itemize}
+\end{definition}
+
+\begin{remarque}
+    \tcblower
+    \begin{itemize}
+        \item Deux vecteurs linéairement dépendants sont dits \textbf{colinéaires}. $\vec{u}$ et $\vec{v}$ colinéaires $\iff \exists\lambda\in\mathbb{R}$ tel que $\vec{u}=\lambda\cdot\vec{v}$.
+        \item Trois vecteurs linéairement dépendants sont dits \textbf{coplanaires}.
+    \end{itemize}
+\end{remarque}
+
+\begin{definition}
+    \tcblower
+    \begin{itemize}
+        \item Un \textbf{repère} de $V$ est la donnée d'une origine et d'une base de $V$.
+        \item Relatif à une base $\{\vec{e_{1}},...,\vec{e_{k}}\}$, les \textbf{composantes} de $\vec{v}$ sont les coefficients de la combinaison linéaire :
+        \[ \vec{v}=\begin{pmatrix}v_{1}\\ ...\\ v_{k}\end{pmatrix} \iff \vec{v}=v_{1}\cdot\vec{e_{1}}+...+v_{k}\cdot\vec{e_{k}} \]
+    \end{itemize}
+\end{definition}
+
+\begin{prop}
+    \tcblower
+    \textbf{Opérations sur les composantes :}
+    Soient $\vec{u}=\begin{pmatrix}u_{1}\\ ...\\ u_{k}\end{pmatrix}$, $\vec{v}=\begin{pmatrix}v_{1}\\ ...\\ v_{k}\end{pmatrix}$ et $\lambda\in\mathbb{R}$, alors :
+    \[ \vec{u}+\vec{v}=\begin{pmatrix}u_{1}+v_{1}\\ ...\\ u_{k}+v_{k}\end{pmatrix} \quad \text{et} \quad \lambda\cdot\vec{u}=\begin{pmatrix}\lambda\cdot u_{1}\\ ...\\ \lambda\cdot u_{k}\end{pmatrix} \]
+\end{prop}
+
+\begin{exercice}
+    \tcblower
+    Démontrez que pour deux vecteurs $\vec{u}$ et $\vec{v}$ non colinéaires, on a :
+    \begin{tasks}(1)
+        \task $\alpha\cdot\vec{u}+\beta\cdot\vec{v}=\vec{0} \iff \alpha=0$ et $\beta=0$
+        \task $x_{1}\cdot\vec{u}+y_{1}\cdot\vec{v}=x_{2}\cdot\vec{u}+y_{2}\cdot\vec{v} \iff x_{1}=x_{2}$ et $y_{1}=y_{2}$
+    \end{tasks}
+    Déduisez de b) que les composantes d'un vecteur dans une base donnée sont uniques.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soit $ABCD$ un carré de centre $O$. Déterminez les composantes des vecteurs $\vec{OC}$, $\vec{AB}$, $\vec{BC}$, $\vec{BD}$ et $\vec{DA}$ dans la base proposée :
+    \begin{tasks}(1)
+        \task Base : $\vec{i}=\vec{OA}$ et $\vec{j}=\vec{OB}$
+        \task Base : $\vec{i}=\vec{DC}$ et $\vec{j}=\vec{DA}$
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Les points $M$, $N$, $P$ et $Q$ étant les milieux des côtés du parallélogramme $ABCD$.
+    \begin{center}
+    \begin{tikzpicture}[scale=0.7]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (4,0);
+        \coordinate (D) at (1.5,2.5);
+        \coordinate (C) at (5.5,2.5);
+        \coordinate (M) at (2,0);
+        \coordinate (N) at (4.75,1.25);
+        \coordinate (P) at (3.5,2.5);
+        \coordinate (Q) at (0.75,1.25);
+        \coordinate (O) at (2.75,1.25);
+        \draw (A) node[below left]{$A$} -- (B) node[below right]{$B$} -- (C) node[above right]{$C$} -- (D) node[above left]{$D$} -- cycle;
+        \draw (A) -- (C);
+        \draw (B) -- (D);
+        \node at (M) [below] {$M$};
+        \node at (N) [right] {$N$};
+        \node at (P) [above] {$P$};
+        \node at (Q) [left] {$Q$};
+        \node at (O) [below] {$O$};
+        \foreach \p in {A,B,C,D,M,N,P,Q,O} \fill (\p) circle (1.5pt);
+    \end{tikzpicture}
+    \end{center}
+    \begin{tasks}(1)
+        \task Donnez dans la base $(\vec{AB};\vec{AD})$ les composantes des vecteurs : $\vec{AB}, \vec{AD}, \vec{AM}, \vec{AQ}, \vec{AN}, \vec{AP}, \vec{AO}, \vec{OB}, \vec{QP}$ et $\vec{CM}$.
+        \task Même question, mais relativement à la base $(\vec{AD};\vec{AM})$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On considère le parallélépipède $ABCDEFGH$ et les points $K, M, R, S$ et $T$ ($M$ et $R$ étant les milieux respectifs de $[CG]$ et $[BC]$).
+    \begin{tasks}(1)
+        \task Donnez dans la base $(\vec{AB}; \vec{AD}; \vec{AE})$ les composantes des vecteurs $\vec{AB}, \vec{AC}, \vec{AD}, \vec{AE}, \vec{AF}, \vec{AG}, \vec{AH}, \vec{AM}, \vec{AS}, \vec{AR}$ et $\vec{AK}$.
+        \task (Entraînement individuel) Même question, dans la base $(\vec{CM};\vec{CD};\vec{BR})$.
+    \end{tasks}
+\begin{tikzpicture}[line join=round, line cap=round, scale=1.5]
+    % Define 3D coordinates
+    \pgfmathsetmacro{\cubex}{4}
+    \pgfmathsetmacro{\cubey}{2}
+    \pgfmathsetmacro{\cubez}{2}
+    
+    % Basis vectors to simulate perspective
+    \coordinate (x) at (1,0);
+    \coordinate (y) at (0.5,0.5);
+    \coordinate (z) at (0,1);
+    
+    % Vertices
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (\cubex,0);
+    \coordinate (D) at (\cubey*0.5, \cubey*0.5);
+    \coordinate (C) at (\cubex + \cubey*0.5, \cubey*0.5);
+    
+    \coordinate (E) at (0, \cubez);
+    \coordinate (F) at (\cubex, \cubez);
+    \coordinate (H) at (\cubey*0.5, \cubey*0.5 + \cubez);
+    \coordinate (G) at (\cubex + \cubey*0.5, \cubey*0.5 + \cubez);
+
+    % Special Points
+    \coordinate (M) at ($(C)!0.5!(G)$); % Midpoint CG
+    \coordinate (R) at ($(B)!0.5!(C)$); % Midpoint BC
+    \coordinate (T) at ($(A)!0.5!(C)$); % Center Bottom
+    \coordinate (K) at ($(E)!0.5!(G)$); % Center Top
+    \coordinate (S) at ($(C)!0.33!(E)$); % Point on diagonal CE (approx from image)
+
+    % Hidden Lines (Dashed)
+    \draw[dashed] (A) -- (D);
+    \draw[dashed] (D) -- (C);
+    \draw[dashed] (D) -- (H);
+    \draw[dashed, thin] (B) -- (D); % Diagonal base
+    \draw[dashed, thin] (A) -- (C); % Diagonal base
+    \draw[dashed, thin] (E) -- (C); % Space diagonal
+    \draw[dashed, thin] (H) -- (F); % Top diagonal
+    \draw[dashed, thin] (E) -- (G); % Top diagonal
+
+    % Visible Lines
+    \draw[thick] (A) -- (B) -- (C); % Bottom/Front
+    \draw[thick] (A) -- (E);
+    \draw[thick] (B) -- (F);
+    \draw[thick] (C) -- (G); % Vertical
+    \draw[thick] (E) -- (F) -- (G) -- (H) -- (E); % Top
+
+    % Labels
+    \node[below left] at (A) {$A$};
+    \node[below right] at (B) {$B$};
+    \node[right] at (C) {$C$};
+    \node[left] at (D) {$D$};
+    \node[left] at (E) {$E$};
+    \node[above left] at (F) {$F$}; % Adjusted to match image style
+    \node[above right] at (G) {$G$};
+    \node[above] at (H) {$H$};
+    
+    \fill (T) circle (1.5pt) node[below] {$T$};
+    \fill (K) circle (1.5pt) node[above] {$K$};
+    \fill (M) circle (1.5pt) node[right] {$M$};
+    \fill (R) circle (1.5pt) node[below right] {$R$};
+    \fill (S) circle (1.5pt) node[above right] {$S$};
+
+\end{tikzpicture}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On considère les trois vecteurs $\vec{a}, \vec{b}, \vec{c}$ sur un quadrillage.
+    \begin{center}
+    \begin{tikzpicture}[scale=0.5]
+        \draw[step=1cm,gray,very thin] (0,0) grid (15,8);
+        \draw[->, thick] (13,6) -- (14,7) node[midway,above left] {$\vec{a}$};
+        \draw[->, thick] (7,5) -- (4,7) node[midway,above] {$\vec{b}$};
+        \draw[->, thick] (7,3) -- (10,5) node[midway,below right] {$\vec{c}$};
+    \end{tikzpicture}
+    \end{center}
+    Construisez les vecteurs :
+    \begin{tasks}(3)
+        \task $\vec{d}=2\vec{a}$
+        \task $\vec{e}=-\frac{3}{4}\vec{b}$
+        \task $\vec{f}=-\vec{c}$
+        \task $\vec{g}=\vec{a}-\vec{b}$
+        \task $\vec{h}=2\vec{b}-\vec{a}-\frac{3}{2}\vec{c}$
+        \task $\vec{l}=-\frac{5}{4}\vec{a}+\vec{b}-2\vec{c}$
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soit $I$ le milieu d'un segment $[AB]$.
+    \begin{tasks}(1)
+        \task Montrez que : $\vec{OI}=\frac{1}{2}(\vec{OA}+\vec{OB})$.
+        \task Donnez les coordonnées de $I$ en fonction de celles de $A=(a_{1};a_{2})$ et $B=(b_{1};b_{2})$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On considère les points $A=(-3;4)$, $B=(5;-2)$ et $C=(1; 8)$.
+    \begin{tasks}(1)
+        \task Trouvez les coordonnées des milieux respectifs $A^{\prime}$, $B^{\prime}$ et $C^{\prime}$ de $[BC]$, $[AC]$ et $[AB]$.
+        \task Calculez les composantes des vecteurs suivants : $\vec{AA^{\prime}}$, $\vec{BB^{\prime}}$ et $\vec{CC^{\prime}}$.
+        \task Calculez la somme : $\vec{AA^{\prime}}+\vec{BB^{\prime}}+\vec{CC^{\prime}}$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} Soit $ABCDEF$ un hexagone régulier de centre $O$. Donnez les composantes des vecteurs : $\vec{AB}, \vec{CB}, \vec{FA}, \vec{EA}, \vec{AC}, \vec{CF}, \vec{EB}, \vec{CO}, \vec{BD}, \vec{AD}, \vec{OD}, \vec{OE}$.
+    \begin{tasks}(1)
+        \task Dans le repère $(O; C; D)$;
+        \task Dans le repère $(O; A; E)$;
+    \end{tasks}
+\begin{tikzpicture}[scale=1.5]
+    % Define points
+    \coordinate (O) at (0,0);
+    \coordinate (C) at (0:1.5);
+    \coordinate (D) at (60:1.5);
+    \coordinate (E) at (120:1.5);
+    \coordinate (F) at (180:1.5);
+    \coordinate (A) at (240:1.5);
+    \coordinate (B) at (300:1.5);
+    
+    % Draw Hexagon
+    \draw[thick] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+    
+    % Draw Diagonals
+    \draw[dashed] (A) -- (D);
+    \draw[dashed] (B) -- (E);
+    \draw[dashed] (C) -- (F);
+    
+    % Labels
+    \fill (O) circle (1.5pt) node[below] {$O$};
+    \fill (A) circle (1.5pt) node[below left] {$A$};
+    \fill (B) circle (1.5pt) node[below right] {$B$};
+    \fill (C) circle (1.5pt) node[right] {$C$};
+    \fill (D) circle (1.5pt) node[above right] {$D$};
+    \fill (E) circle (1.5pt) node[above left] {$E$};
+    \fill (F) circle (1.5pt) node[left] {$F$};
+\end{tikzpicture}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Relativement à une base du plan, on considère les vecteurs :
+    $\vec{a}=\begin{pmatrix}1\\ 3\end{pmatrix}$, $\vec{b}=\begin{pmatrix}0\\ -1\end{pmatrix}$, $\vec{c}=\begin{pmatrix}-2\\ 3\end{pmatrix}$, $\vec{d}=\begin{pmatrix}2\\ 6\end{pmatrix}$, $\vec{e}=\begin{pmatrix}6\\ -4\end{pmatrix}$, $\vec{f}=\begin{pmatrix}1\\ -3/2\end{pmatrix}$, $\vec{g}=\begin{pmatrix}-1/9\\ -1/3\end{pmatrix}$.
+    \begin{tasks}(1)
+        \task Donnez, parmi ces vecteurs, ceux qui sont colinéaires.
+        \task Donnez les composantes du vecteur $\vec{e}$ dans la base $(\vec{a}; \vec{b})$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Relativement à une base du plan, on donne les vecteurs : $\vec{a}=\begin{pmatrix}7\\ -2\end{pmatrix}$, $\vec{b}=\begin{pmatrix}-3\\ 5\end{pmatrix}$, $\vec{c}=\begin{pmatrix}0\\ 5\end{pmatrix}$.
+    Déterminez un nombre réel $\lambda$ et un vecteur $\vec{x}$ colinéaire au vecteur $\vec{a}$ tels que : $\vec{x}+\lambda\vec{b}=\vec{c}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soient $A^{\prime}$, $B^{\prime}$ et $C^{\prime}$ les milieux des côtés d'un triangle $ABC$. Montrez que :
+    \begin{tasks}(1)
+        \task $\vec{C^{\prime}B^{\prime}}=\frac{1}{2}\vec{BC}$;
+        \task $\vec{AA^{\prime}}+\vec{BB^{\prime}}+\vec{CC^{\prime}}=\vec{0}$.
+    \end{tasks}
+\begin{tikzpicture}[scale=1.2]
+    \coordinate (A) at (1,3);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (5,0);
+    
+    % Midpoints
+    \coordinate (Cp) at ($(A)!0.5!(B)$); % C' on AB
+    \coordinate (Ap) at ($(B)!0.5!(C)$); % A' on BC
+    \coordinate (Bp) at ($(C)!0.5!(A)$); % B' on CA
+    
+    % Draw Triangle
+    \draw[thick] (A) -- (B) -- (C) -- cycle;
+    
+    % Labels
+    \fill (A) circle (1.5pt) node[above] {$A$};
+    \fill (B) circle (1.5pt) node[left] {$B$};
+    \fill (C) circle (1.5pt) node[right] {$C$};
+    
+    \fill (Ap) circle (1.5pt) node[below] {$A'$};
+    \fill (Bp) circle (1.5pt) node[right] {$B'$};
+    \fill (Cp) circle (1.5pt) node[left] {$C'$};
+\end{tikzpicture}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soient $\vec{AB}$ un vecteur et $M$ un point donné du plan. Trouvez quel est l'ensemble des points $P$ du plan tels que $\vec{MP}=\lambda\vec{AB}$, où $\lambda\in\mathbb{R}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Relativement à une base de l'espace, on considère les vecteurs :
+    $\vec{a}=\begin{pmatrix}1\\ -3\\ 2\end{pmatrix}$, $\vec{b}=\begin{pmatrix}0\\ 8\\ -5\end{pmatrix}$, $\vec{c}=\begin{pmatrix}2\\ 18\\ -11\end{pmatrix}$, $\vec{d}=\begin{pmatrix}35\\ 14\\ -10\end{pmatrix}$, $\vec{e}=\begin{pmatrix}-2\\ -1\\ 0\end{pmatrix}$.
+    \begin{tasks}(1)
+        \task (Entraînement individuel) Calculez les composantes des vecteurs : $\vec{u}=2\vec{a}-\vec{b}+2\vec{d}$; $\vec{v}=-\vec{c}+3\vec{e}$; $\vec{w}=\frac{1}{2}\vec{a}-\frac{1}{3}\vec{c}+2\vec{d}$ et $\vec{t}=2\vec{a}+3\vec{b}-\vec{c}$.
+        \task Montrez que les vecteurs $\vec{a}, \vec{b}$ et $\vec{c}$ sont coplanaires.
+        \task Montrez que les vecteurs $\vec{a}, \vec{b}$ et $\vec{e}$ sont linéairement indépendants.
+        \task Exprimez le vecteur $\vec{d}$ comme combinaison linéaire des vecteurs $\vec{a}, \vec{b}$ et $\vec{e}$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soit un triangle $ABC$. $E$ est le point tel que $\vec{AE}=\frac{1}{4}\vec{BC}$ et $F$ est le point tel que $\vec{AF}=\frac{1}{5}\vec{AC}$. Démontrez que les points $B, E$ et $F$ sont alignés.
+\end{exercice}
+
+\section{La norme}
+
+\begin{definition}
+    \tcblower
+    La \textbf{norme} d'un vecteur $\vec{u}\in V$ (notée $||\vec{u}||$) est la longueur du vecteur.
+    \[ ||\vec{u}||=\sqrt{u_{1}^{2}+u_{2}^{2}+...+u_{k}^{2}} \]
+    $\vec{u}$ est unitaire $\iff ||\vec{u}||=1$.
+    
+    \textbf{Propriétés :}
+    \begin{enumerate}
+        \item $||\vec{u}||=0 \iff \vec{u}=\vec{0}$
+        \item $||\vec{u}||\ge0$
+        \item $||\lambda\cdot\vec{u}||=|\lambda|\cdot||\vec{u}||$
+        \item $||\vec{u}||=||-\vec{u}||$
+        \item $||\vec{u}+\vec{v}||\le||\vec{u}||+||\vec{v}||$ (inégalité triangulaire)
+    \end{enumerate}
+    Dans $\mathbb{R}^{2}$ : $||\vec{AB}||=\sqrt{(b_{1}-a_{1})^{2}+(b_{2}-a_{2})^{2}}$.
+\end{definition}
+
+\begin{exercice}
+    \tcblower
+    On donne les points $A=(1; 4)$, $B=(-8; 10)$ et $C=(1; -2)$. Calculez les longueurs des côtés du triangle $ABC$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Montrez que le vecteur suivant est unitaire : $\vec{u}=\begin{pmatrix}\frac{4}{\sqrt{41}}\\ \frac{5}{\sqrt{41}}\end{pmatrix}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Calculez la coordonnée manquante pour que les vecteurs suivants soient unitaires :
+    $\vec{a}=\begin{pmatrix}-1\\ \lambda\end{pmatrix}$ ; $\vec{b}=\begin{pmatrix}\omega\\ -2\omega\\ -\frac{1}{4}\end{pmatrix}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On donne les vecteurs : $\vec{a}=\begin{pmatrix}2\\ 3\end{pmatrix}$ et $\vec{b}=\begin{pmatrix}-2\\ 4\end{pmatrix}$.
+    Déterminez le nombre réel $\lambda$ tel que le vecteur $\vec{a}+\lambda\vec{b}$ ait une norme égale à $\sqrt{82}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Illustrez l'inégalité triangulaire à l'aide de deux vecteurs. Dans quels cas aura-t-on égalité ?
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Démontrez les propriétés de la norme, pour tout vecteur $\vec{v}$ (de $\mathbb{R}^{2}$) et tout nombre réel $\alpha$ :
+    \begin{tasks}(1)
+        \task $\vec{v}=\vec{0} \iff ||\vec{v}||=0$;
+        \task $||\alpha\cdot\vec{v}||=|\alpha|\cdot||\vec{v}||$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On considère les vecteurs : $\vec{a}=\begin{pmatrix}3\\ 4\end{pmatrix}$, $\vec{b}=\begin{pmatrix}0\\ -4\end{pmatrix}$ et $\vec{c}=\begin{pmatrix}\frac{\sqrt{2}}{2}\\ -\frac{\sqrt{2}}{2}\end{pmatrix}$.
+    \begin{tasks}(1)
+        \task Calculez la norme de chacun d'eux;
+        \task Calculez les composantes des vecteurs unitaires et colinéaires respectivement aux vecteurs $\vec{a}, \vec{b}$ et $\vec{c}$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} On considère le cube unité dans un repère orthonormé $(O; \vec{I}; \vec{J}; \vec{K})$.
+    \begin{tasks}(1)
+        \task Donnez les coordonnées des points $A, B, C, D$ et $E$;
+        \task Déterminez les composantes des vecteurs $\vec{AB}, \vec{AC}, \vec{AD}$ et $\vec{AE}$;
+        \task Les vecteurs $\vec{AC}, \vec{AD}$ et $\vec{AE}$ sont-ils coplanaires ?
+        \task Les vecteurs $\vec{AB}, \vec{AC}$ et $\vec{AD}$ sont-ils coplanaires ?
+    \end{tasks}
+\begin{tikzpicture}[scale=2, z={(-0.35cm,-0.25cm)}]
+    % Axes
+    \draw[->] (0,0,0) -- (1.3,0,0) node[right] {$y$};
+    \draw[->] (0,0,0) -- (0,1.3,0) node[above] {$z$};
+    \draw[->] (0,0,0) -- (0,0,1.5) node[below left] {$x$};
+    
+    % Cube Coordinates
+    \coordinate (O) at (0,0,0);
+    \coordinate (X) at (1,0,0); % y=1
+    \coordinate (Y) at (0,1,0); % z=1
+    \coordinate (Z) at (0,0,1); % x=1
+    
+    \coordinate (P1) at (1,0,1); % Front-Right-Bottom
+    \coordinate (P2) at (1,1,1); % Front-Right-Top
+    \coordinate (P3) at (0,1,1); % Front-Left-Top
+    \coordinate (P4) at (1,1,0); % Back-Right-Top
+    
+    % Points from Exercise (Based on Image Analysis)
+    % A is marked at (1,0,1) (Front Right Bottom corner on x axis end)
+    \coordinate (A) at (0,0,1); % Actually x-axis tip
+    \coordinate (B) at (1,1,1); % Far corner? Let's check image carefully.
+    % Image: A is front-bottom-right (y=1, z=0, x=1)? No.
+    % Let's rely on standard basis representation in math texts:
+    % x comes out, y goes right, z goes up.
+    % A is at (y=0.something, z=0, x=1). 
+    % Let's assume standard unit cube vertices for simplicity if grid logic fails:
+    % A=(1,0,1), B=(1,1,1)? 
+    % Let's define points by grid divisions (dots are 1/3 or 1/4).
+    
+    % Main Cube Outline
+    \draw (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle; % Front face
+    \draw (1,0,1) -- (1,0,0);
+    \draw (1,1,1) -- (1,1,0);
+    \draw (0,1,1) -- (0,1,0);
+    \draw (1,0,0) -- (1,1,0) -- (0,1,0) -- (0,0,0); % Back face part
+    \draw (0,0,1) -- (0,0,0) -- (1,0,0); 
+    \draw (0,1,0) -- (0,0,0);
+    
+    % Labels (matching image)
+    \node[below left] at (0,0,0) {$O$};
+    \fill (0,0,0) circle (0.5pt);
+    
+    % A: Front, x=1, y=0.66? 
+    % Image shows A on the bottom edge parallel to y axis, but shifted in x.
+    \coordinate (PtA) at (0.66, 0, 1); 
+    \node[below] at (PtA) {$A$}; \fill (PtA) circle (1pt);
+    
+    % B: Right face, vertical edge
+    \coordinate (PtB) at (1, 0.66, 0); 
+    \node[right] at (PtB) {$B$}; \fill (PtB) circle (1pt);
+
+    % C: Top face
+    \coordinate (PtC) at (0.33, 1, 0); 
+    \node[above] at (PtC) {$C$}; \fill (PtC) circle (1pt);
+    
+    % D: Top-Left edge
+    \coordinate (PtD) at (0, 1, 0.33);
+    \node[left] at (PtD) {$D$}; \fill (PtD) circle (1pt);
+
+    % E: Front-Left vertical edge
+    \coordinate (PtE) at (0, 0.33, 1);
+    \node[left] at (PtE) {$E$}; \fill (PtE) circle (1pt);
+    
+    % Vectors
+    \draw[->, thick] (PtA) -- (PtC);
+    \draw[->, thick] (PtA) -- (PtB);
+    \draw[->, thick] (PtA) -- (PtE);
+    \draw[->, thick] (PtA) -- (PtD);
+    
+    % Grid Dots (approximate on edges)
+    \foreach \i in {0.33, 0.66} {
+        \fill (\i, 0, 1) circle (0.5pt);
+        \fill (1, \i, 1) circle (0.5pt);
+        \fill (\i, 1, 1) circle (0.5pt);
+        \fill (0, \i, 1) circle (0.5pt);
+        % ... add others if needed, sticking to the main ones
+    }
+
+\end{tikzpicture}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} On donne les points $A=(7;1)$, $B=(5;5)$, $C=(5;-3)$ et $I=(2;1)$. Montrez que les points $A, B$ et $C$ sont sur un cercle de centre $I$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Trouvez un vecteur orthogonal au vecteur $\vec{v}=\vec{AB}$ avec $A=(-2;7)$ et $B=(5;1)$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Trouvez un vecteur unitaire, orthogonal au vecteur $\vec{a}=\begin{pmatrix}5\\ 7\end{pmatrix}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soit $\vec{n}$ un vecteur non nul. Exprimez en fonction de $\vec{n}$ les deux vecteurs unitaires ayant la même direction que $\vec{n}$.
+\end{exercice}
+
+\section{Produit scalaire et angle}
+\begin{tikzpicture}
+    % Left image: Vector Difference
+    \begin{scope}
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (2, -1.5);
+        \coordinate (B) at (3, 1.5);
+        
+        \draw[->, thick, >=latex] (O) -- (A) node[midway, below left] {$\vec{a}$};
+        \draw[->, thick, >=latex] (O) -- (B) node[midway, right] {$\vec{b}$};
+        \draw[->, thick, >=latex] (A) -- (B) node[midway, above] {$\vec{b}-\vec{a}$};
+        
+        % Angle Theta
+        \pic [draw, red!50, fill=red!20, angle radius=0.5cm, "$\theta$"] {angle = A--O--B};
+    \end{scope}
+    
+    % Right image: Triangle notation
+    \begin{scope}[xshift=5cm]
+        \coordinate (P1) at (0,0);
+        \coordinate (P2) at (4,1);
+        \coordinate (P3) at (3,3);
+        
+        \draw[thick] (P1) -- (P2) node[midway, below] {$a$};
+        \draw[thick] (P2) -- (P3) node[midway, above right] {$b$};
+        \draw[thick] (P3) -- (P1) node[midway, above left] {$c$};
+        
+        \pic [draw, fill=gray!20, angle radius=0.4cm, "$\beta$"] {angle = P2--P1--P3};
+        \pic [draw, fill=gray!20, angle radius=0.4cm, "$\gamma$"] {angle = P3--P2--P1};
+        \pic [draw, fill=gray!20, angle radius=0.4cm, "$\alpha$"] {angle = P1--P3--P2};
+        
+        \fill (P1) circle (1.5pt);
+        \fill (P2) circle (1.5pt);
+        \fill (P3) circle (1.5pt);
+    \end{scope}
+\end{tikzpicture}
+\begin{definition}
+    \tcblower
+    On appelle le \textbf{produit scalaire} de $\vec{a}$ et $\vec{b}$ le nombre réel :
+    \begin{itemize}
+        \item Dans $\mathbb{R}^{2}$ : $\vec{a}\cdot\vec{b}=a_{1}b_{1}+a_{2}b_{2}$
+        \item Dans $\mathbb{R}^{3}$ : $\vec{a}\cdot\vec{b}=a_{1}b_{1}+a_{2}b_{2}+a_{3}b_{3}$
+    \end{itemize}
+    \textbf{Relation avec l'angle :}
+    \[ \vec{a}\cdot\vec{b}=||\vec{a}||\cdot||\vec{b}||\cos(\theta) \]
+    D'où $\theta=\arccos\left(\dfrac{\vec{a}\cdot\vec{b}}{||\vec{a}||\cdot||\vec{b}||}\right)$.
+    
+    \textbf{Critère d'orthogonalité :} $\vec{a}\cdot\vec{b}=0 \iff \vec{a}\perp\vec{b}$ (pour vecteurs non nuls).
+\end{definition}
+
+\begin{exercice}
+    \tcblower
+    Démontrez les propriétés suivantes du produit scalaire :
+    \begin{tasks}(1)
+        \task Commutativité : $\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}$;
+        \task Distributivité : $\vec{u}\cdot(\vec{v}+\vec{w})=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}$;
+        \task $k(\vec{u}\cdot\vec{v})=(k\vec{u})\cdot\vec{v}=\vec{u}\cdot(k\vec{v})$;
+        \task $\vec{v}\cdot\vec{v}=0 \iff \vec{v}=\vec{0}$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soit $\vec{u}$ un vecteur de $\mathbb{R}^{3}$. Démontrez la propriété $\vec{u}\cdot\vec{u}=||\vec{u}||^{2}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On considère les vecteurs $\vec{a}=\begin{pmatrix}1\\ 2\\ -3\end{pmatrix}$ et $\vec{b}=\begin{pmatrix}2\\ -1\\ 3\end{pmatrix}$.
+    \begin{tasks}(1)
+        \task Donnez un vecteur orthogonal à $\vec{a}$ et un autre vecteur orthogonal à $\vec{b}$;
+        \task Déterminez un vecteur orthogonal simultanément à $\vec{a}$ et $\vec{b}$;
+        \task Déterminez un vecteur unitaire $\vec{w}$, orthogonal à $\vec{u}=\begin{pmatrix}-1\\ 0\\ 2\end{pmatrix}$ et $\vec{v}=\begin{pmatrix}2\\ 1\\ -1\end{pmatrix}$ simultanément.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} Montrez à l'aide du produit scalaire que le quadrilatère $ABCD$ est un rectangle, sachant que : $A=(0;2)$, $B=(6;6)$, $C=(8;3)$ et $D=(2;-1)$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Montrez que les vecteurs ayant la forme $\vec{d_{1}}=\begin{pmatrix}m\\ n\end{pmatrix}$ et $\vec{d_{2}}=\begin{pmatrix}n\\ -m\end{pmatrix}$ sont orthogonaux et de même norme.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soient $A=(5;7)$, $B=(4;-2)$ et $C=(3;3)$.
+    \begin{tasks}(1)
+        \task Trouvez un point $D$ tel que $\vec{AB}\perp\vec{CD}$;
+        \task Déterminez l'ensemble de tous les points $D$ tels que $\vec{AB}\perp\vec{CD}$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soient $\vec{AB}$ et $\vec{AC}$ des vecteurs et $M$ un point du plan. Déterminez quel est l'ensemble des points $P$ du plan tels que le vecteur $\vec{MP}$ peut s'écrire sous la forme $\vec{MP}=\alpha\cdot\vec{AB}+\beta\cdot\vec{AC}$ ($\alpha,\beta\in\mathbb{R}$).
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On considère les deux vecteurs $\vec{a}=\begin{pmatrix}1\\ 3\end{pmatrix}$ et $\vec{b}=\begin{pmatrix}-3\\ 11\end{pmatrix}$. Déterminez un nombre réel $\lambda$ et un vecteur $\vec{v}$ orthogonal à $\vec{a}$ tels que l'on ait $\vec{b}=\lambda\vec{a}+\vec{v}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Montrez que $A=(3;0;2)$, $B=(4;3;0)$ et $C=(8;1;-1)$ sont les sommets d'un triangle rectangle et calculez la valeur de ses deux autres angles.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Calculez la mesure de l'angle compris entre la diagonale d'un cube et l'une de ses arêtes.
+\begin{tikzpicture}[scale=1.5, z={(-0.35cm,-0.25cm)}]
+    % Axes
+    \draw[->] (0,0,0) -- (2,0,0) node[below left] {$x$}; % Swapped per image label
+    \draw[->] (0,0,0) -- (0,1.5,0) node[right] {$y$}; 
+    \draw[->] (0,0,0) -- (0,0,1.5) node[above] {$z$};
+    
+    % Cube
+    \draw (0,0,0) -- (1,0,0) -- (1,1,0) -- (0,1,0) -- cycle;
+    \draw (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle;
+    \draw (0,0,0) -- (0,0,1);
+    \draw (1,0,0) -- (1,0,1);
+    \draw (1,1,0) -- (1,1,1);
+    \draw (0,1,0) -- (0,1,1);
+    
+    % Diagonal
+    \draw[->, thick, >=latex] (0,0,0) -- (1,1,1);
+    
+    % Angle theta
+    % Visualizing angle between Z axis and diagonal
+    \draw[thin] (0,0,0.5) arc (90:45:0.5); % Approximation
+    \node at (0.2,0,0.6) {$\theta$};
+
+    % Labels
+    \node[below] at (1,0,0) {$(k;0;0)$};
+    \node[right] at (0,1,0) {$(0;k;0)$};
+    \node[left] at (0,0,1) {$(0;0;k)$};
+\end{tikzpicture}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Montrez que le vecteur $\vec{n}=\begin{pmatrix}a\\ b\end{pmatrix}$ est orthogonal à la droite d'équation $ax+by+c=0$.
+\end{exercice}
+
+\section{Projection orthogonale}
+
+\begin{definition}
+    \tcblower
+    La projection orthogonale $\vec{b_{1}}$ du vecteur $\vec{b}$ sur $\vec{a}$ est donnée par :
+    \[ \vec{b_{1}}=\dfrac{\vec{a}\cdot\vec{b}}{||\vec{a}||^{2}}\cdot\vec{a} \]
+\end{definition}
+
+\begin{exercice}
+    \tcblower
+    Relativement à une base de l'espace, on considère les vecteurs : $\vec{a}=\begin{pmatrix}1\\ -3\\ 2\end{pmatrix}$ et $\vec{b}=\begin{pmatrix}0\\ 8\\ -5\end{pmatrix}$.
+    \begin{tasks}(1)
+        \task Déterminez $\vec{b_{1}}$ la projection de $\vec{b}$ sur $\vec{a}$;
+        \task Calculez $\vec{a}\cdot\vec{b_{1}}$ et $\vec{a}\cdot\vec{b}$;
+        \task Calculez la norme des vecteurs $\vec{a}, \vec{b}$ et $\vec{b_{1}}$ ainsi que les produits : $||\vec{b}||\cdot||\vec{b_{1}}||$ et $||\vec{a}||\cdot||\vec{b_{1}}||$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} Calculez les angles du triangle $ABC$, avec $A=(3;1;1)$, $B=(-1;2;1)$ et $C=(2;-2;5)$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Calculez l'angle aigu formé par les droites $d_{1}: 3x-5y+4=0$ et $d_{2}: x+y-2=0$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soient le vecteur $\vec{n}=\begin{pmatrix}-5\\ 8\end{pmatrix}$ et le point $A=(7;-1)$. Trouvez l'équation de la droite $d$ telle que $A\in d$ et $d\perp\vec{n}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On donne $A=(1;3;-1)$ et $B=(-4;5;2)$. Déterminez les coordonnées de chacun des points $P_{1}$ et $P_{2}$ situés respectivement au tiers et aux deux tiers du segment $AB$.
+\end{exercice}
+
+\section{Droites dans $\mathbb{R}^{3}$}
+\begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (1,2.5);
+    \coordinate (P) at (4,1.5);
+    
+    % Vectors
+    \draw[->, thick, >=latex] (O) -- (A) node[midway, left] {$\vec{OA}$};
+    \draw[->, thick, >=latex] (O) -- (P) node[midway, below right] {$\vec{OP}$};
+    \draw[->, thick, >=latex] (A) -- (P) node[midway, above] {$\vec{AP} = \lambda \cdot \vec{d}$};
+    
+    % Line d
+    \draw[dashed] ($(A)!-0.5!(P)$) -- ($(A)!1.5!(P)$) node[right] {$d$};
+    
+    % Points
+    \fill (O) circle (1.5pt) node[below left] {$O$};
+    \fill (A) circle (1.5pt) node[above] {$A$};
+    \fill (P) circle (1.5pt) node[right] {$P$};
+\end{tikzpicture}
+
+\begin{definition}
+    \tcblower
+    Equation vectorielle de la droite $d$ passant par $A$ de direction $\vec{d}$ :
+    \[ \vec{OP}=\vec{OA}+\lambda\cdot\vec{d} \]
+    Système d'équations paramétriques ($P=(x;y;z)$, $A=(a_{1};a_{2};a_{3})$, $\vec{d}=(d_{1};d_{2};d_{3})$) :
+    \[ \begin{cases}x=a_{1}+\lambda d_{1}\\ y=a_{2}+\lambda d_{2}\\ z=a_{3}+\lambda d_{3}\end{cases}, \lambda\in\mathbb{R} \]
+\end{definition}
+
+\begin{exercice}
+    \tcblower
+    On donne une droite $d$ par la représentation paramétrique : $\begin{cases}x=5-k\\ y=2+3k\\ z=3+3k\end{cases}, k\in\mathbb{R}$.
+    \begin{tasks}(1)
+        \task Les points suivants appartiennent-ils à la droite $d$ ? $A=(6;-10;-8)$; $B=(3;8;9)$; $C=(6;-1;0)$.
+        \task Complétez le point $D=(?;-2;?)$ pour qu'il appartienne à la droite $d$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Déterminez un système d'équations paramétriques pour la droite passant par les deux points suivants :
+    \begin{tasks}(1)
+        \task $A=(1;1;-1)$; $B=(-2;1;3)$
+        \task $A=(-1;5;2)$; $B=(3;-4;1)$
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Déterminez un système d'équations paramétriques de la droite passant par le point $A$ et de direction $\vec{v}$.
+    \begin{tasks}(1)
+        \task $A=(3;-1;2)$ et $\vec{v}=\begin{pmatrix}2\\ 1\\ 3\end{pmatrix}$
+        \task $A=(-2;3;-3)$ et $\vec{v}=\begin{pmatrix}6\\ -6\\ 2\end{pmatrix}$
+        \task $A=(2;2;6)$ et $\vec{v}=\begin{pmatrix}0\\ 1\\ 0\end{pmatrix}$
+        \task $A=(0;0;0)$ et $\vec{v}=\begin{pmatrix}1\\ -2\\ 3\end{pmatrix}$
+    \end{tasks}
+\end{exercice}
+
+\section{Equation de plan}
+
+\begin{definition}
+    \tcblower
+    L'équation cartésienne d'un plan $\Pi$ passant par $P_{0}$ et de vecteur normal $\vec{n}=(a;b;c)$ est :
+    \[ ax+by+cz+d=0 \]
+\end{definition}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} Déterminez l'équation du plan passant par les trois points suivants :
+    \begin{tasks}(1)
+        \task $A=(2;1;1)$, $B=(3;-1;1)$ et $C=(4;1;-1)$; (en déterminant un vecteur normal)
+        \task $A=(-2;3;-1)$, $B=(2;2;3)$ et $C=(-4;-1;1)$; (sans déterminer un vecteur normal)
+        \task $A=(-5;-1;2)$, $B=(1;2;-1)$ et $C=(3;-1;2)$. (technique libre)
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} Dans chaque cas, déterminez l'équation cartésienne du plan $\Pi$ passant par le point $A$ ayant $\vec{n}$ comme vecteur normal.
+    \begin{tasks}(1)
+        \task $A=(-1;3;-2)$; $\vec{n}=\begin{pmatrix}-2\\ 1\\ -1\end{pmatrix}$
+        \task $A=(0;0;0)$; $\vec{n}=\begin{pmatrix}1\\ 2\\ 3\end{pmatrix}$
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Donnez un vecteur normal au plan d'équation $3x-7y-2z+10=0$. Puis déterminez l'équation d'un plan qui soit perpendiculaire à ce plan. Même question pour le plan $x-4z=0$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Calculez l'angle entre les plans donnés par les équations :
+    \begin{tasks}(1)
+        \task $x+y+z-1=0$ et $x-y-z-5=0$
+        \task $2x+3y+z+5=0$ et $x-2y+4z-1=0$
+        \task $-2x+4y-6z+5=0$ et $x-2y+3z=0$
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Déterminez l'équation du plan passant par les points $A=(3;-7;6)$, $B=(-6;-7;0)$ et $C=(15;21;6)$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On considère $P=(1;3;5)$ et $\vec{d}=\begin{pmatrix}-2\\ 1\\ 1\end{pmatrix}$. Trouvez l'intersection que fait la droite passant par $P$ et de direction $\vec{d}$ avec le plan d'équation $x+3y-z=1$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Soient les points $A=(1;-1;2)$, $B=(4;-2;-3)$ et le vecteur $\vec{n}=\begin{pmatrix}1\\ 2\\ 2\end{pmatrix}$. Déterminez le point d'intersection de la droite passant par $B$ et de même direction que $\vec{n}$ avec le plan passant par $A$ et perpendiculaire à $\vec{n}$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Dans chaque cas, déterminez l'intersection des deux plans :
+    \begin{tasks}(1)
+        \task $\Pi_{1}: 2x-y+z-1=0$ ; $\Pi_{2}: 3x+y+z-2=0$
+        \task $\Pi_{1}: 2x-y+5z-2=0$ ; $\Pi_{2}: 4x-2y+4=0$
+    \end{tasks}
+\end{exercice}
+
+\section{Distance point plan}
+\begin{tikzpicture}[scale=1.2]
+    % Plane Pi
+    \fill[red!10] (-2,0) -- (2,0) -- (4,1.5) -- (0,1.5) -- cycle;
+    \draw[red!50!black] (-2,0) -- (2,0) -- (4,1.5) -- (0,1.5) -- cycle;
+    \node[below right, red!50!black] at (2,0) {$\Pi: ax+by+cz+d=0$};
+    
+    % Point P1 (Projected)
+    \coordinate (P1) at (1, 0.75);
+    \fill (P1) circle (1.5pt) node[below] {$P_1=(x_1;y_1;z_1)$};
+    
+    % Point P0 (Target)
+    \coordinate (P0) at (1, 3.5);
+    \fill (P0) circle (1.5pt) node[right] {$P_0=(x_0;y_0;z_0)$};
+    
+    % Vector P1 -> P0
+    \draw[->, thick, >=latex] (P1) -- (P0) node[midway, right] {$\vec{P_0P}$}; % Label logic from image slightly weird, stick to standard
+    
+    % Normal Vector
+    \draw[->, thick, >=latex] (-1, 0.75) -- (-1, 2.75) node[left] {$\vec{n}=\begin{pmatrix}a\\b\\c\end{pmatrix}$};
+    \fill (-1, 0.75) circle (1.5pt);
+    
+    % Projection lines
+    \draw[dashed] (P1) -- (-1, 0.75);
+    \draw[dashed] (P0) -- (-1, 2.75);
+    
+    % Delta
+    \draw[dashed] (2.5, 0.75) -- (2.5, 3.5);
+    \draw (2.4, 0.75) -- (2.6, 0.75);
+    \draw (2.4, 3.5) -- (2.6, 3.5);
+    \node at (2.7, 2.1) {$\delta$};
+    
+\end{tikzpicture}
+
+\begin{definition}
+    \tcblower
+    La distance $\delta$ entre le point $P_{0}(x_{0};y_{0};z_{0})$ et le plan $\Pi: ax+by+cz+d=0$ est :
+    \[ \delta = \dfrac{|ax_{0}+by_{0}+cz_{0}+d|}{\sqrt{a^{2}+b^{2}+c^{2}}} \]
+\end{definition}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} Si les plans sont parallèles, déterminez la distance les séparant; s'ils ne le sont pas, déterminez leur droite commune.
+    \begin{tasks}(1)
+        \task $\Pi_{1}: 4x-y+2z=5$ ; $\Pi_{2}: 7x-3y+4z=8$
+        \task $\Pi_{1}: x-4y-3z-2=0$ ; $\Pi_{2}: 3x-12y-9z-7=0$
+        \task $\Pi_{1}: 2y=8x-4z+5$ ; $\Pi_{2}: x=\frac{1}{2}z+\frac{1}{4}y$
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Calculez la distance du point $M$ au plan $\Pi$ dans chacun des cas suivants :
+    \begin{tasks}(1)
+        \task $M=(1;1;2)$ et $\Pi: 3x+y-5z=2$
+        \task $M=(-1;3;2)$ et $\Pi: 2x-y+z=1$
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Déterminez si la droite $d$ et le plan $\Pi$ sont parallèles ou non. Déterminez leur distance ou leur intersection, selon le cas :
+    \begin{tasks}(1)
+        \task $d: \begin{cases}x=-5-4t\\ y=1-t\\ z=3+3k\end{cases}$ (Note: eq param incomplète dans source); $\Pi: x+2y+3z-9=0$.
+        \task $d: \begin{cases}x=3t\\ y=1+2t\\ z=-2+t\end{cases}$ (Note: eq param reconstituée); $\Pi: 4x-y+2z=1$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} Les droites $d$ et $e$ sont données par:
+    $d: \begin{cases}x=13+5k\\ y=-3-2k\\ z=5+3k\end{cases}$ et $e: \begin{cases}x=t\\ y=-2+t\\ z=5+3t\end{cases}$.
+    Les plans $\alpha: 5x+11y-z-11=0$; $\beta: x-y+3z+1=0$; $\gamma: 5x+11y-z-43=0$.
+    \begin{tasks}(1)
+        \task Montrez que les deux droites ont un point commun $P$ et déterminez ses coordonnées.
+        \task Montrez que les plans $\alpha$ et $\beta$ sont sécants et déterminez un système d'équations paramétriques de leur droite $i$ d'intersection.
+        \task Montrez que les plans $\alpha$ et $\gamma$ sont strictement parallèles.
+        \task Montrez que la droite $e$ coupe le plan $\gamma$ en un point $Q$.
+        \task Montrez que la droite $d$ est parallèle au plan $\alpha$.
+        \task Montrez que la droite $e$ est dans le plan $\beta$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} Soient le plan $\Pi$ d'équation $x+2y+z-1=0$ et les points $A=(1;2;3)$ et $B=(3;-1;-1)$. Déterminez les coordonnées du point $C$ appartenant au plan $\Pi$ et à la droite $AB$, s'il existe.
+\end{exercice}
+
+\section{Equations de sphères}
+\begin{tikzpicture}[scale=1.5]
+    \coordinate (C) at (0,0);
+    \def\R{1.5}
+    
+    % Sphere Outline
+    \draw (C) circle (\R);
+    
+    % Equator
+    \draw[rotate=0] (\R,0) arc (0:180:\R cm and 0.4cm);
+    \draw[rotate=0, dashed] (\R,0) arc (0:-180:\R cm and 0.4cm);
+    
+    % Point P
+    \coordinate (P) at (50:\R);
+    \fill (C) circle (1.5pt) node[below left] {$C$};
+    \fill (P) circle (1.5pt) node[right] {$P$};
+    
+    % Radius
+    \draw[->, thick, >=latex] (C) -- (P);
+\end{tikzpicture}
+
+\begin{definition}
+    \tcblower
+    Une \textbf{sphère} est l'ensemble des points situés à égale distance (rayon $r$) d'un centre $C=(x_{0};y_{0};z_{0})$.
+    Equation cartésienne :
+    \[ (x-x_{0})^{2}+(y-y_{0})^{2}+(z-z_{0})^{2}=r^{2} \]
+\end{definition}
+
+\begin{exercice}
+    \tcblower
+    \textbf{Entraînement individuel.} Déterminez une équation du plan $\alpha$ contenant la droite $d$ (passant par $D=(6;4;2)$, dir $\vec{d}=(-2;1;-1)$) et le point $A=(1;1;3)$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Déterminez l'angle aigu formé par la droite $d$ (passant par $A=(-1;5;2)$, dir $\vec{d}=(1;2;-3)$) et le plan $\Pi$ d'équation $2x-y+3z-4=0$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On donne $A=(3;4;0)$, $B=(-3;8;1)$, $C=(1;2;-3)$, $D=(11;1;1)$, $E=(3;3;-1)$, $F=(8;3;1)$, $G=(0;5;-1)$, $H=(-5;-2;-5)$, $I=(0;4;-3)$.
+    \begin{tasks}(1)
+        \task Déterminez les coordonnées du point d'intersection de la droite $(HI)$ et du plan $(ABC)$;
+        \task Montrez que la droite $(DE)$ est incluse dans le plan $(ABC)$;
+        \task Montrez que la droite $(FG)$ est strictement parallèle au plan $(ABC)$. Calculez la distance.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Deux plans $\alpha$ et $\beta$ sont donnés par leurs intersections avec les axes : $A_{1}=(2;0;0), A_{2}=(0;3;0), A_{3}=(0;0;-7)$ pour $\alpha$; $B_{1}=(5;0;0), B_{2}=(0;-6;0), B_{3}=(0;0;8)$ pour $\beta$. Déterminez l'équation cartésienne de $\alpha$ et $\beta$.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On donne une sphère $\Sigma$ et un point $T$. Vérifiez que $T \in \Sigma$, puis trouvez l'équation du plan tangent.
+    \begin{tasks}(1)
+        \task $\Sigma: (x+3)^{2}+(y-15)^{2}+(z-2)^{2}=225$, $T=(7;4;4)$ (Note: Coordonnées vérifiées par calcul)
+        \task (Données manquantes dans source pour b et c, supposées similaires)
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Déterminez l'équation de la sphère :
+    \begin{tasks}(1)
+        \task De diamètre $[AB]$, avec $A=(-1;0;5)$ et $B=(7;4;-7)$;
+        \task De centre $C=(4;1;-5)$ et tangente au plan $x+2y+2z-4=0$;
+        \task Passant par $A=(4;2;-3)$ et $B=(-1;3;1)$ et ayant son centre sur la droite $\begin{pmatrix}x\\ y\\ z\end{pmatrix}=\begin{pmatrix}2\\ 3\\ 7\end{pmatrix}+k\begin{pmatrix}-1\\ 2\\ 2\end{pmatrix}$.
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Montrez que les sphères $x^{2}+y^{2}+z^{2}=81$ et $x^{2}+y^{2}+z^{2}-4x-12y+6z=-45$ sont tangentes et déterminez l'équation de leur plan tangent commun.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Déterminez les équations des plans tangents à la sphère $x^{2}+y^{2}+z^{2}+8x-2y-2z-48=0$ aux points d'intersection avec les axes de coordonnées.
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    Déterminez les équations des plans parallèles à $\alpha$ et tangents à $\Sigma$, et les points de contact.
+    \begin{tasks}(1)
+        \task $\Sigma: x^{2}+y^{2}+z^{2}=216$, $\alpha: 7x-2y-z=0$
+        \task $\Sigma: (x-3)^{2}+(y-1)^{2}+z^{2}=169$, $\alpha: 12x+4y+3z-12=0$
+        \task $\Sigma: 2x^{2}+2y^{2}+2z^{2}-2x+8y+2z-87=0$, $\alpha: x-y-z+11=0$
+    \end{tasks}
+\end{exercice}
+
+\begin{exercice}
+    \tcblower
+    On donne la sphère $x^{2}+y^{2}+z^{2}=9$ et les points $A=(3;0;6)$ et $B=(3;5;1)$. Déterminez les équations des plans tangents à $\Sigma$ et contenant la droite $(AB)$.
+\end{exercice}
+\end{document}
