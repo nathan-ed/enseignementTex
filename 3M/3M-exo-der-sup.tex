@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tasks}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\title{Derivatives of Radicals and Rational Powers}
+\author{Calculus Exercises}
+\date{January 4, 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Part 1: Introductory Level}
+Find the derivative $\dfrac{dy}{dx}$ for each of the following functions.
+
+\begin{tasks}(1)
+    \task $y = \sqrt{7x - 2}$
+    \textbf{Solution:} \\
+    $\displaystyle \dfrac{dy}{dx} = \dfrac{1}{2}(7x - 2)^{-\frac{1}{2}} \cdot (7) = \dfrac{7}{2\sqrt{7x - 2}}$
+
+    \task $y = x^2 \sqrt{x}$
+    \textbf{Solution:} \\
+    Simplify first: $y = x^2 \cdot x^{\frac{1}{2}} = x^{\frac{5}{2}}$. \\
+    $\displaystyle \dfrac{dy}{dx} = \dfrac{5}{2}x^{\frac{3}{2}} = \dfrac{5}{2}x\sqrt{x}$
+
+    \task $y = (3x^2 + 1)^{\frac{1}{3}}$
+    \textbf{Solution:} \\
+    $\displaystyle \dfrac{dy}{dx} = \dfrac{1}{3}(3x^2 + 1)^{-\frac{2}{3}} \cdot (6x) = \dfrac{2x}{\sqrt[3]{(3x^2 + 1)^2}}$
+
+    \task $y = \dfrac{1}{\sqrt{x + 5}}$
+    \textbf{Solution:} \\
+    $y = (x + 5)^{-\frac{1}{2}}$. \\
+    $\displaystyle \dfrac{dy}{dx} = -\dfrac{1}{2}(x + 5)^{-\frac{3}{2}} = -\dfrac{1}{2\sqrt{(x + 5)^3}}$
+
+    \task $y = \sqrt{x}(2x - 3)$
+    \textbf{Solution:} \\
+    Using Product Rule: \\
+    $\displaystyle \dfrac{dy}{dx} = \left(\dfrac{1}{2\sqrt{x}}\right)(2x - 3) + \sqrt{x}(2) = \dfrac{2x - 3 + 4x}{2\sqrt{x}} = \dfrac{6x - 3}{2\sqrt{x}}$
+\end{tasks}
+
+\newpage
+
+\section{Part 2: Advanced Level}
+
+\begin{tasks}(1)
+    \addtocounter{task}{5}
+    \task $y = \sqrt{x^2 + \sqrt{x + 1}}$
+    \textbf{Solution:} \\
+    $\displaystyle \dfrac{dy}{dx} = \dfrac{1}{2\sqrt{x^2 + \sqrt{x + 1}}} \cdot \left( 2x + \dfrac{1}{2\sqrt{x + 1}} \right)$
+
+    \task $y = (x^2 + 1)^3 \sqrt{3x - 1}$
+    \textbf{Solution:} \\
+    $\displaystyle \dfrac{dy}{dx} = 3(x^2 + 1)^2(2x)\sqrt{3x - 1} + (x^2 + 1)^3\left(\dfrac{3}{2\sqrt{3x - 1}}\right)$
+
+    \task $y = \dfrac{\sqrt{x^2 - 1}}{x + 2}$
+    \textbf{Solution:} \\
+    Using Quotient Rule: \\
+    $\displaystyle \dfrac{dy}{dx} = \dfrac{\frac{x}{\sqrt{x^2-1}}(x + 2) - \sqrt{x^2-1}}{(x + 2)^2} = \dfrac{2x + 1}{(x + 2)^2\sqrt{x^2 - 1}}$
+
+    \task $y = \left( \dfrac{x}{x^2 + 1} \right)^{\frac{3}{4}}$
+    \textbf{Solution:} \\
+    Note how LaTeX automatically aligns the large parentheses and exponents: \\
+    $\displaystyle \dfrac{dy}{dx} = \dfrac{3}{4}\left( \dfrac{x}{x^2 + 1} \right)^{-\frac{1}{4}} \cdot \dfrac{(1)(x^2 + 1) - (x)(2x)}{(x^2 + 1)^2} = \dfrac{3(1 - x^2)}{4(x^2 + 1)^{\frac{7}{4}}x^{\frac{1}{4}}}$
+
+    \task $y = \sqrt[3]{x^2 \sqrt{x^3 + 1}}$
+    \textbf{Solution:} \\
+    $y = x^{\frac{2}{3}}(x^3 + 1)^{\frac{1}{6}}$. \\
+    $\displaystyle \dfrac{dy}{dx} = \dfrac{2}{3}x^{-\frac{1}{3}}(x^3 + 1)^{\frac{1}{6}} + x^{\frac{2}{3}}\left(\dfrac{1}{6}(x^3 + 1)^{-\frac{5}{6}}(3x^2)\right)$
+\end{tasks}
+
+
+\end{document}
