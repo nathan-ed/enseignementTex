@@ -1,7 +1,8 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{../packages/coursCollege}
-\newcommand{\Chapitre}{Fonctions}
+\newcommand{\Chapitre}{Ch. 3: Fonctions}
 \renewcommand{\path}{../}
+\usepgfplotslibrary{fillbetween}
 
 \usepackage[    %backend=biber,
     natbib=true,
@@ -10,7 +11,21 @@
 \addbibresource{biblio-der.bib}
 \renewcommand\refname{Sources}
 \renewcommand{\cours}{1MA~--~EG~--~ns~--~2025-2026}
-\begin{document}
+% Define the style within pgfplotsset to avoid namespace errors
+\pgfplotsset{
+    artistic_axis/.style={
+        axis lines=middle,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!15},
+        major grid style={line width=.2pt, draw=gray!30},
+        ticks=none,
+        xlabel style={at={(ticklabel* cs:1)}, anchor=north west},
+        ylabel style={at={(ticklabel* cs:1)}, anchor=south west},
+        font=\small
+    }
+  }
+
+  \begin{document}
 \tocloftpagestyle{fancy}
 % Reduce space between section entries
 \setlength{\cftbeforesecskip}{2pt}
@@ -19,10 +34,122 @@
 \setlength{\cftsecindent}{1em}
 
 \begin{center}
-	{\bfseries \Huge Fonctions}
+	{\bfseries \Huge Chapitre 3 : Fonctions}
+
+% Side-by-side individual plots using the tasks package
+\begin{tasks}(4)
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[artistic_axis, width=4.5cm, height=4.5cm, xmin=-0.2, xmax=2.2, ymin=-0.2, ymax=2.2, title={$y=x^2$}]
+            \addplot[very thick, red!80!black, domain=0:sqrt(2.2), samples=50] {x^2};
+        \end{axis}
+    \end{tikzpicture}
+
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[artistic_axis, width=4.5cm, height=4.5cm, xmin=-0.2, xmax=2.2, ymin=-0.2, ymax=2.2, title={$y=\sqrt{x}$}]
+            \addplot[very thick, blue!80!black, domain=0:2.2, samples=50] {sqrt(x)};
+        \end{axis}
+    \end{tikzpicture}
+
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[artistic_axis, width=4.5cm, height=4.5cm, xmin=-0.2, xmax=2.2, ymin=-0.2, ymax=2.2, title={$y=\dfrac{1}{x}$}]
+            \addplot[very thick, orange!80!black, domain=0.45:2.2, samples=50] {1/x};
+        \end{axis}
+    \end{tikzpicture}
+
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[artistic_axis, width=4.5cm, height=4.5cm, xmin=-0.2, xmax=2.2, ymin=-0.2, ymax=2.2, title={$y=x$}]
+            \addplot[thick, gray, dashed, domain=0:2.2] {x};
+        \end{axis}
+    \end{tikzpicture}
+\end{tasks}
 
 
+\pgfplotsset{
+    transformation_plot/.style={
+        axis lines=middle,
+        xmin=-4, xmax=4,
+        ymin=-2, ymax=6,
+     xtick={-4,-3,...,4},
+    ytick={-2,-1,...,6},
+        grid=both,
+        grid style={line width=.1pt, draw=gray!15},
+        major grid style={line width=.2pt, draw=gray!30},
+        ticks=none,
+        width=4.5cm, height=4.5cm,
+        font=\small,
+        every axis plot/.append style={very thick, cyan!70!black}
+    }
+}
 
+\begin{tasks}(4)
+    % 1. Parent Function
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[transformation_plot, title={$y=x^2$}]
+            \addplot[domain=-2.4:2.4, samples=50] {x^2};
+        \end{axis}
+    \end{tikzpicture}
+
+    % 2. Vertical Shift
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[transformation_plot, title={$y=x^2+2$}]
+            \addplot[domain=-2:2, samples=50] {x^2+2};
+        \end{axis}
+    \end{tikzpicture}
+
+    % 3. Vertical Compression
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[transformation_plot, title={$y=\dfrac{1}{2}x^2$}]
+            \addplot[domain=-3.4:3.4, samples=50] {0.5*x^2};
+        \end{axis}
+    \end{tikzpicture}
+
+    % 4. Horizontal Shift
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[transformation_plot, title={$y=(x-2)^2$}]
+            \addplot[domain=-0.4:4, samples=50] {(x-2)^2};
+        \end{axis}
+    \end{tikzpicture}
+
+    % 5. Combined Transformation
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[transformation_plot, title={$y=\dfrac{1}{2}(x-2)^2+1$}]
+            \addplot[domain=-1:4, samples=50] {0.5*(x-2)^2+1};
+        \end{axis}
+    \end{tikzpicture}
+
+    % 6. Reflection
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[transformation_plot, title={$y=-x^2$}]
+            \addplot[domain=-2.4:2.4, samples=50] {-x^2};
+        \end{axis}
+    \end{tikzpicture}
+
+    % 7. Vertical Stretch
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[transformation_plot, title={$y=2x^2$}]
+            \addplot[domain=-1.7:1.7, samples=50] {2*x^2};
+        \end{axis}
+    \end{tikzpicture}
+
+    % 8. Multiple Shifts and Reflection
+    \task[]
+    \begin{tikzpicture}
+        \begin{axis}[transformation_plot, title={$y=-(x+1)^2+3$}]
+            \addplot[domain=-3.5:1.5, samples=50] {-(x+1)^2+3};
+        \end{axis}
+    \end{tikzpicture}
+\end{tasks}
 \end{center}
 
 \vspace{-1cm}
@@ -33,31 +160,10 @@
 \section{Généralités sur les fonctions}
 \subsection{Découverte de quelques fonctions et vocabulaire}
 \insertexo{n6f5f}{false}{exo}
-\begin{center}
-	\begin{tikzpicture}[scale=1.5]
-  \begin{axis}[
-    axis lines=middle,
-    xlabel={$x$}, ylabel={$y$},
-    every axis x label/.style={at={(ticklabel* cs:0.92)}, anchor=west, yshift=10pt},
-    every axis y label/.style={at={(ticklabel* cs:0.92)}, anchor=south, xshift=10pt},
-    xmin=-6,   xmax=6,
-    ymin=-4,   ymax=6,
-    xtick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
-    ytick={-3,-2,-1,0,1,2,3,4,5},
-    grid=both,
-    grid style={dashed,gray!30},
-    tick label style={font=\tiny},
-    xlabel style={font=\tiny},
-    ylabel style={font=\tiny}
-  ]
-    % branche pour x > 9
-    \addplot[domain=-4:5.5, samples=200, thick]
-      {-2 + 1.12406*x - 0.0055405*x^2 - 0.120957*x^3 + 0.00248144*x^4 - 0.00311538*x^5 + 0.003193*x^6 + 0.00000448489*x^7 - 0.000133948 *x^8 + 0.0000122393*x^9
-}
-      node[left,pos=0.1, font=\tiny] {$f(x)$};
-  \end{axis}
-\end{tikzpicture}
-\end{center}
+\insertexo{qcb47}{false}{exo}
+\insertexo{xd937}{false}{exo}
+\insertexo{m6328}{false}{exo}
+
 
 \insertexo{b6cb8}{false}{exo}
 \insertexo{b2603}{false}{exo}
@@ -80,6 +186,7 @@
 \subsection{Opérations sur les fonctions}
 \insertexo{d7ab2}{false}{exo}
 \insertexo{tcbf7}{false}{exo}
+\insertexo{adb2d}{false}{exo}
 \subsection{Composition de fonctions}
 \insertexo{f6d6b}{false}{exo}
 \insertexo{s13bb}{false}{exo}
@@ -93,6 +200,8 @@
 \insertexo{v91bb}{false}{exo}
 \insertexo{pbb73}{false}{exo}
 \insertexo{wb9ff}{false}{exo}
+\section{La droite}
+\subsection{Représentation}
 \insertexo{b8eb6}{false}{exo}
 \insertexo{a5561}{false}{exo}
 \insertexo{ua665}{false}{exo}
@@ -101,42 +210,51 @@
 \insertexo{d775a}{false}{exo}
 \insertexo{pa02f}{false}{exo}
 \insertexo{fa8ff}{false}{exo}
+\insertexo{b2e74}{false}{exo}
+\insertexo{acc7c}{false}{exo}
+\insertexo{y3eae}{false}{exo}
+\insertexo{h8fbd}{false}{exo}
+\insertexo{l368d}{false}{exo}
 \insertexo{t3d16}{false}{exo}
 \insertexo{x1fab}{false}{exo}
 \insertexo{u416d}{false}{exo}
+\insertexo{u5d18}{false}{exo}
+\subsection{Droites parallèles et perpendiculaires}
 \insertexo{of723}{false}{exo}
 \insertexo{b2bfd}{false}{exo}
 \insertexo{fcacb}{false}{exo}
-\insertexo{u5d18}{false}{exo}
 \insertexo{lc23a}{false}{exo}
 \insertexo{jf835}{false}{exo}
 \insertexo{t4cab}{false}{exo}
 \insertexo{u06a8}{false}{exo}
 \insertexo{x844f}{false}{exo}
-\insertexo{jb01e}{false}{exo}
+\section{La parabole}
+\subsection{Définitions et différentes formes}
+\insertexo{jb01e}{false}{Exo}
 \insertexo{a2371}{false}{exo}
 \insertexo{sc0ae}{false}{exo}
 \insertexo{x1384}{false}{exo}
+\insertexo{n3d9e}{false}{exo}
+\insertexo{af4d2}{false}{exo}
+
+\subsection{Extremum}
 \insertexo{i34c4}{false}{exo}
 \insertexo{f5f9a}{false}{exo}
 \insertexo{z8537}{false}{exo}
 \insertexo{cc016}{false}{exo}
 \insertexo{h2451}{false}{exo}
+\insertexo{h5627}{false}{exo}
 
-Intersections
-
+\subsection{Intersections}
 \insertexo{h3c4c}{false}{exo}
 \insertexo{lf2a1}{false}{exo}
-\insertexo{h5627}{false}{exo}
+\insertexo{pc233}{false}{exo}
 \insertexo{p5deb}{false}{exo}
-\textbf{Problèmes d'optimisation}
+\subsection{Optimisation}
 \insertexo{efc34}{false}{exo}
 \insertexo{x07dc}{false}{exo}
 \insertexo{x8166}{false}{exo}
 \insertexo{u4adb}{false}{exo}
 \insertexo{ne2ae}{false}{exo}
 \insertexo{bf450}{false}{exo}
-
-\section{Les droites}
-\section{Les paraboles}
 \end{document}
