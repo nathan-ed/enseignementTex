@@ -94,10 +94,10 @@
 
 	\begin{proof}
 	L'image de $c$ est un maximum, donc pour un $h$ assez petit, on a
-	\[f(c)\geq f(x),  \forall x\in \ointerval{c-h}{c+h}.\]
+	\[f(c)\geq f(x) \, \forall x\in \ointerval{c-h}{c+h}.\]
 	Ce qui est équivalent à
 	\begin{equation}
-	f(c)-f(x)\geq 0,  \forall x\in \ointerval{c-h}{c+h}.
+	0\geq f(x)-f(c) \, \forall x\in \ointerval{c-h}{c+h}.
 	\tag{$\star$}
 	\label{eq:max}
 \end{equation}
@@ -346,10 +346,10 @@ Mais que veut dire « croissante » et « décroissante » mathématiquement ?
 	\tcblower
 	On dit qu'une fonction est
 	\begin{itemize}
-		\item {\bfseries croissante} sur un intervalle $I$ ssi pour tout $x_1, x_2\in I$
+		\item {\bfseries strictement croissante} sur un intervalle $I$ ssi pour tout $x_1, x_2\in I$
 			\[x_1<x_2\implies f(x_1)<f(x_2)\]
 
-		\item {\bfseries décroissante} sur un intervalle $I$ ssi pour tout $x_1, x_2\in I$
+		\item {\bfseries strictement décroissante} sur un intervalle $I$ ssi pour tout $x_1, x_2\in I$
 			\[x_1<x_2\implies f(x_1)>f(x_2)\]
 	\end{itemize}
 \end{definition}
@@ -366,7 +366,7 @@ La fonction $f(x)=x^2$ est décroissante sur l'intervalle $]-\infty;0]$ et crois
 	est constante sur l'intervalle $]-\infty;0]$ et croissante sur l'intervalle $[0;+\infty[$.
 \end{exemple}
 
-Le théorème suivant est une conséquence directe du Théorème des accroissements finis.
+Le théorème suivant est une conséquence du Théorème des accroissements finis.
 
 \begin{thm}
 	Relation entre la dérivée et la monotonie d'une fonction
@@ -376,7 +376,7 @@ Le théorème suivant est une conséquence directe du Théorème des accroisseme
 	Soit $f$ une fonction dérivable sur un intervalle $I=]a;b[$, alors
 	\begin{itemize}
 		\item Si $f'(x)>0$ pour tout $x\in I$, alors $f$ est strictement croissante sur $I$;
-		\item Si $f'(x)<0$ pour tout $x\in I$, alors $f$ est strictement décroissante sur $I$;
+		\item Si $f'(x)<0$ pour tout $x\in I$, alors $f$ est strictement décroissante sur~$I$;
 		\item Si $f'(x)=0$ pour tout $x\in I$, alors $f$ est constante sur $I$.
 	\end{itemize}
 	\begin{proof}
@@ -746,6 +746,10 @@ Une fonction admet un minimum local en $c$ ssi
 		\item $f'(x)>0$ pour tout $x\in ]c-a;c[$ et $f'(x)<0$ pour tout $x\in]c;c+a[$ alors $c$ est un maximum local.
 	\end{itemize}
 \end{methode}
+\begin{remarque}
+  \tcblower
+Le résultat précédent nous dit que si la dérivée change de signe en un point critique, alors on un extremum!
+  \end{remarque}
 \begin{comment}
 \begin{exemple}
 	\tcblower
@@ -835,7 +839,8 @@ Une fonction admet un minimum local en $c$ ssi
 	\end{enumerate}
 \end{methode}
 
-\insertexo{hhksj}{true}{exo}
+%\insertexo{hhksj}{false}{exo}
+\vspace{-0.7cm}
 \subsection{Optimisation}
 Vous avez déjà rencontré des problèmes d'optimisation dans votre cursus. Ces questions représentent des applications concrètes des outils d'analyse que nous avons étudiés dans les sections précédentes. Il s'agit de déterminer la valeur minimale ou maximale d'une quantité variable dans une situation donnée.
 
@@ -853,7 +858,7 @@ La partie la plus complexe dans la résolution d'un problème d'optimisation con
 		\item Interpréter la réponse trouvée et conclure.
 	\end{enumerate}
 \end{methode}
-
+\vspace{-0.3cm}
 \begin{exemple}
   \tcblower
 	Quelles sont les dimensions du rectangle d'aire maximale qui puisse être inscrit dans un cercle de rayon $r$~?
@@ -871,13 +876,13 @@ La partie la plus complexe dans la résolution d'un problème d'optimisation con
 
 \subsubsection{Le théorème des accroissement finis}
 \insertexo{kafhh}{false}{exo}
-%\insertexo{d4c88}{true}{exo}
-%\insertexo{aef2y}{true}{exo}
-%\insertexo{n67du}{true}{exo}
-\insertexo{5hev4}{true}{exo}
-\insertexo{hju27}{true}{exo}
-\insertexo{zar8b}{true}{exo}
-\insertexo{x5ny2}{true}{exo}
+%\insertexo{d4c88}{false}{exo}
+%\insertexo{aef2y}{false}{exo}
+%\insertexo{n67du}{false}{exo}
+\insertexo{5hev4}{false}{exo}
+\insertexo{hju27}{false}{exo}
+\insertexo{zar8b}{false}{exo}
+\insertexo{x5ny2}{false}{exo}
 \insertexo{147ae}{false}{exo}
 \insertexo{4qat4}{false}{exo}
 \insertexo{qr5rf}{false}{exo}
@@ -887,10 +892,10 @@ La partie la plus complexe dans la résolution d'un problème d'optimisation con
 %\insertexo{8bwde}{false}{exo}
 \insertexo{pjez7}{false}{exo}
 \insertexo{c61qc}{false}{exo}
-%\insertexo{n67du}{true}{exo}
+%\insertexo{n67du}{false}{exo}
 
 \subsubsection{Fonctions croissantes et décroissantes}
-\insertexo{r9x4h}{true}{exo}
+\insertexo{r9x4h}{false}{exo}
 \insertexo{5pyfw}{false}{exo}
 
 
@@ -903,14 +908,14 @@ La partie la plus complexe dans la résolution d'un problème d'optimisation con
 
 \insertexo{fxy4n}{false}{exo}
 
-\subsection{Étude de fonctions}
+\subsubsection{Étude de fonctions}
 \insertexo{a16e2}{false}{exo}
 \insertexo{g2505}{false}{exo}
 \insertexo{qf40a}{false}{exo}
 \insertexo{iaa5d}{false}{exo}
 \insertexo{q5c03}{false}{exo}
 
-\subsection{Optimisation}
+\subsubsection{Optimisation}
 \insertexo{df9ef}{false}{exo}
 \insertexo{jd179}{false}{exo}
 \insertexo{td5f5}{false}{exo}
@@ -951,15 +956,15 @@ La partie la plus complexe dans la résolution d'un problème d'optimisation con
 %\insertexo{3e21y}{false}{exo}
 %\insertexo{fxwf8}{false}{exo}
 %
-%\insertexo{gmcwt}{true}{exo}
-%\insertexo{shcv8}{true}{exo}
-%\insertexo{9q8gz}{true}{exo}
-%\insertexo{xkwd5}{true}{exo}
-%\insertexo{bs74m}{true}{exo}
-%\insertexo{nv48n}{true}{exo}
-%\insertexo{pmwx1}{true}{exo}
-%\insertexo{fnj4z}{true}{exo}
-%\insertexo{bhu5u}{true}{exo}
+%\insertexo{gmcwt}{false}{exo}
+%\insertexo{shcv8}{false}{exo}
+%\insertexo{9q8gz}{false}{exo}
+%\insertexo{xkwd5}{false}{exo}
+%\insertexo{bs74m}{false}{exo}
+%\insertexo{nv48n}{false}{exo}
+%\insertexo{pmwx1}{false}{exo}
+%\insertexo{fnj4z}{false}{exo}
+%\insertexo{bhu5u}{false}{exo}
 %
 %\subsubsection{Concavité et points d'inflexion}
 %\insertexo{n94b7}{false}{exo}
@@ -969,20 +974,20 @@ La partie la plus complexe dans la résolution d'un problème d'optimisation con
 %\insertexo{mdru5}{false}{exo}
 %
 %\subsubsection{Application à l'étude de fonctions}
-%\insertexo{515q8}{true}{exo}
-%\insertexo{yn5fe}{true}{exo}
-%\insertexo{3exms}{true}{exo}
-%\insertexo{w3pgx}{true}{exo}
+%\insertexo{515q8}{false}{exo}
+%\insertexo{yn5fe}{false}{exo}
+%\insertexo{3exms}{false}{exo}
+%\insertexo{w3pgx}{false}{exo}
 %\subsubsection{Applications}
-%\insertexo{fg15r}{true}{exo}
-%\insertexo{2mqwc}{true}{exo}
-%\insertexo{m4mzh}{true}{exo}
-%\insertexo{wu8y4}{true}{exo}
-%\insertexo{u7dja}{true}{exo}
-%\insertexo{e1wtj}{true}{exo}
-%\insertexo{hvq58}{true}{exo}
-%\insertexo{uvgs1}{true}{exo}
-%\insertexo{7zb7h}{true}{exo}
+%\insertexo{fg15r}{false}{exo}
+%\insertexo{2mqwc}{false}{exo}
+%\insertexo{m4mzh}{false}{exo}
+%\insertexo{wu8y4}{false}{exo}
+%\insertexo{u7dja}{false}{exo}
+%\insertexo{e1wtj}{false}{exo}
+%\insertexo{hvq58}{false}{exo}
+%\insertexo{uvgs1}{false}{exo}
+%\insertexo{7zb7h}{false}{exo}
 
 
  \nocite{*}
